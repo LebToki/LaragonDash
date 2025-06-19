@@ -15,7 +15,7 @@
 - ✅ **No database required**
 
 ```txt
-Compatible with Laragon 6+ 7+ and 8+ • PHP 8+ • Apache/Nginx • Lightweight & open source
+Compatible with Laragon 6+ - 7+ and 8+ • PHP 7+ - 8+ • Apache/Nginx • Lightweight & open source
 ```
 
 ---
