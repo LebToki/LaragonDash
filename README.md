@@ -12,11 +12,11 @@
 
 ---
 
-![Promo](assets/LaragonDash.jpg)
-![Dashboard Light](assets/LaragonDash-Screenshot-Dashboard-Light.png)
-![Dashboard Dark](assets/LaragonDash-Screenshot-Dashboard-Dark.png)
-![MailReader](assets/LaragonDash-Screenshot-MailReader-Light.png)
-![Bcrypt Tool](assets/LaragonDash-Screenshot-Bcrypt-Dark.png)
+![Promo](assets/images/screenshots/LaragonDash.jpg)
+![Dashboard Light](assets/images/screenshots/LaragonDash-Screenshot-Dashboard-Light.png)
+![Dashboard Dark](assets/images/screenshots/LaragonDash-Screenshot-Dashboard-Dark.png)
+![MailReader](assets/images/screenshots/LaragonDash-Screenshot-MailReader-Light.png)
+![Bcrypt Tool](assets/images/screenshots//LaragonDash-Screenshot-Bcrypt-Dark.png)
 
 ---
 
@@ -58,13 +58,13 @@ You can also build and register your own modules!
 ```php
 $domainSuffix = '.local';
 $ignore_dirs = array('.', '..', 'logs', 'access-logs', 'vendor', 'favicon_io', 'assets');
+```
 
 4. Update mailbox path in .env or config.php:
 
-
 define('SENDMAIL_OUTPUT_DIR', '/path/to/laragon/tmp');
 
-Enjoy a smoother local development experience!
+### Enjoy a smoother local development experience!
 
 📂 Module Directory Structure
 LaragonDash/
