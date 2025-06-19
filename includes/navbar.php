@@ -8,7 +8,7 @@
 		<!-- Search Box -->
 		<form class="d-flex" action="../index.php" method="GET" role="search">
 			<input type="hidden" name="module" value="search">
-			<input class="form-control me-2 form-control-sm" type="search" name="query" placeholder="Search projects..." aria-label="Search">
+                        <input class="form-control me-2 form-control-sm" type="search" name="query" placeholder="Search projects..." aria-label="Search" data-i18n-placeholder="search">
 			<button class="btn btn-sm btn-outline-secondary" type="submit">
 				<iconify-icon icon="ic:round-search"></iconify-icon>
 			</button>

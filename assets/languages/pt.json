@@ -18,11 +18,11 @@
 	"breadcrumb_server_vitals": "Meus sinais vitais do servidor de desenvolvimento",
 
 	"server_status": "Status do Servidor",
-	"tempo de atividade": "Tempo de atividade",
+        "uptime": "Tempo de atividade",
 	"memory_usage": "Uso de memória (em MB)",
 	"disk_usage": "Uso do disco",
 
-	"good-morning": "Bom dia",
+        "good_morning": "Bom dia",
 	"good_afternoon": "Boa tarde",
 	"good_evening": "Boa noite",
 
@@ -32,7 +32,7 @@
 	"logged-messages": "Mensagens registradas",
 	"email-list": "Lista de e-mail",
 	"no-emails-found": "Nenhum e-mail encontrado",
-	"excluir": "Excluir",
+        "delete": "Excluir",
 
 	"default_footer": "&copy; 2024    <?php echo htmlspecialchars(date('Y')); ?>, Tarek Tarabichi",
 	"made_with_love": "Feito com <span style=\"color: #e25555;\">&hearts;</span> e desenvolvido por Laragon"
