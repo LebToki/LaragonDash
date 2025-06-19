@@ -1,12 +1,30 @@
 <?php
+	
+	// Handle deletion BEFORE any output or includes
+	if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['delete'])) {
+		$emailDir = 'D:/laragon/bin/sendmail/output/';
+		$target = basename($_POST['delete']);
+		$fullPath = $emailDir . $target;
+		
+		if (file_exists($fullPath)) {
+			unlink($fullPath);
+			echo "<script>location.href='?module=email&deleted=1';</script>";
+			exit;
+		}
+	}
+	
+	// Now safe to include UI-related files
 	require_once 'includes/functions.php';
 	
-	$emailDir = 'emails/';
-	$emails = glob($emailDir . '*.html');
-	usort($emails, fn($a, $b) => filemtime($b) <=> filemtime($a)); // Newest first
+	
+	$emailDir = 'D:/laragon/bin/sendmail/output/';
+	$emails = glob($emailDir . '*.{eml,txt}', GLOB_BRACE);
+	
+	usort($emails, fn($a, $b) => strcmp(basename($b), basename($a))); // DESC by filename
+	
 	$current = $_GET['email'] ?? null;
 	
-	// Handle delete request
+	// Handle deletion
 	if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['delete'])) {
 		$target = basename($_POST['delete']);
 		$fullPath = $emailDir . $target;
@@ -20,7 +38,7 @@
 
 <div class="container-fluid py-4">
 	<div class="row g-3">
-		<!-- Inbox Sidebar -->
+		<!-- Sidebar Inbox -->
 		<div class="col-md-4 col-lg-3 border-end" style="height: 80vh; overflow-y: auto;">
 			<h5 class="mb-3">
 				<iconify-icon icon="mdi:email-outline" class="me-1"></iconify-icon> Inbox
@@ -34,7 +52,7 @@
 			<?php endif; ?>
 			
 			<?php if (empty($emails)): ?>
-				<div class="text-muted small">No emails found in <code>/emails</code>.</div>
+				<div class="text-muted small">No emails found in <code><?= $emailDir ?></code>.</div>
 			<?php else: ?>
 				<div class="list-group small">
 					<?php foreach ($emails as $file):
@@ -58,17 +76,27 @@
 		
 		<!-- Email Content -->
 		<div class="col-md-8 col-lg-9">
-			<?php if ($current && file_exists($emailDir . $current)): ?>
-				<div class="card shadow-sm" style="height: 80vh; overflow-y: auto;">
-					<div class="card-body">
-						<?php include $emailDir . $current; ?>
-					</div>
-				</div>
-			<?php else: ?>
-				<div class="text-muted d-flex align-items-center justify-content-center" style="height: 80vh;">
-					<em>Select an email to view its contents</em>
-				</div>
-			<?php endif; ?>
+			<?php
+				if ($current && file_exists($emailDir . $current)) {
+					$content = file_get_contents($emailDir . $current);
+					$ext = strtolower(pathinfo($current, PATHINFO_EXTENSION));
+					
+					echo '<div class="card shadow-sm" style="height: 80vh; overflow-y: auto;"><div class="card-body">';
+					
+					// Render HTML safely in iframe
+					if (stripos($content, '<html') !== false || stripos($content, '<body') !== false) {
+						echo '<iframe srcdoc="' . htmlspecialchars($content) . '" style="width:100%; height:70vh; border:none;"></iframe>';
+					} else {
+						echo '<pre style="white-space: pre-wrap; word-wrap: break-word;">' . htmlspecialchars($content) . '</pre>';
+					}
+					
+					echo '</div></div>';
+				} else {
+					echo '<div class="text-muted d-flex align-items-center justify-content-center" style="height: 80vh;">
+						<em>Select an email to view its contents</em>
+					</div>';
+				}
+			?>
 		</div>
 	</div>
 </div>

@@ -1,5 +1,5 @@
 <?php
-	require_once '../../includes/functions.php';
+	require_once 'includes/functions.php';
 	
 	$langDir = realpath(__DIR__ . '/../../includes/languages');
 	$files = glob($langDir . '/*.json');
@@ -28,15 +28,24 @@
 	if ($filePath && file_exists($filePath)) {
 		$content = file_get_contents($filePath);
 	}
+	
+	// Add for debugging
+	error_log("Selected: $selected");
+	error_log("FilePath: $filePath");
+	error_log("LangDir: $langDir");
 ?>
 
 <div class="container py-4">
-	<h4 class="mb-3"><i class="ri-translate-2"></i> <?= t('settings.language_editor_title', 'Language Editor') ?></h4>
+	<h4 class="mb-3"><i class="ri-translate-2"></i> <?= t('settings.language_editor_title', [], 'Language Editor') ?></h4>
+	
 	
 	<form method="get" class="mb-3">
-		<label class="form-label"><?= t('settings.select_file', 'Select Language File') ?></label>
+		<input type="hidden" name="module" value="settings">
+		<input type="hidden" name="page" value="language-editor">
+		
+		<label class="form-label"><?= t('settings.select_file', [], 'Select Language File') ?></label>
 		<select name="file" class="form-select" onchange="this.form.submit()">
-			<option value=""><?= t('settings.choose_file', 'Choose...') ?></option>
+			<option value=""><?= t('settings.choose_file', [], 'Choose...') ?></option>
 			<?php foreach ($files as $f):
 				$name = basename($f); ?>
 				<option value="<?= $name ?>" <?= $name === $selected ? 'selected' : '' ?>>
@@ -54,13 +63,13 @@
 			<textarea id="json-editor" name="json" rows="20" class="form-control mb-2"><?= htmlspecialchars($content) ?></textarea>
 			<div class="mb-2">
 				<button type="button" class="btn btn-sm btn-secondary" onclick="addGroup()">
-					<i class="ri-folder-add-line"></i> <?= t('settings.add_group', 'Add Group') ?>
+					<i class="ri-folder-add-line"></i> <?= t('settings.add_group', [], 'Add Group') ?>
 				</button>
 				<button type="button" class="btn btn-sm btn-secondary" onclick="addKey()">
-					<i class="ri-key-2-line"></i> <?= t('settings.add_key', 'Add Key') ?>
+					<i class="ri-key-2-line"></i> <?= t('settings.add_key', [], 'Add Key') ?>
 				</button>
 				<button type="submit" class="btn btn-sm btn-primary">
-					<i class="ri-save-line"></i> <?= t('settings.save', 'Save') ?>
+					<i class="ri-save-line"></i> <?= t('settings.save', [], 'Save') ?>
 				</button>
 			</div>
 		</form>

@@ -1,7 +1,6 @@
 <?php
 	require_once __DIR__ . '/functions.php'; // lang.php is already included
 	
-
 	// Meta data
 	$title = t('app.title', [], 'LaragonDash');
 	$description = t('app.description', [], 'A dashboard to manage local development projects.');

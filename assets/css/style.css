@@ -102,6 +102,81 @@ iconify-icon {
 }
 
 /* =======================================
+   Email
+======================================= */
+/* DARK MODE EMAIL VIEWER FIX */
+body.theme-dark .card-body,
+body.theme-dark .email-preview,
+body.theme-dark .email-html,
+body.theme-dark pre,
+body.theme-dark code {
+  background-color: #1e1e2f !important;
+  color: #f1f1f1 !important;
+  font-family: "Courier New", monospace;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+/* DARK Sidebar & Button Fixes */
+body.theme-dark .list-group-item {
+  background-color: #262738!important;;
+  color: #eee!important;;
+  border-color: #2c2f3a!important;;
+}
+body.theme-dark .list-group-item.active {
+  background-color: #1a1c28!important;;
+  color: #fff!important;;
+}
+body.theme-dark .btn-outline-danger {
+  color: #ff6b6b!important;;
+  border-color: #ff6b6b!important;;
+}
+body.theme-dark .btn-outline-danger:hover {
+  background-color: #ff6b6b!important;;
+  color: #000!important;;
+}
+
+/* LIGHT MODE EMAIL VIEWER */
+body:not(.theme-dark) .card-body,
+body:not(.theme-dark) .email-preview,
+body:not(.theme-dark) .email-html,
+body:not(.theme-dark) pre,
+body:not(.theme-dark) code {
+  background-color: #ffffff !important;
+  color: #212529 !important;
+  font-family: "Courier New", monospace;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+/* LIGHT Sidebar & Button Consistency */
+body:not(.theme-dark) .list-group-item {
+  background-color: #f8f9fa!important;;
+  color: #212529!important;;
+  border-color: #dee2e6!important;;
+}
+body:not(.theme-dark) .list-group-item.active {
+  background-color: #e9ecef!important;;
+  color: #000!important;;
+}
+body:not(.theme-dark) .btn-outline-danger {
+  color: #dc3545!important;;
+  border-color: #dc3545!important;;
+}
+body:not(.theme-dark) .btn-outline-danger:hover {
+  background-color: #dc3545!important;;
+  color: #fff!important;;
+}
+
+/* Shared Email Viewer */
+.email-preview {
+  max-width: 100%;
+  overflow-x: auto;
+  padding: 10px;
+  font-size: 14px;
+}
+
+/* =======================================
    📦 Cards & Project Tiles
 ======================================= */
 .card {
