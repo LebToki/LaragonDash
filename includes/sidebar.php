@@ -3,7 +3,7 @@
 	
 	// Language detection
 	$lang = $_COOKIE['lang'] ?? 'en';
-	$langFile = __DIR__ . '/../includes/lang/' . $lang . '.json';
+        $langFile = __DIR__ . '/../includes/languages/' . $lang . '.json';
 	$trans = [];
 	
 	if (file_exists($langFile)) {

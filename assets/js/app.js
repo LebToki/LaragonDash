@@ -69,6 +69,7 @@
       try {
         const res = await fetch(`includes/languages/${lang}.json`);
         const translations = await res.json();
+        window.i18n = translations;
         
         document.querySelectorAll("[data-i18n]").forEach((el) => {
           const keys = el.dataset.i18n.split(".");
