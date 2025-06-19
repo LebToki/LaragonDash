@@ -9,7 +9,7 @@ built for developers who want speed, control, and an intuitive interface to mana
 ---
 
 > Following the success and adoption of the original Laragon Dashboard by the community, we’re proud to introduce
-`LaragonDash v1.1`.
+`LaragonDash`.
 > This spin-off delivers a modern MVC-inspired layout, support for modules, improved theming, and smarter tooling —
 > while still preserving the simplicity developers loved about the original.
 
@@ -69,7 +69,7 @@ LaragonDash/
 📆 Changelog Summary
 v1.1 — June 2025
 <details>
-<summary>Version 2.3.4 – June 06, 2024</summary>
+<summary>Version 1.2 – June 19, 2025</summary>
 
 - Language Loading and Selection: Added functionality to load language files and detect user language preference.
 - Server Status Display: Added functions to display server uptime, memory usage, and disk usage.
