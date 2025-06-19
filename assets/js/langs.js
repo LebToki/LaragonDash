@@ -9,6 +9,20 @@ window.availableLanguages = {
   tl: { label: "Tagalog", code: "ph", dir: "ltr" },
   hi: { label: "हिन्दी", code: "in", dir: "ltr" },
   ur: { label: "اردو", code: "pk", dir: "rtl" },
-
-  // Add new languages here
+  
+  // Additional supported languages
+  zh: { label: "中文 (简体)", code: "cn", dir: "ltr" },
+  zh_tw: { label: "中文 (繁體)", code: "tw", dir: "ltr" },
+  ja: { label: "日本語", code: "jp", dir: "ltr" },
+  ko: { label: "한국어", code: "kr", dir: "ltr" },
+  ru: { label: "Русский", code: "ru", dir: "ltr" },
+  fa: { label: "فارسی", code: "ir", dir: "rtl" },
+  tr: { label: "Türkçe", code: "tr", dir: "ltr" },
+  it: { label: "Italiano", code: "it", dir: "ltr" },
+  nl: { label: "Nederlands", code: "nl", dir: "ltr" },
+  th: { label: "ไทย", code: "th", dir: "ltr" },
+  sw: { label: "Kiswahili", code: "ke", dir: "ltr" },
+  ms: { label: "Bahasa Melayu", code: "my", dir: "ltr" },
+  vi: { label: "Tiếng Việt", code: "vn", dir: "ltr" },
+  he: { label: "עברית", code: "il", dir: "rtl" }
 };

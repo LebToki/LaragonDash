@@ -24,7 +24,18 @@
 
 		
 		<!-- Language Selector (dynamically populated in app.js) -->
-		<select id="lang-select" class="form-select form-select-sm" aria-label="Language Selector" style="width: auto;"></select>
+		
+		
+		<div class="dropdown lang-dropdown">
+			<button class="btn btn-sm btn-outline-secondary dropdown-toggle" type="button" id="langDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+				<span class="fi fi-gb me-1" id="currentLangFlag"></span>
+				<span id="currentLangLabel">English</span>
+			</button>
+			<ul class="dropdown-menu dropdown-menu-end" aria-labelledby="langDropdown" id="languageList">
+				<!-- Dynamically populated -->
+			</ul>
+		</div>
+		
 		
 		<!-- User Dropdown -->
 		<div class="dropdown">

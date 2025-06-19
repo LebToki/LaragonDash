@@ -1,8 +1,8 @@
 <!-- JS Libraries -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" defer></script>
 <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js" defer></script>
 
-<!-- Fonts -->
+<!-- Fonts (should ideally be in head, but included here if needed late) -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 
 <!-- App JS -->
@@ -17,6 +17,5 @@
 		        data-bs-dismiss="toast" aria-label="Close"></button>
 	</div>
 </div>
-
 </body>
 </html>

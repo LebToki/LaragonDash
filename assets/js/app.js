@@ -106,6 +106,46 @@
     });
   });
   
+  
+  document.addEventListener("DOMContentLoaded", () => {
+    const langList = document.getElementById('languageList');
+    const currentLangFlag = document.getElementById('currentLangFlag');
+    const currentLangLabel = document.getElementById('currentLangLabel');
+    const currentLang = localStorage.getItem('lang') || 'en';
+    
+    // Set current language UI
+    function setLang(langCode) {
+      const lang = window.availableLanguages[langCode];
+      if (lang) {
+        currentLangFlag.className = 'fi fi-' + lang.code;
+        currentLangLabel.textContent = lang.label;
+        document.documentElement.setAttribute('lang', langCode);
+        document.documentElement.setAttribute('dir', lang.dir);
+        localStorage.setItem('lang', langCode);
+        location.reload(); // Optional: reload to apply new translations
+      }
+    }
+    
+    // Populate list
+    for (const [key, lang] of Object.entries(window.availableLanguages)) {
+      const li = document.createElement('li');
+      li.innerHTML = `<a class="dropdown-item" href="#" data-lang="${key}">
+                      <span class="fi fi-${lang.code} me-2"></span>${lang.label}
+                    </a>`;
+      langList.appendChild(li);
+    }
+    
+    // Click listener
+    langList.addEventListener('click', (e) => {
+      e.preventDefault();
+      const lang = e.target.closest('a')?.dataset?.lang;
+      if (lang) setLang(lang);
+    });
+    
+    // Init
+    setLang(currentLang);
+  });
+  
   // ========== GLOBAL TOAST ========== //
   window.showToast = function (message) {
     const toastBody = document.querySelector(".toast-body");

@@ -1,21 +1,28 @@
 <?php
-// Load LaragonDash settings
-        $laraconfig = include __DIR__ . '/config/settings.php';
-        require_once __DIR__ . '/lang.php';
+	/**
+	 * Main helper functions for LaragonDash
+	 */
+	$laraconfig = include __DIR__ . '/config/settings.php';
+	require_once __DIR__ . '/lang.php';
+
+// Detect theme from cookie or URL
+	$theme = $_COOKIE['theme'] ?? $_GET['theme'] ?? 'light';
 	
 	/**
-	 * Determine whether to use HTTP or HTTPS based on SSL settings.
+	 * Determine protocol scheme
 	 */
-	function getURLScheme(): string {
+	function getURLScheme(): string
+	{
 		global $laraconfig;
 		if (!isset($laraconfig['SSLEnabled']) || !isset($laraconfig['Port'])) return 'http';
 		return ($laraconfig['SSLEnabled'] == 1 && $laraconfig['Port'] != 80) ? 'https' : 'http';
 	}
 	
 	/**
-	 * Detect project type based on folder structure or key files.
+	 * Detect project platform by folder structure
 	 */
-	function detectProjectType(string $path): array {
+	function detectProjectType(string $path): array
+	{
 		$domain = basename($path) . '.local';
 		$scheme = getURLScheme();
 		
@@ -40,13 +47,15 @@
 		if (file_exists("$path/index.php") && is_dir("$path/application")) {
 			return ['name' => 'CodeIgniter', 'icon' => 'logos:codeigniter-icon', 'admin' => ''];
 		}
+		
 		return ['name' => 'Unknown', 'icon' => 'mdi:folder-outline', 'admin' => ''];
 	}
 	
 	/**
-	 * Scan project folders and return valid project tiles.
+	 * Generate a list of valid project tiles
 	 */
-	function getProjectTiles(string $search = ''): array {
+	function getProjectTiles(string $search = ''): array
+	{
 		global $laraconfig;
 		$basePath = $laraconfig['ProjectPath'] ?? '..';
 		$ignored = $laraconfig['IgnoreDirs'] ?? ['.', '..', 'logs', 'vendor', 'assets'];
@@ -75,9 +84,10 @@
 	}
 	
 	/**
-	 * Retrieve basic system/server info.
+	 * Basic server info
 	 */
-	function getSystemInfo(): array {
+	function getSystemInfo(): array
+	{
 		return [
 			'PHP Version' => phpversion(),
 			'Server Software' => $_SERVER['SERVER_SOFTWARE'] ?? 'Unknown',
@@ -87,9 +97,10 @@
 	}
 	
 	/**
-	 * Aggregate system vitals.
+	 * Vitals (dummy placeholders if not implemented)
 	 */
-	function getServerVitals(): array {
+	function getServerVitals(): array
+	{
 		return [
 			'Uptime' => getUptime(),
 			'Memory' => getMemoryUsage(),
