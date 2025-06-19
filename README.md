@@ -2,13 +2,21 @@
 
 ## 🚀 Welcome to LaragonDash v1.0
 
-**LaragonDash** is the natural evolution of the popular [Laragon Dashboard](https://github.com/LebToki/Laragon-Dashboard). It’s **modular**, **future-proof**, and built for developers who prefer speed, simplicity, and full control over their local development stack.
+
+**LaragonDash** is the natural evolution of the original [Laragon Dashboard](https://github.com/LebToki/Laragon-Dashboard). It’s **modular**, **future-proof**, and built for developers who want speed, control, and an intuitive interface to manage their local stack.
 
 ---
 
-> Following the success of the original Laragon Dashboard and its adoption by the community, we are proud to release `LaragonDash v1.0`. Built for users who wish to stay close to the classic Laragon interface but with extended functionality, improved theming, modularity, and utility integrations.
+> Following the success and adoption of the original Laragon Dashboard by the community, we’re proud to introduce `LaragonDash v1.0`.  
+> This spin-off delivers a modern MVC-inspired layout, support for modules, improved theming, and smarter tooling — while still preserving the simplicity developers loved about the original.
 
-> LaragonDash is fully compatible with Laragon 6+ and we will continue supporting and maintaining this version for those who prefer the lightweight approach.
+> ⚙️ **LaragonDash** is fully compatible with Laragon 6+ and will continue to receive updates and improvements as the new primary branch of development.
+
+---
+
+💡 **Prefer the classic look?**  
+The original [Laragon Dashboard](https://github.com/LebToki/Laragon-Dashboard) will remain available in its current form.  
+Users who prefer the traditional layout can continue using it until the end of the year, while all future development and new features will be released under **LaragonDash**.
 
 ---
 
