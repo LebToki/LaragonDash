@@ -28,9 +28,11 @@ Compatible with Laragon 6+ - 7+ and 8+ • PHP 7+ - 8+ • Apache/Nginx • Ligh
 
 # ![LaragonDash Projects](assets/images/LaragonDash-Screenshot-Projects-Light.png)
 
-# ![LaragonDash Projects](assets/images/LaragonDash-Screenshot-MailReader-Light.png)
+# ![LaragonDash SendMail Client](assets/images/LaragonDash-Screenshot-MailReader-Light.png)
 
-# ![LaragonDash Projects](assets/images/LaragonDash-Screenshot-Bcrypt-Dark.png)
+# ![LaragonDash Languages Editor](assets/images/LaragonDash-Screenshot-LanguageEditor-details-Light.png)
+
+# ![LaragonDash Bcrypt Generator](assets/images/LaragonDash-Screenshot-Bcrypt-Dark.png)
 
 
 ---
@@ -93,15 +95,34 @@ LaragonDash/
 
 ## 🗓️ Changelog Summary
 
-<details>
-<summary><strong>v1.2 – June 19, 2025</strong></summary>
 
-- 🔄 Language auto-detection + RTL direction
-- 🌍 Flag dropdown with live translations
-- 🛠 Server vitals (CPU/RAM/Disk) module
-- ⏳ PHP + Apache version inspection
-- ⚙️ Modular bootstrap with dynamic includes
-- 🧪 WordPress core version + update checker
+<details open> <summary><strong>v1.2 – June 19, 2025</strong></summary>
+🔄 Language auto-detection + RTL direction
+
+🌍 Flag dropdown with live translations
+
+🛠 Server vitals (CPU/RAM/Disk) module
+
+⏳ PHP + Apache version inspection
+
+⚙️ Modular bootstrap with dynamic includes
+
+🧪 WordPress core version + update checker
+
+✍️ Language Editor improvements:
+
+Preserves route on language file selection
+
+Live JSON validation with grouped nesting
+
+Dynamic add/edit for keys & groups
+
+Secure file access with path validation
+
+💥 Fix: t() function type safety for fallback strings
+
+🌓 Dark Mode fixes for email viewer and editor contrast
+
 </details>
 
 <details>
@@ -146,6 +167,14 @@ Here’s a quick example for `xx.json`:
 
 ✅ It will be picked up automatically in the language dropdown!  
 ✅ Arabic/Urdu will trigger RTL mode with `Tajawal` or `Noto Nastaliq Urdu`.
+
+## 📝 Language Editor
+The language-editor.php tool inside the settings module allows real-time editing of translation JSON files.
+
+✅ Add/remove keys and groups
+✅ Safe JSON validation
+✅ Supports all loaded languages in /includes/languages/
+✅ RTL-aware input and dynamic reloading
 
 ---
 
