@@ -68,6 +68,27 @@ LaragonDash/
 
 📆 Changelog Summary
 v1.1 — June 2025
+<details>
+<summary>Version 2.3.4 – June 06, 2024</summary>
+
+- Language Loading and Selection: Added functionality to load language files and detect user language preference.
+- Server Status Display: Added functions to display server uptime, memory usage, and disk usage.
+- Query Parameter Handling: Improved handling of incoming query parameters.
+- PHP and Apache Extension Retrieval: Added functionality to retrieve PHP extensions and Apache modules.
+- PHP Version Checking: Fetches the latest PHP version and compares it with the current version running on the server.
+- Server Information Retrieval: Gathers information about the server environment, including versions of HTTP server, OpenSSL, PHP, and Xdebug.
+- MySQL Version Retrieval: Added function to retrieve the MySQL version.
+- PHP Download Links: Generates download and changelog links for specific PHP versions.
+- Site Directory Determination: Determines the directory path for server-specific site configuration based on the server software.
+- WordPress Core Update Detection: Added functionality to detect if WordPress has any updates. (Plugins and Themes in the next version)
+- Local Sites Retrieval: Fetches configuration details for local sites based on server configuration files.
+- HTML Links Rendering: Renders HTML links for local sites with XSS prevention and includes control buttons for starting and stopping applications.
+
+</details>
+
+<details>
+<summary>Version 1.1 – June 2025</summary>
+
 Language loader with RTL support
 Dynamic language dropdown with emoji flags
 Fallback to English if translation missing
@@ -79,6 +100,11 @@ Search results ranked by relevance
 Vitals charts auto refresh
 
 v1.0 — June 2025
+</details>
+
+<details>
+<summary>Version 1.0 – June 2025</summary>
+
 Initial modular release
 Theme toggle with persistent mode
 Sidebar + Navbar toggle with icons
@@ -89,9 +115,33 @@ Bcrypt Generator Tool
 Improved code structure and error handling
 Multi-language JSON structure for UI
 
+</details>
+
 🗣 Language Support
-All translations reside in `includes/languages/`. 
-Want to contribute your own? Simply add a `code.json` file with:
+All translations reside in `assets/languages/`. Want to contribute your own? Simply add a `code.json` file with:
+Currently bundled languages:
+
+```
+ar.json
+de.json
+en.json
+es.json
+fr.json
+hi.json
+id.json
+ja.json
+ko.json
+pt.json
+pt-BR.json
+ru.json
+tr.json
+tl.json
+ur.json
+vi.json
+zh-CN.json
+```
+
+Want to contribute a new one? Simply add a `code.json` file with:
 
 ```
 {
