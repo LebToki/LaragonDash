@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-current-lang="en">
+<html lang="en">
 <head>
 	<meta charset="UTF-8">
 	<title>LaragonDash – Local Project Dashboard for Developers</title>

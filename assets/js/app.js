@@ -62,47 +62,17 @@
       });
     });
     
-    // Language selector and translations
+    // Language selector
     const langSelect = document.getElementById("lang-select");
-    let currentLang = localStorage.getItem("lang") || "en";
     if (langSelect) {
       const savedLang = localStorage.getItem("lang") || "en";
       langSelect.value = savedLang;
+      
       langSelect.addEventListener("change", () => {
         localStorage.setItem("lang", langSelect.value);
         location.reload(); // Optional: implement dynamic lang switching
-        applyTranslations(langSelect.value);
       });
     }
-    
-    function applyTranslations(lang) {
-      fetch(`assets/languages/${lang}.json`)
-        .then(r => r.ok ? r.json() : Promise.reject())
-        .catch(() => fetch('assets/languages/en.json').then(r => r.json()).then(d => { lang = 'en'; return d; }))
-        .then(data => {
-          document.documentElement.lang = lang;
-          if (lang === 'ar') {
-            document.documentElement.dir = 'rtl';
-          } else {
-            document.documentElement.removeAttribute('dir');
-          }
-          document.querySelectorAll('[data-i18n]').forEach(el => {
-            const key = el.getAttribute('data-i18n');
-            if (data[key]) {
-              el.innerHTML = data[key];
-            }
-          });
-          document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
-            const key = el.getAttribute('data-i18n-placeholder');
-            if (data[key]) {
-              el.setAttribute('placeholder', data[key]);
-            }
-          });
-        })
-        .catch(() => {});
-    }
-    
-    applyTranslations(currentLang);
   });
   
   // Global Toast function

@@ -8,37 +8,28 @@
 		<!-- Search Box -->
 		<form class="d-flex" action="../index.php" method="GET" role="search">
 			<input type="hidden" name="module" value="search">
-                        <input class="form-control me-2 form-control-sm" type="search" name="query" placeholder="Search projects..." aria-label="Search" data-i18n-placeholder="search">
+			<input class="form-control me-2 form-control-sm" type="search" name="query" placeholder="Search projects..." aria-label="Search">
 			<button class="btn btn-sm btn-outline-secondary" type="submit">
 				<iconify-icon icon="ic:round-search"></iconify-icon>
 			</button>
 		</form>
 		
 		<!-- Theme Toggle -->
-                <button class="btn btn-sm btn-outline-secondary" id="themeToggleBtn" data-theme-toggle>
-                        <iconify-icon icon="ph:moon-stars-duotone"></iconify-icon>
-                </button>
+		<button class="btn btn-sm btn-outline-secondary" id="themeToggleBtn" data-theme-toggle>🌓</button>
+			<iconify-icon icon="ph:moon-stars-duotone"></iconify-icon>
+		</button>
 		
-                <!-- Language Dropdown -->
-                <select id="lang-select" class="form-select form-select-sm" aria-label="Language Selector" style="width: auto;">
-                        <?php
-                                $available = getAvailableLanguages();
-                                $flagMap = [
-                                        'en' => 'gb',
-                                        'fr' => 'fr',
-                                        'es' => 'es',
-                                        'de' => 'de',
-                                        'pt' => 'pt',
-                                        'id' => 'id',
-                                        'tl' => 'ph',
-                                        'ar' => 'sa'
-                                ];
-                                foreach ($available as $code):
-                                        $flag = $flagMap[$code] ?? $code;
-                                        echo '<option value="' . $code . '">' . flagEmoji($flag) . '</option>';
-                                endforeach;
-                        ?>
-                </select>
+		<!-- Language Dropdown -->
+		<select id="lang-select" class="form-select form-select-sm" aria-label="Language Selector" style="width: auto;">
+			<option value="en">🇬🇧</option>
+			<option value="fr">🇫🇷</option>
+			<option value="es">🇪🇸</option>
+			<option value="de">🇩🇪</option>
+			<option value="pt">🇵🇹</option>
+			<option value="id">🇮🇩</option>
+			<option value="tl">🇵🇭</option>
+			<option value="ar">🇸🇦</option>
+		</select>
 		
 		<!-- User Dropdown -->
 		<div class="dropdown">

@@ -1,17 +1,1 @@
-{
-  "dash": "Dash",
-  "search": "Search",
-  "projects": "Projects",
-  "email": "Email",
-  "vitals": "Vitals",
-  "bcrypt": "Bcrypt",
-  "settings": "Settings",
-  "inbox": "Inbox",
-  "delete": "Delete",
-  "select_email": "Select an email to view.",
-  "theme_mode": "Theme Mode",
-  "language": "Language",
-  "ignored_dirs": "Ignored Directories (one per line)",
-  "save": "Save",
-  "settings_saved": "Settings saved."
-}
+{"greeting": "Welcome to LaragonDash"}

@@ -1,23 +1,6 @@
 <?php
-// Initialize empty config if not already set
-if (!isset($laraconfig) || !is_array($laraconfig)) {
-    $laraconfig = [];
-}
-
-// Default configuration
-$defaultConfig = [
-    'ProjectPath' => '..',
-    'IgnoreDirs' => ['.', '..', 'LaragonDash', 'logs', 'vendor', 'assets', '.git', '.idea'],
-    'ProjectURL' => 'http://' . ($_SERVER['HTTP_HOST'] ?? 'localhost')
-];
-
-// Merge with existing config
-$laraconfig = array_merge($defaultConfig, $laraconfig);
-
-// Load additional configuration if available
-if (file_exists(dirname(__DIR__) . '/config.php')) {
-    require_once dirname(__DIR__) . '/config.php';
-}
+// Load Settings
+	$laraconfig = include __DIR__ . '/config/settings.php';
 	
 	/**
 	 * Get the proper URL scheme (http or https) based on SSL settings.
@@ -59,31 +42,13 @@ if (file_exists(dirname(__DIR__) . '/config.php')) {
 	/**
 	 * Get list of project tiles from directories.
 	 */
-        function getProjectTiles(string $search = ''): array {
+	function getProjectTiles(string $search = ''): array {
 		global $laraconfig;
-		
-		// Debug: Show current working directory and config
-		error_log('Current working directory: ' . getcwd());
-		error_log('ProjectPath: ' . ($laraconfig['ProjectPath'] ?? 'not set'));
-		
-		$path = realpath($laraconfig['ProjectPath'] ?? '..');
-		if ($path === false) {
-			throw new Exception("Invalid project path: " . ($laraconfig['ProjectPath'] ?? '..'));
-		}
-		
+		$path = $laraconfig['ProjectPath'] ?? '..';
 		$ignored = $laraconfig['IgnoreDirs'] ?? ['.', '..', 'logs', 'vendor', 'assets'];
 		$tiles = [];
 		
-		error_log("Scanning directory: $path");
-		
-		$dirs = @scandir($path);
-		if ($dirs === false) {
-			throw new Exception("Failed to scan directory: $path. Check if the directory exists and has proper permissions.");
-		}
-		
-		error_log('Found ' . count($dirs) . ' items in directory');
-		
-		foreach ($dirs as $dir) {
+		foreach (scandir($path) as $dir) {
 			if (in_array($dir, $ignored)) continue;
 			
 			$fullPath = "$path/$dir";
@@ -91,45 +56,18 @@ if (file_exists(dirname(__DIR__) . '/config.php')) {
 			
 			if (!empty($search) && stripos($dir, $search) === false) continue;
 			
-			try {
-				$type = detectProjectType($fullPath);
-				
-				$tiles[] = [
-					'name' => $dir,
-					'type' => $type['name'],
-					'icon' => $type['icon'],
-					'link' => getURLScheme() . "://$dir.local",
-					'admin' => $type['admin']
-				];
-				
-				error_log("Added project: $dir (Type: {$type['name']})");
-			} catch (Exception $e) {
-				error_log("Error processing directory $dir: " . $e->getMessage());
-				continue;
-			}
+			$type = detectProjectType($fullPath);
+			
+			$tiles[] = [
+				'name' => $dir,
+				'type' => $type['name'],
+				'icon' => $type['icon'],
+				'link' => getURLScheme() . "://$dir.local",
+				'admin' => $type['admin']
+			];
 		}
-		
-		error_log('Total projects found: ' . count($tiles));
 		return $tiles;
 	}
-
-        /**
-         * Search projects and rank them by similarity to query.
-         */
-        function searchAndRankProjects(array $projects, string $query): array {
-                if ($query === '') return $projects;
-                $scored = [];
-                foreach ($projects as $p) {
-                        similar_text(strtolower($query), strtolower($p['name']), $percent);
-                        $score = $percent;
-                        if (stripos($p['name'], $query) !== false) {
-                                $score += 50;
-                        }
-                        $scored[] = ['score' => $score, 'project' => $p];
-                }
-                usort($scored, fn($a, $b) => $b['score'] <=> $a['score']);
-                return array_column($scored, 'project');
-        }
 	
 	/**
 	 * Get basic system info.
@@ -146,34 +84,10 @@ if (file_exists(dirname(__DIR__) . '/config.php')) {
 	/**
 	 * Get system vitals (extend as needed).
 	 */
-       function getServerVitals(): array {
-               return [
-                       'Uptime' => getUptime(),
-                       'Memory' => getMemoryUsage(),
-                       'Disk' => getDiskUsage(),
-               ];
-       }
-
-       /**
-        * List available language codes based on JSON files in assets/languages.
-        */
-       function getAvailableLanguages(): array {
-               $files = glob(__DIR__ . '/../assets/languages/*.json');
-               $codes = array_map(fn($f) => basename($f, '.json'), $files);
-               sort($codes);
-               return $codes;
-       }
-
-       /**
-        * Convert a country code into its flag emoji.
-        */
-       function flagEmoji(string $cc): string {
-               if (strlen($cc) !== 2) return '';
-               $codepoints = [
-                       0x1F1E6 + ord(strtoupper($cc[0])) - 65,
-                       0x1F1E6 + ord(strtoupper($cc[1])) - 65
-               ];
-               return mb_convert_encoding('&#' . $codepoints[0] . ';', 'UTF-8', 'HTML-ENTITIES') .
-                      mb_convert_encoding('&#' . $codepoints[1] . ';', 'UTF-8', 'HTML-ENTITIES');
-       }
-
+	function getServerVitals(): array {
+		return [
+			'Uptime' => getUptime(),
+			'Memory' => getMemoryUsage(),
+			'Disk' => getDiskUsage(),
+		];
+	}

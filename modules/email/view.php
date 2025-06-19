@@ -4,19 +4,15 @@
 	
 	require_once 'includes/functions.php';
 	
-       $emailDir = defined('SENDMAIL_OUTPUT_DIR') ? rtrim(SENDMAIL_OUTPUT_DIR, '/\\') : __DIR__ . '/../../emails';
-       if (!is_dir($emailDir)) {
-               mkdir($emailDir, 0777, true);
-       }
-       $emails = glob($emailDir . '/*.{html,txt}', GLOB_BRACE);
-       $current = $_GET['email'] ?? null;
+	$emails = glob('emails/*.html');
+	$current = $_GET['email'] ?? null;
 ?>
 
 <div class="container-fluid py-3">
 	<div class="row">
 		<!-- Sidebar: Email list -->
 		<div class="col-md-4 col-lg-3 border-end">
-                        <h5 class="mb-3" data-i18n="inbox">📥 Inbox</h5>
+			<h5 class="mb-3">📥 Inbox</h5>
 			<div class="list-group small">
 				<?php foreach ($emails as $emailFile):
 					$filename = basename($emailFile);
@@ -25,10 +21,10 @@
 					?>
 					<a href="?module=email&email=<?= urlencode($filename) ?>" class="list-group-item list-group-item-action <?= $active ?>">
 						<?= htmlspecialchars($subject) ?>
-                                                <form method="post" action="?module=email" class="d-inline float-end" onsubmit="return confirm('Delete this email?');">
-                                                        <input type="hidden" name="delete" value="<?= htmlspecialchars($filename) ?>">
-                                                        <button class="btn btn-sm btn-link text-danger p-0 ms-2" title="Delete" data-i18n="delete">&times;</button>
-                                                </form>
+						<form method="post" action="?module=email" class="d-inline float-end" onsubmit="return confirm('Delete this email?');">
+							<input type="hidden" name="delete" value="<?= htmlspecialchars($filename) ?>">
+							<button class="btn btn-sm btn-link text-danger p-0 ms-2" title="Delete">&times;</button>
+						</form>
 					</a>
 				<?php endforeach; ?>
 			</div>
@@ -37,22 +33,17 @@
 		<!-- Email Viewer -->
 		<div class="col-md-8">
 			<?php
-                               if (isset($_POST['delete']) && in_array($emailDir . '/' . $_POST['delete'], $emails)) {
-                                       unlink($emailDir . '/' . $_POST['delete']);
+				if (isset($_POST['delete']) && in_array("emails/" . $_POST['delete'], $emails)) {
+					unlink("emails/" . $_POST['delete']);
 					echo "<div class='alert alert-success'>Email deleted.</div>";
 				}
 				
-                               if ($current && file_exists($emailDir . '/' . $current)) {
-                                       echo "<div class='card shadow-sm'><div class='card-body'>";
-                                       $ext = pathinfo($current, PATHINFO_EXTENSION);
-                                       if ($ext === 'html') {
-                                               include $emailDir . '/' . $current;
-                                       } else {
-                                               echo '<pre>' . nl2br(htmlspecialchars(file_get_contents($emailDir . '/' . $current))) . '</pre>';
-                                       }
-                                       echo "</div></div>";
+				if ($current && file_exists("emails/" . $current)) {
+					echo "<div class='card shadow-sm'><div class='card-body'>";
+					include "emails/" . $current;
+					echo "</div></div>";
 				} else {
-                                       echo "<div class='text-muted' data-i18n='select_email'>Select an email to view.</div>";
+					echo "<div class='text-muted'>Select an email to view.</div>";
 				}
 			?>
 		</div>

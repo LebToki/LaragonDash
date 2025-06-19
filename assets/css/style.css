@@ -1,28 +1,12 @@
 /* =======================================
    Base Theme
 ======================================= */
-
 body {
   font-family: 'Poppins', sans-serif;
   font-size: 14px;
   background-color: #f9f9f9;
   color: #333;
 }
-
-html[dir='rtl'] body {
-  font-family: 'Tajawal', sans-serif;
-}
-
-iconify-icon {
-  font-family: initial !important;
-}
-
-[data-theme="dark"] body,
-[data-theme="dark"] {
-  background-color: #1e1e2f;
-  color: #ddd;
-}
-
 
 [data-theme="dark"] body,
 [data-theme="dark"] {
@@ -195,7 +179,6 @@ ul.list-unstyled.small.lh-lg {
 
 #lang-select {
   min-width: 120px;
-  font-family: inherit;
 }
 
 /* Toast */
