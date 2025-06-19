@@ -1,12 +1,14 @@
 <?php
 	header('Content-Type: application/json');
 	
-	function safeExec($command) {
+	function safeExec($command)
+	{
 		$output = shell_exec($command);
 		return $output !== null ? trim($output) : null;
 	}
 	
-	function parseMemInfo($meminfo) {
+	function parseMemInfo($meminfo)
+	{
 		$lines = explode("\n", $meminfo);
 		$data = [];
 		foreach ($lines as $line) {
@@ -20,7 +22,8 @@
 		return $data;
 	}
 	
-	function parseDiskUsage($diskinfo) {
+	function parseDiskUsage($diskinfo)
+	{
 		$lines = explode("\n", $diskinfo);
 		$data = [];
 		foreach ($lines as $line) {
