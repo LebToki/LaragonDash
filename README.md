@@ -20,7 +20,7 @@ Users who prefer the traditional layout can continue using it until the end of t
 
 ---
 
-![Promo](assets/images/LaragonDash.jpg)
+![Promo](assets/images/LaragonDash.png)
 ![Dashboard Light](assets/images/LaragonDash-Screenshot-Dashboard-Light.png)
 ![Dashboard Dark](assets/images/LaragonDash-Screenshot-Dashboard-Dark.png)
 ![MailReader](assets/images/LaragonDash-Screenshot-MailReader-Light.png)
