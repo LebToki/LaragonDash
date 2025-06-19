@@ -1,17 +1,118 @@
 {
-  "dash": "لوحة التحكم",
-  "search": "بحث",
-  "projects": "المشاريع",
-  "email": "البريد",
-  "vitals": "حالة النظام",
-  "bcrypt": "بي كريبت",
-  "settings": "الإعدادات",
-  "inbox": "الوارد",
-  "delete": "حذف",
-  "select_email": "اختر رسالة لعرضها",
-  "theme_mode": "وضع المظهر",
-  "language": "اللغة",
-  "ignored_dirs": "المجلدات المتجاهلة (سطر لكل مجلد)",
-  "save": "حفظ",
-  "settings_saved": "تم حفظ الإعدادات"
+  "app": {
+    "title": "لاراجون داش – لوحة تحكم المشاريع المحلية",
+    "description": "لاراجون داش هي لوحة تحكم محلية أنيقة تساعد المطورين على تنظيم ومعاينة وإدارة مشاريع لاراجون بسهولة.",
+    "author": "طارق طرابيشي من 2TInteractive"
+  },
+  "navigation": {
+    "dashboard": "لوحة التحكم",
+    "search": "بحث",
+    "projects": "المشاريع",
+    "email": "البريد",
+    "vitals": "المؤشرات",
+    "bcrypt": "توليد Bcrypt",
+    "settings": "الإعدادات"
+  },
+  "dashboard": {
+    "system_info": "معلومات النظام",
+    "add_project": "إضافة مشروع جديد",
+    "more_projects": "المزيد من المشاريع",
+    "project_types": {
+      "wordpress": "ووردبريس",
+      "joomla": "جوملا",
+      "laravel": "لارافيل",
+      "drupal": "دروبال",
+      "symfony": "سيمفوني",
+      "python": "بايثون",
+      "codeigniter": "كودإغنايتر",
+      "unknown": "غير معروف"
+    }
+  },
+  "system": {
+    "php_version": "إصدار PHP",
+    "server_software": "برنامج الخادم",
+    "document_root": "جذر المستند",
+    "date": "التاريخ",
+    "uptime": "مدة التشغيل",
+    "memory_usage": "استهلاك الذاكرة",
+    "disk_usage": "استهلاك القرص",
+    "cpu_usage": "استهلاك المعالج"
+  },
+  "search": {
+    "placeholder": "ابحث في المشاريع...",
+    "no_results": "لم يتم العثور على مشاريع"
+  },
+  "email": {
+    "preview": "معاينة البريد",
+    "subject": "الموضوع",
+    "from": "من",
+    "to": "إلى",
+    "date": "التاريخ",
+    "body": "المحتوى"
+  },
+  "vitals": {
+    "title": "مؤشرات النظام",
+    "server_status": "حالة الخادم",
+    "database_status": "حالة قاعدة البيانات",
+    "online": "متصل",
+    "offline": "غير متصل",
+    "last_checked": "آخر فحص"
+  },
+  "bcrypt": {
+    "title": "مولد Bcrypt",
+    "input_placeholder": "أدخل النص لإنشاء التشفير",
+    "generate": "توليد",
+    "copy": "نسخ",
+    "copied": "تم النسخ!"
+  },
+  "settings": {
+    "title": "الإعدادات",
+    "appearance": {
+      "title": "المظهر",
+      "theme": "الوضع",
+      "light": "فاتح",
+      "dark": "داكن",
+      "system": "حسب النظام"
+    },
+    "general": {
+      "title": "عام",
+      "language": "اللغة",
+      "save": "حفظ التغييرات"
+    }
+  },
+  "alerts": {
+    "changes_saved": "تم حفظ التغييرات بنجاح",
+    "error_occurred": "حدث خطأ ما",
+    "project_not_found": "لم يتم العثور على المشروع",
+    "module_not_found": "لم يتم العثور على الوحدة"
+  },
+  "buttons": {
+    "save": "حفظ",
+    "cancel": "إلغاء",
+    "close": "إغلاق",
+    "edit": "تعديل",
+    "delete": "حذف",
+    "confirm": "تأكيد",
+    "dismiss": "تجاهل"
+  },
+  "titles": {
+    "dashboard": "لوحة التحكم",
+    "search": "بحث المشاريع",
+    "projects": "المشاريع",
+    "email": "معاينة البريد",
+    "vitals": "مؤشرات النظام",
+    "bcrypt": "مولد Bcrypt",
+    "settings": "الإعدادات"
+  },
+  "tooltips": {
+    "theme_toggle": "تبديل الوضع",
+    "refresh": "تحديث",
+    "help": "مساعدة",
+    "notifications": "الإشعارات"
+  },
+  "errors": {
+    "404": "الصفحة غير موجودة",
+    "403": "تم رفض الوصول",
+    "500": "خطأ في الخادم الداخلي"
+  }
 }

@@ -1,22 +1,22 @@
 {
   "app": {
-    "title": "LaragonDash – Local Project Dashboard",
-    "description": "LaragonDash is a clean, local developer dashboard to organize, preview, and manage your Laragon projects effortlessly.",
-    "author": "Tarek Tarabichi from 2TInteractive"
+    "title": "LaragonDash – Panel de Proyectos Local",
+    "description": "LaragonDash es un panel limpio y local para desarrolladores que organiza, previsualiza y gestiona tus proyectos de Laragon fácilmente.",
+    "author": "Tarek Tarabichi de 2TInteractive"
   },
   "navigation": {
-    "dashboard": "Dashboard",
-    "search": "Search",
-    "projects": "Projects",
-    "email": "Email",
-    "vitals": "Vitals",
+    "dashboard": "Inicio",
+    "search": "Buscar",
+    "projects": "Proyectos",
+    "email": "Correo",
+    "vitals": "Vitales",
     "bcrypt": "Bcrypt",
-    "settings": "Settings"
+    "settings": "Configuración"
   },
   "dashboard": {
-    "system_info": "System Information",
-    "add_project": "Add New Project",
-    "more_projects": "More Projects",
+    "system_info": "Información del Sistema",
+    "add_project": "Agregar Nuevo Proyecto",
+    "more_projects": "Más Proyectos",
     "project_types": {
       "wordpress": "WordPress",
       "joomla": "Joomla",
@@ -25,94 +25,94 @@
       "symfony": "Symfony",
       "python": "Python",
       "codeigniter": "CodeIgniter",
-      "unknown": "Unknown"
+      "unknown": "Desconocido"
     }
   },
   "system": {
-    "php_version": "PHP Version",
-    "server_software": "Server Software",
-    "document_root": "Document Root",
-    "date": "Date",
-    "uptime": "Uptime",
-    "memory_usage": "Memory Usage",
-    "disk_usage": "Disk Usage",
-    "cpu_usage": "CPU Usage"
+    "php_version": "Versión de PHP",
+    "server_software": "Software del Servidor",
+    "document_root": "Raíz del Documento",
+    "date": "Fecha",
+    "uptime": "Tiempo activo",
+    "memory_usage": "Uso de Memoria",
+    "disk_usage": "Uso de Disco",
+    "cpu_usage": "Uso de CPU"
   },
   "search": {
-    "placeholder": "Search projects...",
-    "no_results": "No projects found"
+    "placeholder": "Buscar proyectos...",
+    "no_results": "No se encontraron proyectos"
   },
   "email": {
-    "preview": "Email Preview",
-    "subject": "Subject",
-    "from": "From",
-    "to": "To",
-    "date": "Date",
-    "body": "Body"
+    "preview": "Vista previa del correo",
+    "subject": "Asunto",
+    "from": "De",
+    "to": "Para",
+    "date": "Fecha",
+    "body": "Contenido"
   },
   "vitals": {
-    "title": "System Vitals",
-    "server_status": "Server Status",
-    "database_status": "Database Status",
-    "online": "Online",
-    "offline": "Offline",
-    "last_checked": "Last checked"
+    "title": "Indicadores del Sistema",
+    "server_status": "Estado del Servidor",
+    "database_status": "Estado de la Base de Datos",
+    "online": "En línea",
+    "offline": "Fuera de línea",
+    "last_checked": "Última verificación"
   },
   "bcrypt": {
-    "title": "Bcrypt Generator",
-    "input_placeholder": "Enter text to hash",
-    "generate": "Generate",
-    "copy": "Copy",
-    "copied": "Copied!"
+    "title": "Generador Bcrypt",
+    "input_placeholder": "Introduce texto para encriptar",
+    "generate": "Generar",
+    "copy": "Copiar",
+    "copied": "¡Copiado!"
   },
   "settings": {
-    "title": "Settings",
+    "title": "Configuración",
     "appearance": {
-      "title": "Appearance",
-      "theme": "Theme",
-      "light": "Light",
-      "dark": "Dark",
-      "system": "System"
+      "title": "Apariencia",
+      "theme": "Tema",
+      "light": "Claro",
+      "dark": "Oscuro",
+      "system": "Sistema"
     },
     "general": {
       "title": "General",
-      "language": "Language",
-      "save": "Save Changes"
+      "language": "Idioma",
+      "save": "Guardar Cambios"
     }
   },
   "alerts": {
-    "changes_saved": "Changes saved successfully",
-    "error_occurred": "An error occurred",
-    "project_not_found": "Project not found",
-    "module_not_found": "Module not found"
+    "changes_saved": "Cambios guardados exitosamente",
+    "error_occurred": "Ocurrió un error",
+    "project_not_found": "Proyecto no encontrado",
+    "module_not_found": "Módulo no encontrado"
   },
   "buttons": {
-    "save": "Save",
-    "cancel": "Cancel",
-    "close": "Close",
-    "edit": "Edit",
-    "delete": "Delete",
-    "confirm": "Confirm",
-    "dismiss": "Dismiss"
+    "save": "Guardar",
+    "cancel": "Cancelar",
+    "close": "Cerrar",
+    "edit": "Editar",
+    "delete": "Eliminar",
+    "confirm": "Confirmar",
+    "dismiss": "Descartar"
   },
   "titles": {
-    "dashboard": "Dashboard",
-    "search": "Search Projects",
-    "projects": "Projects",
-    "email": "Email Preview",
-    "vitals": "System Vitals",
-    "bcrypt": "Bcrypt Generator",
-    "settings": "Settings"
+    "dashboard": "Inicio",
+    "search": "Buscar Proyectos",
+    "projects": "Proyectos",
+    "email": "Vista de Correo",
+    "vitals": "Indicadores del Sistema",
+    "bcrypt": "Generador Bcrypt",
+    "settings": "Configuración"
   },
   "tooltips": {
-    "theme_toggle": "Toggle theme",
-    "refresh": "Refresh",
-    "help": "Help",
-    "notifications": "Notifications"
+    "theme_toggle": "Cambiar tema",
+    "refresh": "Actualizar",
+    "help": "Ayuda",
+    "notifications": "Notificaciones"
   },
   "errors": {
-    "404": "Page not found",
-    "403": "Access denied",
-    "500": "Internal server error"
+    "404": "Página no encontrada",
+    "403": "Acceso denegado",
+    "500": "Error interno del servidor"
   }
 }

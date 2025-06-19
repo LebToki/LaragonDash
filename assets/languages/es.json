@@ -48,7 +48,9 @@
     "from": "De",
     "to": "Para",
     "date": "Fecha",
-    "body": "Cuerpo"
+    "body": "Cuerpo",
+    "list": "Lista de correo electrónico",
+    "no_emails": "No se encontraron correos electrónicos"
   },
   "vitals": {
     "title": "Estado del Sistema",
@@ -115,55 +117,35 @@
     "403": "Acceso denegado",
     "500": "Error interno del servidor"
   },
-  "servers_tab": "Servidores",
-  "inbox_tab": "Buzón",
-  "vitals_tab": "Valores del servidor",
-  "settings_tab": "Configuración",
-  "breadcrumb_server_servers": "Mis servidores y aplicaciones de desarrollo",
-  "breadcrumb_server_mailbox": "Mi buzón del servidor de desarrollo",
-  "breadcrumb_server_vitals": "Mis valores vitales del servidor de desarrollo",
-  "server_status": "Estado del servidor",
-  "tiempo de actividad": "Tiempo de actividad",
-  "memory_usage": "Uso de memoria (en MB)",
-  "disk_usage": "Uso del disco",
-  "good_morning": "buenos, días",
-  "good_afternoon": "Buenas tardes",
-  "good_evening": "Buenas noches",
-  "logged-messages": "Mensajes registrados",
-  "email-list": "Lista de correo electrónico",
-  "no-emails-found": "No se encontraron correos electrónicos",
-  "delete": "Eliminar",
+  "tabs": {
+    "servers": "Servidores",
+    "inbox": "Buzón",
+    "vitals": "Valores del servidor",
+    "settings": "Configuración"
+  },
+  "greetings": {
+    "morning": "Buenos días",
+    "afternoon": "Buenas tardes",
+    "evening": "Buenas noches"
+  },
+  "server": {
+    "status": "Estado del servidor",
+    "uptime": "Tiempo de actividad",
+    "memory_usage": "Uso de memoria",
+    "disk_usage": "Uso del disco",
+    "manage_mysql": "Administrar MySQL"
+  },
+  "breadcrumbs": {
+    "servers": "Mis servidores y aplicaciones de desarrollo",
+    "mailbox": "Mi buzón del servidor de desarrollo",
+    "vitals": "Mis valores vitales del servidor de desarrollo"
+  },
+  "messages": {
+    "logged": "Mensajes registrados",
+    "no_emails": "No se encontraron correos electrónicos"
+  },
   "document_root": "Raíz del documento",
-  "manage_mysql": "Administrar MySQL",
-  "default_footer": "&copy; 2024        <?php echo htmlspecialchars(fecha('Y')); ?>, Tarek Tarabichi",
-  "made_with_love": "Hecho con <span style=\"color: #e25555;\">&hearts;</span> y desarrollado por Laragon",
+  "default_footer": " 2024 Tarek Tarabichi. Todos los derechos reservados.",
+  "made_with_love": "Hecho con <span style=\"color: #e25555;\">❤</span> por Laragon",
   "welcome_back": "¡Bienvenido de nuevo!"
-	"breadcrumb_server_servers": "Mis servidores y aplicaciones de desarrollo",
-	"breadcrumb_server_mailbox": "Mi buzón del servidor de desarrollo",
-	"breadcrumb_server_vitals": "Mis valores vitales del servidor de desarrollo",
-
-	"server_status": "Estado del servidor",
-	"tiempo de actividad": "Tiempo de actividad",
-	"memory_usage": "Uso de memoria (en MB)",
-	"disk_usage": "Uso del disco",
-
-	"good_morning": "buenos, días",
-	"good_afternoon": "Buenas tardes",
-	"good_evening": "Buenas noches",
-
-	"logged-messages": "Mensajes registrados",
-	"email-list": "Lista de correo electrónico",
-	"no-emails-found": "No se encontraron correos electrónicos",
-	"delete": "Eliminar",
-
-	"document_root": "Raíz del documento",
-	"manage_mysql": "Administrar MySQL",
-
-	"default_footer": "&copy; 2024        <?php echo htmlspecialchars(fecha('Y')); ?>, Tarek Tarabichi",
-	"made_with_love": "Hecho con <span style=\"color: #e25555;\">&hearts;</span> y desarrollado por Laragon"
-
-
-
-
-
 }
