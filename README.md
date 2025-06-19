@@ -67,7 +67,7 @@ LaragonDash/
 └── README.md
 
 📆 Changelog Summary
-v1.1 — June 2025
+v1.2 — June 2025
 <details>
 <summary>Version 1.2 – June 19, 2025</summary>
 
