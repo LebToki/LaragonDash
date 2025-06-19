@@ -99,9 +99,12 @@
 	<!-- Bootstrap CSS -->
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 	
-	<!-- Remixicon + Iconify -->
-	<link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
-	<script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+        <!-- Remixicon + Iconify -->
+        <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+        <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+
+        <!-- Flag Icons -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flag-icons@6/css/flag-icons.min.css">
 	
 	<!-- Custom CSS -->
 	<link rel="stylesheet" href="../assets/css/style.css">

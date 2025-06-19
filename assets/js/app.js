@@ -42,19 +42,23 @@
     // ========== LANGUAGE ========== //
     const savedLang = localStorage.getItem("lang") || "en";
     
-    if (typeof availableLanguages === "object" && langSelect) {
-      langSelect.innerHTML = "";
-      
-      Object.entries(availableLanguages).forEach(([code, { label, flag }]) => {
-        const option = document.createElement("option");
-        option.value = code;
-        option.textContent = `${flag} ${label}`;
-        langSelect.appendChild(option);
-      });
-      
-      langSelect.value = savedLang;
-      loadLanguageFile(savedLang);
-      applyLanguageDirection(savedLang);
+    if (langSelect) {
+      fetch("includes/get_languages.php")
+        .then((res) => res.json())
+        .then((codes) => {
+          langSelect.innerHTML = "";
+          codes.forEach((code) => {
+            const cfg = availableLanguages?.[code] || { label: code, flag: code };
+            const option = document.createElement("option");
+            option.value = code;
+            option.textContent = `${cfg.flag} ${cfg.label}`;
+            langSelect.appendChild(option);
+          });
+          langSelect.value = savedLang;
+          loadLanguageFile(savedLang);
+          applyLanguageDirection(savedLang);
+        })
+        .catch((err) => console.warn("Failed to load languages", err));
     }
     
     langSelect?.addEventListener("change", function () {
@@ -69,6 +73,7 @@
       try {
         const res = await fetch(`includes/languages/${lang}.json`);
         const translations = await res.json();
+        window.i18n = translations;
         
         document.querySelectorAll("[data-i18n]").forEach((el) => {
           const keys = el.dataset.i18n.split(".");

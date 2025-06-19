@@ -1,118 +1,158 @@
 {
-	"app": {
-		"title": "LaragonDash – Painel de Projetos Local",
-		"description": "LaragonDash é um painel limpo para desenvolvedores locais organizarem, visualizarem e gerenciarem projetos Laragon com facilidade.",
-		"author": "Tarek Tarabichi da 2TInteractive"
-	},
-	"navigation": {
-		"dashboard": "Painel",
-		"search": "Buscar",
-		"projects": "Projetos",
-		"email": "Email",
-		"vitals": "Vitais",
-		"bcrypt": "Bcrypt",
-		"settings": "Configurações"
-	},
-	"dashboard": {
-		"system_info": "Informações do Sistema",
-		"add_project": "Adicionar Novo Projeto",
-		"more_projects": "Mais Projetos",
-		"project_types": {
-			"wordpress": "WordPress",
-			"joomla": "Joomla",
-			"laravel": "Laravel",
-			"drupal": "Drupal",
-			"symfony": "Symfony",
-			"python": "Python",
-			"codeigniter": "CodeIgniter",
-			"unknown": "Desconhecido"
-		}
-	},
-	"system": {
-		"php_version": "Versão do PHP",
-		"server_software": "Software do Servidor",
-		"document_root": "Raiz do Documento",
-		"date": "Data",
-		"uptime": "Tempo Ativo",
-		"memory_usage": "Uso de Memória",
-		"disk_usage": "Uso de Disco",
-		"cpu_usage": "Uso da CPU"
-	},
-	"search": {
-		"placeholder": "Buscar projetos...",
-		"no_results": "Nenhum projeto encontrado"
-	},
-	"email": {
-		"preview": "Pré-visualização do Email",
-		"subject": "Assunto",
-		"from": "De",
-		"to": "Para",
-		"date": "Data",
-		"body": "Corpo"
-	},
-	"vitals": {
-		"title": "Indicadores do Sistema",
-		"server_status": "Status do Servidor",
-		"database_status": "Status do Banco de Dados",
-		"online": "Online",
-		"offline": "Offline",
-		"last_checked": "Última verificação"
-	},
-	"bcrypt": {
-		"title": "Gerador Bcrypt",
-		"input_placeholder": "Digite o texto para encriptar",
-		"generate": "Gerar",
-		"copy": "Copiar",
-		"copied": "Copiado!"
-	},
-	"settings": {
-		"title": "Configurações",
-		"appearance": {
-			"title": "Aparência",
-			"theme": "Tema",
-			"light": "Claro",
-			"dark": "Escuro",
-			"system": "Sistema"
-		},
-		"general": {
-			"title": "Geral",
-			"language": "Idioma",
-			"save": "Salvar alterações"
-		}
-	},
-	"alerts": {
-		"changes_saved": "Alterações salvas com sucesso",
-		"error_occurred": "Ocorreu um erro",
-		"project_not_found": "Projeto não encontrado",
-		"module_not_found": "Módulo não encontrado"
-	},
-	"buttons": {
-		"save": "Salvar",
-		"cancel": "Cancelar",
-		"close": "Fechar",
-		"edit": "Editar",
-		"delete": "Excluir",
-		"confirm": "Confirmar",
-		"dismiss": "Dispensar"
-	},
-	"titles": {
-		"dashboard": "Painel",
-		"search": "Buscar Projetos",
-		"projects": "Projetos",
-		"email": "Visualização de Email",
-		"vitals": "Indicadores do Sistema",
-		"bcrypt": "Gerador Bcrypt",
-		"settings": "Configurações"
-	},
-	"tooltips": {
-		"theme_toggle": "Alternar tema",
-		"refresh": "Atualizar",
-		"help": "Ajuda",
-		"notifications": "Notificações"
-	},
-	"errors": {
-		"404": "Página não encontrada",
-		"403": "Acesso negado",
-		"500": "Erro interno do servidor"
-	}
+  "app": {
+    "title": "LaragonDash – Painel de Projetos Local",
+    "description": "LaragonDash é um painel limpo para desenvolvedores locais organizarem, visualizarem e gerenciarem projetos Laragon com facilidade.",
+    "author": "Tarek Tarabichi da 2TInteractive"
+  },
+  "navigation": {
+    "dashboard": "Painel",
+    "search": "Buscar",
+    "projects": "Projetos",
+    "email": "Email",
+    "vitals": "Vitais",
+    "bcrypt": "Bcrypt",
+    "settings": "Configurações"
+  },
+  "dashboard": {
+    "system_info": "Informações do Sistema",
+    "add_project": "Adicionar Novo Projeto",
+    "more_projects": "Mais Projetos",
+    "project_types": {
+      "wordpress": "WordPress",
+      "joomla": "Joomla",
+      "laravel": "Laravel",
+      "drupal": "Drupal",
+      "symfony": "Symfony",
+      "python": "Python",
+      "codeigniter": "CodeIgniter",
+      "unknown": "Desconhecido"
+    }
+  },
+  "system": {
+    "php_version": "Versão do PHP",
+    "server_software": "Software do Servidor",
+    "document_root": "Raiz do Documento",
+    "date": "Data",
+    "uptime": "Tempo Ativo",
+    "memory_usage": "Uso de Memória",
+    "disk_usage": "Uso de Disco",
+    "cpu_usage": "Uso da CPU"
+  },
+  "search": {
+    "placeholder": "Buscar projetos...",
+    "no_results": "Nenhum projeto encontrado"
+  },
+  "email": {
+    "preview": "Pré-visualização do Email",
+    "subject": "Assunto",
+    "from": "De",
+    "to": "Para",
+    "date": "Data",
+    "body": "Corpo"
+  },
+  "vitals": {
+    "title": "Indicadores do Sistema",
+    "server_status": "Status do Servidor",
+    "database_status": "Status do Banco de Dados",
+    "online": "Online",
+    "offline": "Offline",
+    "last_checked": "Última verificação"
+  },
+  "bcrypt": {
+    "title": "Bcrypt Developer Tools",
+    "generate_tab": "Generate Hash",
+    "verify_tab": "Verify Hash",
+    "info_tab": "Hash Info",
+    "strength_tab": "Password Strength",
+    "input_placeholder": "Enter password to hash",
+    "password": "Password",
+    "hash_to_verify": "Bcrypt Hash",
+    "enter_hash_placeholder": "Paste bcrypt hash here",
+    "generate": "Generate",
+    "verify": "Verify",
+    "analyze": "Analyze",
+    "check_strength": "Check Strength",
+    "copy": "Copy",
+    "copied": "Copied!",
+    "generating": "Generating...",
+    "verifying": "Verifying...",
+    "analyzing": "Analyzing...",
+    "checking": "Checking...",
+    "generated_hash": "Generated Bcrypt Hash",
+    "verify_success": "✅ The password matches the hash!",
+    "verify_failed": "❌ The password does not match the hash.",
+    "hash_info": "Hash Information",
+    "hash_algorithm": "Algorithm",
+    "hash_cost": "Cost Factor",
+    "hash_salt": "Salt",
+    "hash_value": "Hash Value",
+    "password_strength": "Password Strength",
+    "strength_very_weak": "Very Weak",
+    "strength_weak": "Weak",
+    "strength_moderate": "Moderate",
+    "strength_strong": "Strong",
+    "strength_very_strong": "Very Strong",
+    "strength_tips": "Tips for a stronger password:",
+    "strength_tip_length": "• Use at least 12 characters",
+    "strength_tip_upper": "• Include uppercase letters",
+    "strength_tip_lower": "• Include lowercase letters",
+    "strength_tip_number": "• Include numbers",
+    "strength_tip_special": "• Include special characters",
+    "error_enter_password": "Please enter a password to generate a hash.",
+    "error_verify_fields": "Both password and hash are required for verification.",
+    "error_invalid_hash": "Invalid bcrypt hash format.",
+    "error_enter_hash": "Please enter a bcrypt hash to analyze.",
+    "error_enter_password_strength": "Please enter a password to check its strength."
+  },
+  "settings": {
+    "title": "Configurações",
+    "appearance": {
+      "title": "Aparência",
+      "theme": "Tema",
+      "light": "Claro",
+      "dark": "Escuro",
+      "system": "Sistema"
+    },
+    "general": {
+      "title": "Geral",
+      "language": "Idioma",
+      "save": "Salvar alterações"
+    }
+  },
+  "alerts": {
+    "changes_saved": "Alterações salvas com sucesso",
+    "error_occurred": "Ocorreu um erro",
+    "project_not_found": "Projeto não encontrado",
+    "module_not_found": "Módulo não encontrado"
+  },
+  "buttons": {
+    "save": "Salvar",
+    "cancel": "Cancelar",
+    "close": "Fechar",
+    "edit": "Editar",
+    "delete": "Excluir",
+    "confirm": "Confirmar",
+    "dismiss": "Dispensar",
+    "logout": "Logout"
+  },
+  "titles": {
+    "dashboard": "Painel",
+    "search": "Buscar Projetos",
+    "projects": "Projetos",
+    "email": "Visualização de Email",
+    "vitals": "Indicadores do Sistema",
+    "bcrypt": "Gerador Bcrypt",
+    "settings": "Configurações"
+  },
+  "tooltips": {
+    "theme_toggle": "Alternar tema",
+    "refresh": "Atualizar",
+    "help": "Ajuda",
+    "notifications": "Notificações"
+  },
+  "errors": {
+    "404": "Página não encontrada",
+    "403": "Acesso negado",
+    "500": "Erro interno do servidor"
+  }
 }
