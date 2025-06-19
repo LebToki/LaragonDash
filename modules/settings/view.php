@@ -10,7 +10,7 @@
                 <div class="col-md-6">
                         <label class="form-label">Language</label>
                         <?php
-                                $langFiles = glob(__DIR__ . '/../../assets/languages/*.json');
+                                $langFiles = glob(__DIR__ . '/../../includes/languages/*.json');
                                 $flags = [
                                         'en' => '🇬🇧',
                                         'fr' => '🇫🇷',

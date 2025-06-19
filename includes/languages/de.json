@@ -93,8 +93,9 @@
 		"edit": "Bearbeiten",
 		"delete": "Löschen",
 		"confirm": "Bestätigen",
-		"dismiss": "Verwerfen"
-	},
+                "dismiss": "Verwerfen",
+                "logout": "Logout"
+        },
 	"titles": {
 		"dashboard": "Übersicht",
 		"search": "Projekte durchsuchen",

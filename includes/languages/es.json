@@ -95,7 +95,8 @@
     "edit": "Editar",
     "delete": "Eliminar",
     "confirm": "Confirmar",
-    "dismiss": "Descartar"
+    "dismiss": "Descartar",
+    "logout": "Logout"
   },
   "titles": {
     "dashboard": "Inicio",
