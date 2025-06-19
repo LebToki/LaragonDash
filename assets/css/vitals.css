@@ -1,0 +1,19 @@
+
+.card {
+  border: none;
+  border-radius: 6px;
+  background-color: var(--bs-card-bg, #fff);
+}
+.card-header {
+  background: none;
+  font-weight: 600;
+  font-size: 15px;
+}
+.card-body canvas {
+  margin-top: 12px;
+  max-height: 220px;
+}
+body.dark .card {
+  background-color: #222;
+  color: #fff;
+}

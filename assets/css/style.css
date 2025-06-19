@@ -1,0 +1,188 @@
+/* =======================================
+   Base Theme
+======================================= */
+body {
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+[data-theme="dark"] body,
+[data-theme="dark"] {
+  background-color: #1e1e2f;
+  color: #ddd;
+}
+
+/* =======================================
+   Navbar
+======================================= */
+.navbar {
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
+}
+
+[data-theme="dark"] .navbar {
+  background-color: #2c2c3e;
+  border-color: #444;
+  color: #fff;
+}
+
+/* Toggle button */
+[data-theme='dark'] .btn-outline-secondary,
+[data-theme='dark'] .button.btn.btn-sm.btn-outline-secondary {
+  color: antiquewhite !important;
+  background-color: #1c1d2b;
+  border-color: #333;
+}
+
+/* Input inside navbar */
+.navbar input[type="text"] {
+  width: 200px;
+}
+
+/* =======================================
+   Sidebar
+======================================= */
+.sidebar {
+  width: 60px;
+  min-height: 100vh;
+  background-color: #f8f9fa;
+  border-right: 1px solid #ddd;
+  padding-top: 1rem;
+}
+
+.sidebar .nav-link {
+  color: #555;
+  padding: 10px 0;
+  text-align: center;
+}
+
+.sidebar .nav-link:hover,
+.sidebar .nav-link.active-page {
+  color: #000;
+  font-weight: 600;
+}
+
+[data-theme="dark"] .sidebar {
+  background-color: #2c2c3e;
+  border-color: #000;
+  color: #fff;
+}
+
+[data-theme="dark"] .sidebar .nav-link {
+  color: #ccc !important;
+}
+
+[data-theme="dark"] .sidebar .nav-link:hover,
+[data-theme="dark"] .sidebar .nav-link.active-page {
+  color: #fff;
+  font-weight: 600;
+}
+
+/* =======================================
+   Cards & Tiles
+======================================= */
+.card {
+  border-radius: 12px;
+  border: none;
+}
+
+.card-footer {
+  background-color: #fff;
+}
+
+[data-theme="dark"] .card-footer {
+  background-color: #2a2a3d;
+  color: #ddd;
+}
+
+.project-tile {
+  text-align: center;
+  padding: 2rem 0;
+}
+
+.project-tile img {
+  max-width: 50px;
+  margin-bottom: 1rem;
+}
+
+/* Add tile */
+.card.border-dashed {
+  border: 2px dashed #ccc;
+  background-color: #f2f2f2;
+  color: #888;
+}
+
+[data-theme="dark"] .card.border-dashed {
+  background-color: #333;
+  border-color: #555;
+  color: #bbb;
+}
+
+/* =======================================
+   System Info Panel
+======================================= */
+ul.list-unstyled.small.lh-lg {
+  color: #333;
+}
+
+[data-theme="dark"] ul.list-unstyled.small.lh-lg {
+  color: #ddd;
+  background-color: black;
+}
+
+.system-info-box {
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+[data-theme='dark'] .system-info-box {
+  background-color: #2c2d3e;
+  color: #fff;
+  border-color: #444;
+}
+
+[data-theme='dark'] .system-info-box ul li strong {
+  color: #eee;
+}
+
+/* Sticky on large screens */
+@media (min-width: 992px) {
+  .system-info-sticky {
+    position: sticky;
+    top: 80px;
+  }
+}
+
+/* =======================================
+   Utility Overrides
+======================================= */
+[data-theme='dark'] .bg-white {
+  --bs-bg-opacity: 1;
+  background-color: rgba(var(--bs-black-rgb), var(--bs-bg-opacity)) !important;
+  color: #ffffff;
+}
+
+[data-theme='dark'] .text-dark {
+  --bs-text-opacity: 0;
+  color: #ffffff !important;
+}
+
+/* =======================================
+   Miscellaneous UI
+======================================= */
+[data-theme-toggle] {
+  cursor: pointer;
+}
+
+#lang-select {
+  min-width: 120px;
+}
+
+/* Toast */
+#toast .toast {
+  font-size: 14px;
+  border-radius: 6px;
+}
