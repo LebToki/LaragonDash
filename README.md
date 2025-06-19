@@ -1,4 +1,4 @@
-# ![LaragonDash Logo](assets/favicon/favicon-32x32.png) LaragonDash
+# ![LaragonDash Logo](assets/images/favicon/favicon-32x32.png) LaragonDash
 
 ## 🚀 Welcome to LaragonDash v1.0
 
