@@ -1,6 +1,18 @@
 <?php
-// Load Settings
-$laraconfig = include __DIR__ . '/config/settings.php';
+// Initialize empty config if not already set
+if (!isset($laraconfig) || !is_array($laraconfig)) {
+    $laraconfig = [];
+}
+
+// Default configuration
+$defaultConfig = [
+    'ProjectPath' => '..',
+    'IgnoreDirs' => ['.', '..', 'LaragonDash', 'logs', 'vendor', 'assets', '.git', '.idea'],
+    'ProjectURL' => 'http://' . ($_SERVER['HTTP_HOST'] ?? 'localhost')
+];
+
+// Merge with existing config
+$laraconfig = array_merge($defaultConfig, $laraconfig);
 
 // Load additional configuration if available
 if (file_exists(dirname(__DIR__) . '/config.php')) {
@@ -49,11 +61,29 @@ if (file_exists(dirname(__DIR__) . '/config.php')) {
 	 */
         function getProjectTiles(string $search = ''): array {
 		global $laraconfig;
-		$path = $laraconfig['ProjectPath'] ?? '..';
+		
+		// Debug: Show current working directory and config
+		error_log('Current working directory: ' . getcwd());
+		error_log('ProjectPath: ' . ($laraconfig['ProjectPath'] ?? 'not set'));
+		
+		$path = realpath($laraconfig['ProjectPath'] ?? '..');
+		if ($path === false) {
+			throw new Exception("Invalid project path: " . ($laraconfig['ProjectPath'] ?? '..'));
+		}
+		
 		$ignored = $laraconfig['IgnoreDirs'] ?? ['.', '..', 'logs', 'vendor', 'assets'];
 		$tiles = [];
 		
-		foreach (scandir($path) as $dir) {
+		error_log("Scanning directory: $path");
+		
+		$dirs = @scandir($path);
+		if ($dirs === false) {
+			throw new Exception("Failed to scan directory: $path. Check if the directory exists and has proper permissions.");
+		}
+		
+		error_log('Found ' . count($dirs) . ' items in directory');
+		
+		foreach ($dirs as $dir) {
 			if (in_array($dir, $ignored)) continue;
 			
 			$fullPath = "$path/$dir";
@@ -61,18 +91,27 @@ if (file_exists(dirname(__DIR__) . '/config.php')) {
 			
 			if (!empty($search) && stripos($dir, $search) === false) continue;
 			
-			$type = detectProjectType($fullPath);
-			
-			$tiles[] = [
-				'name' => $dir,
-				'type' => $type['name'],
-				'icon' => $type['icon'],
-				'link' => getURLScheme() . "://$dir.local",
-				'admin' => $type['admin']
-			];
+			try {
+				$type = detectProjectType($fullPath);
+				
+				$tiles[] = [
+					'name' => $dir,
+					'type' => $type['name'],
+					'icon' => $type['icon'],
+					'link' => getURLScheme() . "://$dir.local",
+					'admin' => $type['admin']
+				];
+				
+				error_log("Added project: $dir (Type: {$type['name']})");
+			} catch (Exception $e) {
+				error_log("Error processing directory $dir: " . $e->getMessage());
+				continue;
+			}
 		}
-                return $tiles;
-        }
+		
+		error_log('Total projects found: ' . count($tiles));
+		return $tiles;
+	}
 
         /**
          * Search projects and rank them by similarity to query.

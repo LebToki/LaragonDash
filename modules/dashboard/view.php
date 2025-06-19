@@ -1,7 +1,22 @@
 <?php
-	require_once 'includes/functions.php';
-	$projects = getProjectTiles();
-	$system = getSystemInfo();
+	error_reporting(E_ALL);
+	ini_set('display_errors', 1);
+
+	require_once __DIR__ . '/../../includes/functions.php';
+	
+	try {
+		$projects = getProjectTiles();
+		$system = getSystemInfo();
+	} catch (Exception $e) {
+		echo '<div class="alert alert-danger">Error: ' . htmlspecialchars($e->getMessage()) . '</div>';
+		echo '<pre>' . htmlspecialchars($e->getTraceAsString()) . '</pre>';
+		die();
+	}
+	
+	if (empty($projects)) {
+		echo '<div class="alert alert-warning">No projects found. Make sure your projects are in the Laragon www directory.</div>';
+	}
+	
 	$colors = ['#FCE7F3', '#DCFCE7', '#E0F2FE', '#FEF9C3', '#FFEDD5', '#EDE9FE'];
 ?>
 
