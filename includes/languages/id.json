@@ -1,35 +1,158 @@
 {
-  "title": "Selamat Datang di Dashboard Laragon",
-  "header": "Server Pengembangan Saya",
-  "welcome_back": "Selamat Datang Kembali!",
-
-  "servers_tab": "Server",
-  "inbox_tab": "Kotak Masuk",
-  "vitals_tab": "Vital Server",
-  "settings_tab": "Pengaturan",
-
-  "breadcrumb_server_servers": "Server & Aplikasi Pengembangan Saya",
-  "breadcrumb_server_mailbox": "Kotak Masuk Server Pengembangan Saya",
-  "breadcrumb_server_vitals": "Vital Server Pengembangan Saya",
-
-  "server_status": "Status Server",
-  "uptime": "Waktu Aktif",
-  "memory_usage": "Penggunaan Memori (dalam MB)",
-  "disk_usage": "Penggunaan Disk",
-
-  "good_morning": "Selamat pagi",
-  "good_afternoon": "Selamat siang",
-  "good_evening": "Selamat malam",
-
-  "document_root": "Akar Dokumen",
-  "manage_mysql": "Kelola MySQL",
-
-  "logged-messages": "Pesan yang Tercatat",
-  "email-list": "Daftar Email",
-  "no-emails-found": "Tidak Ada Email Ditemukan",
-  "delete": "Hapus",
-
-  "default_footer": "&copy; 2024<?php echo htmlspecialchars(date('Y')); ?>, Tarek Tarabichi",
-  "made_with_love": "Dibuat dengan <span style=\"color: #e25555;\">&hearts;</span> dan didukung oleh Laragon",
-  "logout": "Logout"
+  "app": {
+    "title": "Laragondash - Dasbor Proyek Lokal",
+    "description": "Laragondash adalah dasbor lokal yang bersih dan intuitif bagi pengembang untuk mengatur, melihat pratinjau, dan mengelola proyek Laragon mereka dengan mudah.",
+    "author": "Tarek tarabichi dari 2tinteractive"
+  },
+  "navigation": {
+    "dashboard": "Dasbor",
+    "search": "Mencari",
+    "projects": "Proyek",
+    "email": "E-mail",
+    "vitals": "Vital",
+    "bcrypt": "Bcrypt",
+    "settings": "Pengaturan"
+  },
+  "dashboard": {
+    "system_info": "Informasi sistem",
+    "add_project": "Tambahkan proyek baru",
+    "more_projects": "Lebih banyak proyek",
+    "project_types": {
+      "wordpress": "WordPress",
+      "joomla": "Joomla",
+      "laravel": "Laravel",
+      "drupal": "Drupal",
+      "symfony": "Symfony",
+      "python": "Python",
+      "codeigniter": "Codeigniter",
+      "unknown": "Tidak dikenal"
+    }
+  },
+  "system": {
+    "php_version": "Versi PHP",
+    "server_software": "Perangkat lunak server",
+    "document_root": "Root dokumen",
+    "date": "Tanggal",
+    "uptime": "Uptime",
+    "memory_usage": "Penggunaan memori",
+    "disk_usage": "Penggunaan disk",
+    "cpu_usage": "Penggunaan CPU"
+  },
+  "search": {
+    "placeholder": "Proyek pencarian ...",
+    "no_results": "Tidak ada proyek yang ditemukan"
+  },
+  "email": {
+    "preview": "Pratinjau Email",
+    "subject": "Subjek",
+    "from": "Dari",
+    "to": "Ke",
+    "date": "Tanggal",
+    "body": "Tubuh"
+  },
+  "vitals": {
+    "title": "Vital Sistem",
+    "server_status": "Status server",
+    "database_status": "Status basis data",
+    "online": "On line",
+    "offline": "Offline",
+    "last_checked": "Terakhir diperiksa"
+  },
+  "bcrypt": {
+    "title": "Alat pengembang bcrypt",
+    "generate_tab": "Menghasilkan hash",
+    "verify_tab": "Verifikasi hash",
+    "info_tab": "Info hash",
+    "strength_tab": "Kekuatan Kata Sandi",
+    "input_placeholder": "Masukkan Kata Sandi ke Hash",
+    "password": "Kata sandi",
+    "hash_to_verify": "Bcrypt hash",
+    "enter_hash_placeholder": "Tempel bcrypt hash di sini",
+    "generate": "Menghasilkan",
+    "verify": "Memeriksa",
+    "analyze": "Menganalisa",
+    "check_strength": "Periksa kekuatan",
+    "copy": "Menyalin",
+    "copied": "Disalin!",
+    "generating": "Menghasilkan ...",
+    "verifying": "Memverifikasi ...",
+    "analyzing": "Menganalisis ...",
+    "checking": "Memeriksa ...",
+    "generated_hash": "Menghasilkan hash bcrypt",
+    "verify_success": "✅ Kata sandi cocok dengan hash!",
+    "verify_failed": "❌ Kata sandi tidak cocok dengan hash.",
+    "hash_info": "Informasi hash",
+    "hash_algorithm": "Algoritma",
+    "hash_cost": "Faktor biaya",
+    "hash_salt": "Garam",
+    "hash_value": "Nilai hash",
+    "password_strength": "Kekuatan Kata Sandi",
+    "strength_very_weak": "Sangat lemah",
+    "strength_weak": "Lemah",
+    "strength_moderate": "Sedang",
+    "strength_strong": "Kuat",
+    "strength_very_strong": "Sangat kuat",
+    "strength_tips": "Tips untuk kata sandi yang lebih kuat:",
+    "strength_tip_length": "• Gunakan setidaknya 12 karakter",
+    "strength_tip_upper": "• Sertakan huruf besar",
+    "strength_tip_lower": "• Sertakan huruf kecil",
+    "strength_tip_number": "• Sertakan angka",
+    "strength_tip_special": "• Sertakan karakter khusus",
+    "error_enter_password": "Harap masukkan kata sandi untuk menghasilkan hash.",
+    "error_verify_fields": "Kata sandi dan hash diperlukan untuk verifikasi.",
+    "error_invalid_hash": "Format hash bcrypt tidak valid.",
+    "error_enter_hash": "Harap masukkan hash bcrypt untuk dianalisis.",
+    "error_enter_password_strength": "Harap masukkan kata sandi untuk memeriksa kekuatannya."
+  },
+  "settings": {
+    "title": "Pengaturan",
+    "appearance": {
+      "title": "Penampilan",
+      "theme": "Tema",
+      "light": "Lampu",
+      "dark": "Gelap",
+      "system": "Sistem"
+    },
+    "general": {
+      "title": "Umum",
+      "language": "Bahasa",
+      "save": "Simpan perubahan"
+    }
+  },
+  "alerts": {
+    "changes_saved": "Perubahan berhasil disimpan",
+    "error_occurred": "Terjadi kesalahan",
+    "project_not_found": "Proyek tidak ditemukan",
+    "module_not_found": "Modul tidak ditemukan"
+  },
+  "buttons": {
+    "save": "Menyimpan",
+    "cancel": "Membatalkan",
+    "close": "Menutup",
+    "edit": "Edit",
+    "delete": "Menghapus",
+    "confirm": "Mengonfirmasi",
+    "dismiss": "Membubarkan",
+    "logout": "Logout"
+  },
+  "titles": {
+    "dashboard": "Dasbor",
+    "search": "Proyek pencarian",
+    "projects": "Proyek",
+    "email": "Tampilan Email",
+    "vitals": "Vital Sistem",
+    "bcrypt": "Generator bcrypt",
+    "settings": "Pengaturan"
+  },
+  "tooltips": {
+    "theme_toggle": "Tema tema",
+    "refresh": "Menyegarkan",
+    "help": "Membantu",
+    "notifications": "Pemberitahuan"
+  },
+  "errors": {
+    "404": "Halaman tidak ditemukan",
+    "403": "Akses ditolak",
+    "500": "Kesalahan server internal"
+  }
 }
