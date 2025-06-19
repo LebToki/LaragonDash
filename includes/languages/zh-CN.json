@@ -1,0 +1,158 @@
+{
+  "app": {
+    "title": "LaragonDash - 本地项目仪表板",
+    "description": "LaragonDash 是一个简洁的仪表板，帮助开发者轻松组织、预览和管理 Laragon 项目。",
+    "author": "Tarek Tarabichi 来自 2TInteractive"
+  },
+  "navigation": {
+    "dashboard": "仪表板",
+    "search": "搜索",
+    "projects": "项目",
+    "email": "邮件",
+    "vitals": "系统状态",
+    "bcrypt": "Bcrypt",
+    "settings": "设置"
+  },
+  "dashboard": {
+    "system_info": "系统信息",
+    "add_project": "添加新项目",
+    "more_projects": "更多项目",
+    "project_types": {
+      "wordpress": "WordPress",
+      "joomla": "Joomla",
+      "laravel": "Laravel",
+      "drupal": "Drupal",
+      "symfony": "Symfony",
+      "python": "Python",
+      "codeigniter": "CodeIgniter",
+      "unknown": "未知"
+    }
+  },
+  "system": {
+    "php_version": "PHP 版本",
+    "server_software": "服务器软件",
+    "document_root": "文档根目录",
+    "date": "日期",
+    "uptime": "运行时间",
+    "memory_usage": "内存使用",
+    "disk_usage": "磁盘使用",
+    "cpu_usage": "CPU 使用"
+  },
+  "search": {
+    "placeholder": "搜索项目...",
+    "no_results": "未找到项目"
+  },
+  "email": {
+    "preview": "邮件预览",
+    "subject": "主题",
+    "from": "发件人",
+    "to": "收件人",
+    "date": "日期",
+    "body": "正文"
+  },
+  "vitals": {
+    "title": "系统状态",
+    "server_status": "服务器状态",
+    "database_status": "数据库状态",
+    "online": "在线",
+    "offline": "离线",
+    "last_checked": "最后检查"
+  },
+  "bcrypt": {
+    "title": "Bcrypt 开发工具",
+    "generate_tab": "生成哈希",
+    "verify_tab": "验证哈希",
+    "info_tab": "哈希信息",
+    "strength_tab": "密码强度",
+    "input_placeholder": "输入要加密的密码",
+    "password": "密码",
+    "hash_to_verify": "Bcrypt 哈希值",
+    "enter_hash_placeholder": "在此粘贴 bcrypt 哈希值",
+    "generate": "生成",
+    "verify": "验证",
+    "analyze": "分析",
+    "check_strength": "检查强度",
+    "copy": "复制",
+    "copied": "已复制!",
+    "generating": "生成中...",
+    "verifying": "验证中...",
+    "analyzing": "分析中...",
+    "checking": "检查中...",
+    "generated_hash": "已生成 Bcrypt 哈希",
+    "verify_success": "✅ 密码匹配!",
+    "verify_failed": "❌ 密码不匹配",
+    "hash_info": "哈希信息",
+    "hash_algorithm": "算法",
+    "hash_cost": "成本因子",
+    "hash_salt": "盐值",
+    "hash_value": "哈希值",
+    "password_strength": "密码强度",
+    "strength_very_weak": "非常弱",
+    "strength_weak": "弱",
+    "strength_moderate": "中等",
+    "strength_strong": "强",
+    "strength_very_strong": "非常强",
+    "strength_tips": "增强密码强度的建议:",
+    "strength_tip_length": "• 至少使用12个字符",
+    "strength_tip_upper": "• 包含大写字母",
+    "strength_tip_lower": "• 包含小写字母",
+    "strength_tip_number": "• 包含数字",
+    "strength_tip_special": "• 包含特殊字符",
+    "error_enter_password": "请输入密码以生成哈希。",
+    "error_verify_fields": "需要密码和哈希值进行验证。",
+    "error_invalid_hash": "无效的 bcrypt 哈希格式。",
+    "error_enter_hash": "请输入 bcrypt 哈希值进行分析。",
+    "error_enter_password_strength": "请输入密码以检查强度。"
+  },
+  "settings": {
+    "title": "设置",
+    "appearance": {
+      "title": "外观",
+      "theme": "主题",
+      "light": "浅色",
+      "dark": "深色",
+      "system": "系统"
+    },
+    "general": {
+      "title": "常规",
+      "language": "语言",
+      "save": "保存更改"
+    }
+  },
+  "alerts": {
+    "changes_saved": "更改已保存",
+    "error_occurred": "发生错误",
+    "project_not_found": "未找到项目",
+    "module_not_found": "未找到模块"
+  },
+  "buttons": {
+    "save": "保存",
+    "cancel": "取消",
+    "close": "关闭",
+    "edit": "编辑",
+    "delete": "删除",
+    "confirm": "确认",
+    "dismiss": "关闭",
+    "logout": "退出登录"
+  },
+  "titles": {
+    "dashboard": "仪表板",
+    "search": "搜索项目",
+    "projects": "项目",
+    "email": "邮件预览",
+    "vitals": "系统状态",
+    "bcrypt": "Bcrypt 工具",
+    "settings": "设置"
+  },
+  "tooltips": {
+    "theme_toggle": "切换主题",
+    "refresh": "刷新",
+    "help": "帮助",
+    "notifications": "通知"
+  },
+  "errors": {
+    "404": "页面未找到",
+    "403": "禁止访问",
+    "500": "服务器内部错误"
+  }
+}
