@@ -120,13 +120,9 @@ es.json
 fr.json
 hi.json
 id.json
-ja.json
-pt-BR.json
 pt.json
-ru.json
 tl.json
 ur.json
-zh-CN.json
 ```
 
 Want to contribute a new one? Simply add a `code.json` file with:
