@@ -7,17 +7,38 @@
 			<button class="btn btn-outline-dark w-100" data-theme-toggle>Toggle Theme</button>
 		</div>
 		
-		<div class="col-md-6">
-			<label class="form-label">Language</label>
-			<select id="lang-select" class="form-select">
-				<option value="en">🇬🇧 English</option>
-				<option value="fr">🇫🇷 Français</option>
-				<option value="de">🇩🇪 Deutsch</option>
-				<option value="es">🇪🇸 Español</option>
-				<option value="pt">🇵🇹 Português</option>
-				<option value="id">🇮🇩 Bahasa Indonesia</option>
-				<option value="tl">🇵🇭 Tagalog</option>
-			</select>
-		</div>
+                <div class="col-md-6">
+                        <label class="form-label">Language</label>
+                        <?php
+                                $langFiles = glob(__DIR__ . '/../../assets/languages/*.json');
+                                $flags = [
+                                        'en' => '🇬🇧',
+                                        'fr' => '🇫🇷',
+                                        'es' => '🇪🇸',
+                                        'de' => '🇩🇪',
+                                        'pt' => '🇵🇹',
+                                        'id' => '🇮🇩',
+                                        'tl' => '🇵🇭',
+                                        'ar' => '🇸🇦'
+                                ];
+                                $names = [
+                                        'en' => 'English',
+                                        'fr' => 'Français',
+                                        'es' => 'Español',
+                                        'de' => 'Deutsch',
+                                        'pt' => 'Português',
+                                        'id' => 'Bahasa Indonesia',
+                                        'tl' => 'Tagalog',
+                                        'ar' => 'العربية'
+                                ];
+                        ?>
+                        <select id="lang-select" class="form-select">
+                                <?php foreach($langFiles as $file): $code = basename($file, '.json'); ?>
+                                        <option value="<?= $code ?>">
+                                                <?= ($flags[$code] ?? strtoupper($code)) . ' ' . ($names[$code] ?? strtoupper($code)) ?>
+                                        </option>
+                                <?php endforeach; ?>
+                        </select>
+                </div>
 	</div>
 </div>
