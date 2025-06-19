@@ -1,0 +1,118 @@
+{
+  "app": {
+    "title": "LaragonDash – مقامی پراجیکٹ ڈیش بورڈ",
+    "description": "LaragonDash ایک صاف اور آسان ڈیش بورڈ ہے جو ڈیویلپرز کو اپنے Laragon پراجیکٹس کو منظم، دیکھنے اور کنٹرول کرنے میں مدد دیتا ہے۔",
+    "author": "طارق ترابیشی، 2TInteractive کی جانب سے"
+  },
+  "navigation": {
+    "dashboard": "ڈیش بورڈ",
+    "search": "تلاش",
+    "projects": "پراجیکٹس",
+    "email": "ای میل",
+    "vitals": "سسٹم کی تفصیلات",
+    "bcrypt": "Bcrypt",
+    "settings": "ترتیبات"
+  },
+  "dashboard": {
+    "system_info": "سسٹم کی معلومات",
+    "add_project": "نیا پراجیکٹ شامل کریں",
+    "more_projects": "مزید پراجیکٹس",
+    "project_types": {
+      "wordpress": "ورڈپریس",
+      "joomla": "جوملا",
+      "laravel": "لاراول",
+      "drupal": "ڈروپل",
+      "symfony": "سیمفونی",
+      "python": "پائتھن",
+      "codeigniter": "کوڈاِگنائٹر",
+      "unknown": "نامعلوم"
+    }
+  },
+  "system": {
+    "php_version": "PHP ورژن",
+    "server_software": "سرور سافٹ ویئر",
+    "document_root": "دستاویز کی جڑ",
+    "date": "تاریخ",
+    "uptime": "اپ ٹائم",
+    "memory_usage": "میموری کا استعمال",
+    "disk_usage": "ڈسک کا استعمال",
+    "cpu_usage": "CPU کا استعمال"
+  },
+  "search": {
+    "placeholder": "پراجیکٹس تلاش کریں...",
+    "no_results": "کوئی پراجیکٹ نہیں ملا"
+  },
+  "email": {
+    "preview": "ای میل کا پیش منظر",
+    "subject": "عنوان",
+    "from": "بھیجنے والا",
+    "to": "وصول کنندہ",
+    "date": "تاریخ",
+    "body": "مواد"
+  },
+  "vitals": {
+    "title": "سسٹم کی حیثیت",
+    "server_status": "سرور کی حیثیت",
+    "database_status": "ڈیٹا بیس کی حیثیت",
+    "online": "آن لائن",
+    "offline": "آف لائن",
+    "last_checked": "آخری بار چیک کیا گیا"
+  },
+  "bcrypt": {
+    "title": "Bcrypt جنریٹر",
+    "input_placeholder": "ہیش کے لیے ٹیکسٹ درج کریں",
+    "generate": "بنائیں",
+    "copy": "کاپی کریں",
+    "copied": "کاپی ہوگیا!"
+  },
+  "settings": {
+    "title": "ترتیبات",
+    "appearance": {
+      "title": "ظاہری شکل",
+      "theme": "تھیم",
+      "light": "روشن",
+      "dark": "تاریک",
+      "system": "سسٹم"
+    },
+    "general": {
+      "title": "عمومی",
+      "language": "زبان",
+      "save": "تبدیلیاں محفوظ کریں"
+    }
+  },
+  "alerts": {
+    "changes_saved": "تبدیلیاں کامیابی سے محفوظ ہوگئیں",
+    "error_occurred": "ایک خرابی پیش آئی",
+    "project_not_found": "پراجیکٹ نہیں ملا",
+    "module_not_found": "ماڈیول نہیں ملا"
+  },
+  "buttons": {
+    "save": "محفوظ کریں",
+    "cancel": "منسوخ کریں",
+    "close": "بند کریں",
+    "edit": "ترمیم کریں",
+    "delete": "حذف کریں",
+    "confirm": "تصدیق کریں",
+    "dismiss": "بند کریں"
+  },
+  "titles": {
+    "dashboard": "ڈیش بورڈ",
+    "search": "پراجیکٹس تلاش کریں",
+    "projects": "پراجیکٹس",
+    "email": "ای میل کا پیش منظر",
+    "vitals": "سسٹم کی حیثیت",
+    "bcrypt": "Bcrypt جنریٹر",
+    "settings": "ترتیبات"
+  },
+  "tooltips": {
+    "theme_toggle": "تھیم تبدیل کریں",
+    "refresh": "تازہ کریں",
+    "help": "مدد",
+    "notifications": "اطلاعات"
+  },
+  "errors": {
+    "404": "صفحہ نہیں ملا",
+    "403": "رسائی ممنوع",
+    "500": "اندرونی سرور خرابی"
+  }
+}

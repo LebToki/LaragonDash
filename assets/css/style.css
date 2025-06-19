@@ -1,28 +1,53 @@
 /* =======================================
-   Base Theme
+   ✨ Base Styling
 ======================================= */
 body {
   font-family: 'Poppins', sans-serif;
   font-size: 14px;
   background-color: #f9f9f9;
   color: #333;
+  transition: all 0.3s ease;
 }
+
 iconify-icon {
   font-family: initial !important;
 }
 
-[data-theme="dark"] body,
-[data-theme="dark"] {
+/* Flags/Emoji support */
+#lang-select,
+#lang-select option {
+  font-family: 'Segoe UI Emoji', 'Apple Color Emoji', 'Noto Color Emoji', system-ui, sans-serif !important;
+}
+
+
+/* =======================================
+   🌙 Dark Mode Support
+======================================= */
+[data-theme="dark"],
+[data-theme="dark"] body {
   background-color: #1e1e2f;
   color: #ddd;
 }
 
+[data-theme="dark"] .bg-white {
+  background-color: #000 !important;
+  color: #fff;
+}
+
+[data-theme="dark"] .text-dark {
+  color: #ffffff !important;
+}
+
 /* =======================================
-   Navbar
+   🚀 Navbar
 ======================================= */
 .navbar {
   background-color: #fff;
   border-bottom: 1px solid #ddd;
+}
+
+.navbar input[type="text"] {
+  width: 200px;
 }
 
 [data-theme="dark"] .navbar {
@@ -31,7 +56,6 @@ iconify-icon {
   color: #fff;
 }
 
-/* Toggle button */
 [data-theme='dark'] .btn-outline-secondary,
 [data-theme='dark'] .button.btn.btn-sm.btn-outline-secondary {
   color: antiquewhite !important;
@@ -39,13 +63,8 @@ iconify-icon {
   border-color: #333;
 }
 
-/* Input inside navbar */
-.navbar input[type="text"] {
-  width: 200px;
-}
-
 /* =======================================
-   Sidebar
+   📚 Sidebar
 ======================================= */
 .sidebar {
   width: 60px;
@@ -84,7 +103,7 @@ iconify-icon {
 }
 
 /* =======================================
-   Cards & Tiles
+   📦 Cards & Project Tiles
 ======================================= */
 .card {
   border-radius: 12px;
@@ -100,17 +119,6 @@ iconify-icon {
   color: #ddd;
 }
 
-.project-tile {
-  text-align: center;
-  padding: 2rem 0;
-}
-
-.project-tile img {
-  max-width: 50px;
-  margin-bottom: 1rem;
-}
-
-/* Add tile */
 .card.border-dashed {
   border: 2px dashed #ccc;
   background-color: #f2f2f2;
@@ -123,22 +131,32 @@ iconify-icon {
   color: #bbb;
 }
 
+.project-tile {
+  text-align: center;
+  padding: 2rem 0;
+}
+
+.project-tile img {
+  max-width: 50px;
+  margin-bottom: 1rem;
+}
+
 /* =======================================
-   System Info Panel
+   🧮 System Info Panel
 ======================================= */
+.system-info-box {
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
 ul.list-unstyled.small.lh-lg {
   color: #333;
 }
 
 [data-theme="dark"] ul.list-unstyled.small.lh-lg {
   color: #ddd;
-  background-color: black;
-}
-
-.system-info-box {
-  padding: 1rem;
-  border: 1px solid #ddd;
-  border-radius: 8px;
+  background-color: #000;
 }
 
 [data-theme='dark'] .system-info-box {
@@ -151,7 +169,7 @@ ul.list-unstyled.small.lh-lg {
   color: #eee;
 }
 
-/* Sticky on large screens */
+/* Sticky effect on large screens */
 @media (min-width: 992px) {
   .system-info-sticky {
     position: sticky;
@@ -160,21 +178,7 @@ ul.list-unstyled.small.lh-lg {
 }
 
 /* =======================================
-   Utility Overrides
-======================================= */
-[data-theme='dark'] .bg-white {
-  --bs-bg-opacity: 1;
-  background-color: rgba(var(--bs-black-rgb), var(--bs-bg-opacity)) !important;
-  color: #ffffff;
-}
-
-[data-theme='dark'] .text-dark {
-  --bs-text-opacity: 0;
-  color: #ffffff !important;
-}
-
-/* =======================================
-   Miscellaneous UI
+   🛠️ Utilities
 ======================================= */
 [data-theme-toggle] {
   cursor: pointer;
@@ -184,7 +188,7 @@ ul.list-unstyled.small.lh-lg {
   min-width: 120px;
 }
 
-/* Toast */
+/* Toast Notification */
 #toast .toast {
   font-size: 14px;
   border-radius: 6px;

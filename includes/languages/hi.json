@@ -1,0 +1,118 @@
+{
+  "app": {
+    "title": "LaragonDash – लोकल प्रोजेक्ट डैशबोर्ड",
+    "description": "LaragonDash एक साफ़-सुथरा लोकल डैशबोर्ड है जिससे डेवलपर्स अपने Laragon प्रोजेक्ट्स को आसानी से व्यवस्थित, पूर्वावलोकन और प्रबंधित कर सकते हैं।",
+    "author": "तारिक तराबीची द्वारा, 2TInteractive से"
+  },
+  "navigation": {
+    "dashboard": "डैशबोर्ड",
+    "search": "खोजें",
+    "projects": "प्रोजेक्ट्स",
+    "email": "ईमेल",
+    "vitals": "सिस्टम जानकारी",
+    "bcrypt": "Bcrypt",
+    "settings": "सेटिंग्स"
+  },
+  "dashboard": {
+    "system_info": "सिस्टम जानकारी",
+    "add_project": "नया प्रोजेक्ट जोड़ें",
+    "more_projects": "अधिक प्रोजेक्ट्स",
+    "project_types": {
+      "wordpress": "वर्डप्रेस",
+      "joomla": "जूमला",
+      "laravel": "लारावेल",
+      "drupal": "ड्रुपल",
+      "symfony": "सिम्फनी",
+      "python": "पाइथन",
+      "codeigniter": "कोडइग्नाइटर",
+      "unknown": "अज्ञात"
+    }
+  },
+  "system": {
+    "php_version": "PHP संस्करण",
+    "server_software": "सर्वर सॉफ़्टवेयर",
+    "document_root": "डॉक्युमेंट रूट",
+    "date": "तारीख",
+    "uptime": "अपटाइम",
+    "memory_usage": "मेमोरी उपयोग",
+    "disk_usage": "डिस्क उपयोग",
+    "cpu_usage": "CPU उपयोग"
+  },
+  "search": {
+    "placeholder": "प्रोजेक्ट खोजें...",
+    "no_results": "कोई प्रोजेक्ट नहीं मिला"
+  },
+  "email": {
+    "preview": "ईमेल पूर्वावलोकन",
+    "subject": "विषय",
+    "from": "से",
+    "to": "को",
+    "date": "तारीख",
+    "body": "संदेश"
+  },
+  "vitals": {
+    "title": "सिस्टम स्थिति",
+    "server_status": "सर्वर स्थिति",
+    "database_status": "डेटाबेस स्थिति",
+    "online": "ऑनलाइन",
+    "offline": "ऑफ़लाइन",
+    "last_checked": "आखिरी जाँच"
+  },
+  "bcrypt": {
+    "title": "Bcrypt जनरेटर",
+    "input_placeholder": "हैश करने के लिए टेक्स्ट दर्ज करें",
+    "generate": "जनरेट करें",
+    "copy": "कॉपी करें",
+    "copied": "कॉपी हो गया!"
+  },
+  "settings": {
+    "title": "सेटिंग्स",
+    "appearance": {
+      "title": "रूप",
+      "theme": "थीम",
+      "light": "लाइट",
+      "dark": "डार्क",
+      "system": "सिस्टम"
+    },
+    "general": {
+      "title": "सामान्य",
+      "language": "भाषा",
+      "save": "परिवर्तन सहेजें"
+    }
+  },
+  "alerts": {
+    "changes_saved": "परिवर्तन सफलतापूर्वक सहेजे गए",
+    "error_occurred": "एक त्रुटि हुई",
+    "project_not_found": "प्रोजेक्ट नहीं मिला",
+    "module_not_found": "मॉड्यूल नहीं मिला"
+  },
+  "buttons": {
+    "save": "सहेजें",
+    "cancel": "रद्द करें",
+    "close": "बंद करें",
+    "edit": "संपादित करें",
+    "delete": "हटाएं",
+    "confirm": "पुष्टि करें",
+    "dismiss": "छोड़ें"
+  },
+  "titles": {
+    "dashboard": "डैशबोर्ड",
+    "search": "प्रोजेक्ट खोजें",
+    "projects": "प्रोजेक्ट्स",
+    "email": "ईमेल पूर्वावलोकन",
+    "vitals": "सिस्टम स्थिति",
+    "bcrypt": "Bcrypt जनरेटर",
+    "settings": "सेटिंग्स"
+  },
+  "tooltips": {
+    "theme_toggle": "थीम बदलें",
+    "refresh": "रीफ्रेश करें",
+    "help": "मदद",
+    "notifications": "सूचनाएँ"
+  },
+  "errors": {
+    "404": "पृष्ठ नहीं मिला",
+    "403": "प्रवेश अस्वीकृत",
+    "500": "आंतरिक सर्वर त्रुटि"
+  }
+}

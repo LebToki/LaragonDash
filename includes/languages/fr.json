@@ -1,0 +1,119 @@
+{
+	"app": {
+		"title": "LaragonDash – Tableau de Bord Local",
+		"description": "LaragonDash est un tableau de bord local propre pour les développeurs afin d’organiser, prévisualiser et gérer facilement vos projets Laragon.",
+		"author": "Tarek Tarabichi de 2TInteractive"
+	},
+	"navigation": {
+		"dashboard": "Tableau de bord",
+		"search": "Recherche",
+		"projects": "Projets",
+		"email": "Email",
+		"vitals": "Statut",
+		"bcrypt": "Bcrypt",
+		"settings": "Paramètres"
+	},
+	"dashboard": {
+		"system_info": "Informations système",
+		"add_project": "Ajouter un projet",
+		"more_projects": "Plus de projets",
+		"project_types": {
+			"wordpress": "WordPress",
+			"joomla": "Joomla",
+			"laravel": "Laravel",
+			"drupal": "Drupal",
+			"symfony": "Symfony",
+			"python": "Python",
+			"codeigniter": "CodeIgniter",
+			"unknown": "Inconnu"
+		}
+	},
+	"system": {
+		"php_version": "Version PHP",
+		"server_software": "Logiciel serveur",
+		"document_root": "Racine du document",
+		"date": "Date",
+		"uptime": "Temps de fonctionnement",
+		"memory_usage": "Utilisation mémoire",
+		"disk_usage": "Utilisation du disque",
+		"cpu_usage": "Utilisation CPU"
+	},
+	"search": {
+		"placeholder": "Rechercher des projets...",
+		"no_results": "Aucun projet trouvé"
+	},
+	"email": {
+		"preview": "Aperçu de l'email",
+		"subject": "Sujet",
+		"from": "De",
+		"to": "À",
+		"date": "Date",
+		"body": "Contenu"
+	},
+	"vitals": {
+		"title": "Indicateurs système",
+		"server_status": "Statut serveur",
+		"database_status": "Statut base de données",
+		"online": "En ligne",
+		"offline": "Hors ligne",
+		"last_checked": "Dernière vérification"
+	},
+	"bcrypt": {
+		"title": "Générateur Bcrypt",
+		"input_placeholder": "Entrer le texte à chiffrer",
+		"generate": "Générer",
+		"copy": "Copier",
+		"copied": "Copié !"
+	},
+	"settings": {
+		"title": "Paramètres",
+		"appearance": {
+			"title": "Apparence",
+			"theme": "Thème",
+			"light": "Clair",
+			"dark": "Sombre",
+			"system": "Système"
+		},
+		"general": {
+			"title": "Général",
+			"language": "Langue",
+			"save": "Enregistrer les modifications"
+		}
+	},
+	"alerts": {
+		"changes_saved": "Modifications enregistrées avec succès",
+		"error_occurred": "Une erreur s’est produite",
+		"project_not_found": "Projet introuvable",
+		"module_not_found": "Module introuvable"
+	},
+	"buttons": {
+		"save": "Enregistrer",
+		"cancel": "Annuler",
+		"close": "Fermer",
+		"edit": "Modifier",
+		"delete": "Supprimer",
+		"confirm": "Confirmer",
+		"dismiss": "Ignorer",
+		"logout": "Deconnexion"
+	},
+	"titles": {
+		"dashboard": "Tableau de bord",
+		"search": "Rechercher des projets",
+		"projects": "Projets",
+		"email": "Aperçu email",
+		"vitals": "Indicateurs système",
+		"bcrypt": "Générateur Bcrypt",
+		"settings": "Paramètres"
+	},
+	"tooltips": {
+		"theme_toggle": "Changer le thème",
+		"refresh": "Rafraîchir",
+		"help": "Aide",
+		"notifications": "Notifications"
+	},
+	"errors": {
+		"404": "Page non trouvée",
+		"403": "Accès refusé",
+		"500": "Erreur interne du serveur"
+	}
+}

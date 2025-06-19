@@ -1,9 +1,9 @@
 <?php
-// Load Settings
+// Load LaragonDash settings
 	$laraconfig = include __DIR__ . '/config/settings.php';
 	
 	/**
-	 * Get the proper URL scheme (http or https) based on SSL settings.
+	 * Determine whether to use HTTP or HTTPS based on SSL settings.
 	 */
 	function getURLScheme(): string {
 		global $laraconfig;
@@ -12,26 +12,29 @@
 	}
 	
 	/**
-	 * Detect project type by inspecting file/folder structure.
+	 * Detect project type based on folder structure or key files.
 	 */
 	function detectProjectType(string $path): array {
+		$domain = basename($path) . '.local';
+		$scheme = getURLScheme();
+		
 		if (is_dir("$path/wp-admin")) {
-			return ['name' => 'WordPress', 'icon' => 'logos:wordpress-icon', 'admin' => getURLScheme() . '://' . basename($path) . '.local/wp-admin'];
+			return ['name' => 'WordPress', 'icon' => 'logos:wordpress-icon', 'admin' => "$scheme://$domain/wp-admin"];
 		}
 		if (is_dir("$path/administrator")) {
-			return ['name' => 'Joomla', 'icon' => 'logos:joomla', 'admin' => getURLScheme() . '://' . basename($path) . '.local/administrator'];
+			return ['name' => 'Joomla', 'icon' => 'logos:joomla', 'admin' => "$scheme://$domain/administrator"];
 		}
 		if (file_exists("$path/public/index.php") && file_exists("$path/.env")) {
 			return ['name' => 'Laravel', 'icon' => 'logos:laravel', 'admin' => ''];
 		}
 		if (is_dir("$path/core") || is_dir("$path/web/core")) {
-			return ['name' => 'Drupal', 'icon' => 'logos:drupal-icon', 'admin' => getURLScheme() . '://' . basename($path) . '.local/user'];
+			return ['name' => 'Drupal', 'icon' => 'logos:drupal-icon', 'admin' => "$scheme://$domain/user"];
 		}
 		if (file_exists("$path/bin/console")) {
-			return ['name' => 'Symfony', 'icon' => 'logos:symfony-icon', 'admin' => getURLScheme() . '://' . basename($path) . '.local/admin'];
+			return ['name' => 'Symfony', 'icon' => 'logos:symfony-icon', 'admin' => "$scheme://$domain/admin"];
 		}
 		if (file_exists("$path/app.py") && is_dir("$path/static")) {
-			return ['name' => 'Python', 'icon' => 'logos:python-icon', 'admin' => getURLScheme() . '://' . basename($path) . '.local/Public'];
+			return ['name' => 'Python', 'icon' => 'logos:python-icon', 'admin' => "$scheme://$domain/Public"];
 		}
 		if (file_exists("$path/index.php") && is_dir("$path/application")) {
 			return ['name' => 'CodeIgniter', 'icon' => 'logos:codeigniter-icon', 'admin' => ''];
@@ -40,18 +43,18 @@
 	}
 	
 	/**
-	 * Get list of project tiles from directories.
+	 * Scan project folders and return valid project tiles.
 	 */
 	function getProjectTiles(string $search = ''): array {
 		global $laraconfig;
-		$path = $laraconfig['ProjectPath'] ?? '..';
+		$basePath = $laraconfig['ProjectPath'] ?? '..';
 		$ignored = $laraconfig['IgnoreDirs'] ?? ['.', '..', 'logs', 'vendor', 'assets'];
 		$tiles = [];
 		
-		foreach (scandir($path) as $dir) {
+		foreach (scandir($basePath) as $dir) {
 			if (in_array($dir, $ignored)) continue;
 			
-			$fullPath = "$path/$dir";
+			$fullPath = "$basePath/$dir";
 			if (!is_dir($fullPath)) continue;
 			
 			if (!empty($search) && stripos($dir, $search) === false) continue;
@@ -66,28 +69,29 @@
 				'admin' => $type['admin']
 			];
 		}
+		
 		return $tiles;
 	}
 	
 	/**
-	 * Get basic system info.
+	 * Retrieve basic system/server info.
 	 */
 	function getSystemInfo(): array {
 		return [
 			'PHP Version' => phpversion(),
 			'Server Software' => $_SERVER['SERVER_SOFTWARE'] ?? 'Unknown',
 			'Document Root' => $_SERVER['DOCUMENT_ROOT'] ?? 'N/A',
-			'Date' => date('Y-m-d H:i:s'),
+			'Date' => date('Y-m-d H:i:s')
 		];
 	}
 	
 	/**
-	 * Get system vitals (extend as needed).
+	 * Aggregate system vitals.
 	 */
 	function getServerVitals(): array {
 		return [
 			'Uptime' => getUptime(),
 			'Memory' => getMemoryUsage(),
-			'Disk' => getDiskUsage(),
+			'Disk' => getDiskUsage()
 		];
 	}

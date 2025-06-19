@@ -1,8 +1,12 @@
 <?php
 	return [
+		
+		// 🗂️ Directories to ignore when scanning project folders
 		'ignored_dirs' => [
 			'.', '..', 'logs', 'access-logs', 'vendor', 'favicon_io', 'ablepro-90', 'assets'
 		],
+		
+		// 🚀 Platform Detection Rules
 		'platforms' => [
 			'wordpress' => [
 				'check' => 'wp-admin',

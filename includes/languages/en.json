@@ -1,7 +1,7 @@
 {
   "app": {
     "title": "LaragonDash – Local Project Dashboard",
-    "description": "LaragonDash is a clean, local developer dashboard to organize, preview, and manage your Laragon projects effortlessly.",
+    "description": "LaragonDash is a clean and intuitive local dashboard for developers to organize, preview, and manage their Laragon projects effortlessly.",
     "author": "Tarek Tarabichi from 2TInteractive"
   },
   "navigation": {
@@ -56,7 +56,7 @@
     "database_status": "Database Status",
     "online": "Online",
     "offline": "Offline",
-    "last_checked": "Last checked"
+    "last_checked": "Last Checked"
   },
   "bcrypt": {
     "title": "Bcrypt Generator",
@@ -93,13 +93,14 @@
     "edit": "Edit",
     "delete": "Delete",
     "confirm": "Confirm",
-    "dismiss": "Dismiss"
+    "dismiss": "Dismiss",
+    "logout": "Logout"
   },
   "titles": {
     "dashboard": "Dashboard",
     "search": "Search Projects",
     "projects": "Projects",
-    "email": "Email Preview",
+    "email": "Email View",
     "vitals": "System Vitals",
     "bcrypt": "Bcrypt Generator",
     "settings": "Settings"
