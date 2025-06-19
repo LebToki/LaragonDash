@@ -1,6 +1,11 @@
 <?php
 // Load Settings
-	$laraconfig = include __DIR__ . '/config/settings.php';
+$laraconfig = include __DIR__ . '/config/settings.php';
+
+// Load additional configuration if available
+if (file_exists(dirname(__DIR__) . '/config.php')) {
+    require_once dirname(__DIR__) . '/config.php';
+}
 	
 	/**
 	 * Get the proper URL scheme (http or https) based on SSL settings.

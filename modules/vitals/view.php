@@ -46,7 +46,7 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
 	document.addEventListener("DOMContentLoaded", function () {
-		fetch("modules/vitals/data.php")
+               fetch("includes/api/vitals.php")
 			.then(response => response.json())
 			.then(data => {
 				document.getElementById("uptime").textContent = data.uptime || "Unavailable";
