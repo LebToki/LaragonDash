@@ -2,7 +2,7 @@
   "app": {
     "title": "LaragonDash – مقامی پراجیکٹ ڈیش بورڈ",
     "description": "LaragonDash ایک صاف اور آسان ڈیش بورڈ ہے جو ڈیویلپرز کو اپنے Laragon پراجیکٹس کو منظم، دیکھنے اور کنٹرول کرنے میں مدد دیتا ہے۔",
-    "author": "طارق ترابیشی، 2TInteractive کی جانب سے"
+    "author": "طارق طرابیشی، 2TInteractive کی جانب سے"
   },
   "navigation": {
     "dashboard": "ڈیش بورڈ",
@@ -59,11 +59,50 @@
     "last_checked": "آخری بار چیک کیا گیا"
   },
   "bcrypt": {
-    "title": "Bcrypt جنریٹر",
-    "input_placeholder": "ہیش کے لیے ٹیکسٹ درج کریں",
+    "title": "Bcrypt ڈویلپر ٹولز",
+    "generate_tab": "ہیش بنائیں",
+    "verify_tab": "ہیش کی تصدیق کریں",
+    "info_tab": "ہیش کی معلومات",
+    "strength_tab": "پاسورڈ کی مضبوطی",
+    "input_placeholder": "خفیہ کاری کے لیے پاسورڈ درج کریں",
+    "password": "پاسورڈ",
+    "hash_to_verify": "Bcrypt ہیش",
+    "enter_hash_placeholder": "یہاں Bcrypt ہیش پیسٹ کریں",
     "generate": "بنائیں",
+    "verify": "تصدیق کریں",
+    "analyze": "تجزیہ کریں",
+    "check_strength": "مضبوطی چیک کریں",
     "copy": "کاپی کریں",
-    "copied": "کاپی ہوگیا!"
+    "copied": "کاپی ہوگیا!",
+    "generating": "بنا رہا ہے...",
+    "verifying": "تصدیق ہو رہی ہے...",
+    "analyzing": "تجزیہ ہو رہا ہے...",
+    "checking": "چیک ہو رہا ہے...",
+    "generated_hash": "Bcrypt ہیش بنا دتیا گیا",
+    "verify_success": "✅ پاسورڈ درست ہے!",
+    "verify_failed": "❌ پاسورڈ درست نہیں",
+    "hash_info": "ہیش کی معلومات",
+    "hash_algorithm": "الگورتھم",
+    "hash_cost": "لاگت کا عنصر",
+    "hash_salt": "نمک",
+    "hash_value": "ہیش کی قیمت",
+    "password_strength": "پاسورڈ کی مضبوطی",
+    "strength_very_weak": "بہت کمزور",
+    "strength_weak": "کمزور",
+    "strength_moderate": "درمیانی",
+    "strength_strong": "مضبوط",
+    "strength_very_strong": "بہت مضبوط",
+    "strength_tips": "مضبوط پاسورڈ کے لیے تجاویز:",
+    "strength_tip_length": "• کم از کم 12 حروف استعمال کریں",
+    "strength_tip_upper": "• بڑے حروف شامل کریں",
+    "strength_tip_lower": "• چھوٹے حروف شامل کریں",
+    "strength_tip_number": "• نمبر شامل کریں",
+    "strength_tip_special": "• خاص حروف شامل کریں",
+    "error_enter_password": "براہ کرم ہیش بنانے کے لیے پاسورڈ درج کریں۔",
+    "error_verify_fields": "تصدیق کے لیے پاسورڈ اور ہیش دونوں درکار ہیں۔",
+    "error_invalid_hash": "غلط Bcrypt ہیش فارمیٹ۔",
+    "error_enter_hash": "براہ کرم تجزیہ کے لیے Bcrypt ہیش درج کریں۔",
+    "error_enter_password_strength": "براہ کرم مضبوطی چیک کرنے کے لیے پاسورڈ درج کریں۔"
   },
   "settings": {
     "title": "ترتیبات",
@@ -94,7 +133,7 @@
     "delete": "حذف کریں",
     "confirm": "تصدیق کریں",
     "dismiss": "بند کریں",
-    "logout": "Logout"
+    "logout": "لاگ آوٹ"
   },
   "titles": {
     "dashboard": "ڈیش بورڈ",
