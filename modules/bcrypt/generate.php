@@ -135,6 +135,43 @@
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script>
+	function generateBcrypt() {
+		const password = document.getElementById('bcrypt-input').value.trim();
+		const output = document.getElementById('bcrypt-output');
+		
+		if (!password) {
+			output.textContent = '⚠️ Please enter a password.';
+			return;
+		}
+		
+		fetch('modules/bcrypt/generate.php', {
+			method: 'POST',
+			headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+			body: 'password=' + encodeURIComponent(password)
+		})
+			.then(response => response.text())
+			.then(data => output.textContent = data)
+			.catch(error => output.textContent = '❌ Error generating hash.');
+	}
+	
+	function copyBcryptHash() {
+		const hash = document.getElementById('bcrypt-output').textContent;
+		if (hash && hash !== 'Hash will appear here...') {
+			navigator.clipboard.writeText(hash).then(() => {
+				showToast('Hash copied to clipboard.');
+			});
+		}
+	}
+	
+	function showToast(msg) {
+		const toast = document.getElementById('toastContent');
+		toast.querySelector('.toast-body').textContent = msg;
+		const bsToast = new bootstrap.Toast(toast);
+		bsToast.show();
+	}
+</script>
+
+<script>
 	function toggleVisibility(inputId, toggleBtnId) {
 		const input = document.getElementById(inputId);
 		const toggle = document.getElementById(toggleBtnId);
