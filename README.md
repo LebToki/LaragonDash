@@ -24,6 +24,16 @@ Compatible with Laragon 6+ - 7+ and 8+ • PHP 7+ - 8+ • Apache/Nginx • Ligh
 > The original dashboard will remain available for legacy users until end of 2025.
 
 ---
+# ![LaragonDash Projects](assets/images/LaragonDash-Screenshot-Projects-Dark.png)
+
+# ![LaragonDash Projects](assets/images/LaragonDash-Screenshot-Projects-Light.png)
+
+# ![LaragonDash Projects](assets/images/LaragonDash-Screenshot-MailReader-Light.png)
+
+# ![LaragonDash Projects](assets/images/LaragonDash-Screenshot-Bcrypt-Dark.png)
+
+
+---
 
 ## 🧩 Modular Architecture
 
