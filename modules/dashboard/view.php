@@ -1,8 +1,9 @@
 <?php
-	require_once 'includes/functions.php';
-	$projects = getProjectTiles();
-	$system = getSystemInfo();
-	$colors = ['#FCE7F3', '#DCFCE7', '#E0F2FE', '#FEF9C3', '#FFEDD5', '#EDE9FE'];
+        require_once 'includes/functions.php';
+        require_once 'includes/lang.php';
+        $projects = getProjectTiles();
+        $system = getSystemInfo();
+        $colors = ['#FCE7F3', '#DCFCE7', '#E0F2FE', '#FEF9C3', '#FFEDD5', '#EDE9FE'];
 ?>
 
 <div class="container-fluid px-4">
@@ -25,15 +26,15 @@
 					</div>
 				<?php endforeach; ?>
 				
-				<!-- Optional: "Add More Projects" Tile -->
-				<div class="col-6 col-sm-4 col-md-3 col-xl-2">
-					<div class="card text-center shadow-sm border border-dashed bg-light h-100" title="Add New Project">
-						<div class="card-body d-flex justify-content-center align-items-center" style="height: 100px;">
-							<iconify-icon icon="mdi:plus-circle-outline" width="36" height="36"></iconify-icon>
-						</div>
-						<div class="card-footer bg-white text-muted small">More Projects</div>
-					</div>
-				</div>
+                                <!-- Optional: "Add More Projects" Tile -->
+                                <div class="col-6 col-sm-4 col-md-3 col-xl-2">
+                                        <div class="card text-center shadow-sm border border-dashed bg-light h-100" title="<?= t('dashboard.add_project') ?>">
+                                                <div class="card-body d-flex justify-content-center align-items-center" style="height: 100px;">
+                                                        <iconify-icon icon="mdi:plus-circle-outline" width="36" height="36"></iconify-icon>
+                                                </div>
+                                                <div class="card-footer bg-white text-muted small" data-i18n="dashboard.more_projects">More Projects</div>
+                                        </div>
+                                </div>
 			
 			</div>
 		</div>
@@ -41,15 +42,22 @@
 		<!-- Right Column: System Info -->
 		<div class="col-lg-3 col-12 mt-4 mt-lg-0">
 			<div class="bg-white border rounded p-3 shadow-sm" style="font-family: Poppins, sans-serif;">
-				<h6 class="fw-bold mb-3">
-					<iconify-icon icon="mdi:server" class="me-1"></iconify-icon>
-					System Information
-				</h6>
-				<ul class="list-unstyled small lh-lg mb-0">
-					<?php foreach ($system as $label => $value): ?>
-						<li><strong><?= $label ?>:</strong> <?= $value ?></li>
-					<?php endforeach; ?>
-				</ul>
+                                <h6 class="fw-bold mb-3">
+                                        <iconify-icon icon="mdi:server" class="me-1"></iconify-icon>
+                                        <span data-i18n="dashboard.system_info">System Information</span>
+                                </h6>
+                                <ul class="list-unstyled small lh-lg mb-0">
+                                        <?php
+                                        $labelMap = [
+                                                'PHP Version'     => t('system.php_version'),
+                                                'Server Software' => t('system.server_software'),
+                                                'Document Root'   => t('system.document_root'),
+                                                'Date'            => t('system.date'),
+                                        ];
+                                        foreach ($system as $label => $value): ?>
+                                                <li><strong><?= $labelMap[$label] ?? $label ?>:</strong> <?= $value ?></li>
+                                        <?php endforeach; ?>
+                                </ul>
 			</div>
 		</div>
 	</div>

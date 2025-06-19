@@ -1,14 +1,15 @@
+<?php require_once 'includes/lang.php'; ?>
 <div class="container py-4">
-	<h4 class="mb-4">🛠️ Settings</h4>
+        <h4 class="mb-4">🛠️ <span data-i18n="settings.title">Settings</span></h4>
 	
 	<div class="row g-4">
-		<div class="col-md-6">
-			<label class="form-label">Theme Mode</label>
-			<button class="btn btn-outline-dark w-100" data-theme-toggle>Toggle Theme</button>
-		</div>
+                <div class="col-md-6">
+                        <label class="form-label" data-i18n="settings.appearance.theme">Theme</label>
+                        <button class="btn btn-outline-dark w-100" data-theme-toggle>Toggle Theme</button>
+                </div>
 		
                 <div class="col-md-6">
-                        <label class="form-label">Language</label>
+                        <label class="form-label" data-i18n="settings.general.language">Language</label>
                         <?php
                                 $langFiles = glob(__DIR__ . '/../../includes/languages/*.json');
                                 $flags = [

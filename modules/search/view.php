@@ -1,6 +1,7 @@
 <?php
-	$query = $_GET['query'] ?? '';
-	$projects = getProjectTiles();
+        require_once 'includes/lang.php';
+        $query = $_GET['query'] ?? '';
+        $projects = getProjectTiles();
 	
 	$filtered = array_filter($projects, function ($p) use ($query) {
 		return stripos($p['name'], $query) !== false;
@@ -29,9 +30,9 @@
 	
 	<div class="row">
 		<?php if (empty($filtered)): ?>
-			<div class="col-12 text-center text-muted mt-5">
-				<p>No results found for "<strong><?= htmlspecialchars($query) ?></strong>".</p>
-			</div>
+                        <div class="col-12 text-center text-muted mt-5">
+                                <p><span data-i18n="search.no_results">No projects found</span> "<strong><?= htmlspecialchars($query) ?></strong>".</p>
+                        </div>
 		<?php else: ?>
 			<?php
 			$colors = ['#FCE7F3', '#DCFCE7', '#E0F2FE', '#FEF9C3', '#FFEDD5', '#EDE9FE'];
