@@ -13,11 +13,12 @@
 		"bcrypt": "Bcrypt",
 		"settings": "Paramètres"
 	},
-	"dashboard": {
-		"system_info": "Informations système",
-		"add_project": "Ajouter un projet",
-		"more_projects": "Plus de projets",
-		"project_types": {
+        "dashboard": {
+                "system_info": "Informations système",
+                "add_project": "Ajouter un projet",
+                "more_projects": "Plus de projets",
+                "explore_more": "Explorer plus de projets",
+                "project_types": {
 			"wordpress": "WordPress",
 			"joomla": "Joomla",
 			"laravel": "Laravel",
@@ -38,26 +39,47 @@
 		"disk_usage": "Utilisation du disque",
 		"cpu_usage": "Utilisation CPU"
 	},
-	"search": {
-		"placeholder": "Rechercher des projets...",
-		"no_results": "Aucun projet trouvé"
-	},
-	"email": {
-		"preview": "Aperçu de l'email",
-		"subject": "Sujet",
-		"from": "De",
-		"to": "À",
-		"date": "Date",
-		"body": "Contenu"
-	},
-	"vitals": {
-		"title": "Indicateurs système",
-		"server_status": "Statut serveur",
-		"database_status": "Statut base de données",
-		"online": "En ligne",
-		"offline": "Hors ligne",
-		"last_checked": "Dernière vérification"
-	},
+       "search": {
+               "placeholder": "Rechercher des projets...",
+                "no_results": "Aucun projet trouvé",
+                "results_for": "Résultats de recherche pour \"{query}\"",
+                "no_query": "Aucune recherche saisie.",
+                "no_results_for": "Aucun résultat pour {query}"
+       },
+       "email": {
+               "preview": "Aperçu de l'email",
+               "subject": "Sujet",
+               "from": "De",
+               "to": "À",
+                "date": "Date",
+                "body": "Contenu",
+                "inbox": "Boîte de réception",
+                "no_emails": "Aucun email trouvé.",
+                "confirm_delete": "Supprimer cet email ?",
+                "deleted_success": "Email supprimé avec succès.",
+                "select_prompt": "Sélectionnez un email à afficher"
+       },
+       "vitals": {
+               "title": "Indicateurs système",
+               "server_status": "Statut serveur",
+               "database_status": "Statut base de données",
+               "online": "En ligne",
+               "offline": "Hors ligne",
+                "last_checked": "Dernière vérification",
+                "uptime_cpu": "Temps de fonctionnement & utilisation CPU",
+                "memory_usage": "Utilisation mémoire",
+                "disk_usage": "Utilisation disque",
+                "uptime": "Temps de fonctionnement",
+                "cpu_usage": "Utilisation CPU",
+                "total": "Total",
+                "used": "Utilisé",
+                "free": "Libre",
+                "loading": "Chargement...",
+                "unavailable": "Indisponible",
+                "cpu_usage_label": "Utilisation CPU %",
+                "memory_label": "Mémoire (KB)",
+                "disk_usage_label": "Utilisation disque %"
+       },
 	"bcrypt": {
 		"title": "Outils de développement Bcrypt",
 		"generate_tab": "Générer un hachage",

@@ -17,6 +17,7 @@
     "system_info": "سسٹم کی معلومات",
     "add_project": "نیا پراجیکٹ شامل کریں",
     "more_projects": "مزید پراجیکٹس",
+    "explore_more": "مزید پراجیکٹس دیکھیں",
     "project_types": {
       "wordpress": "ورڈپریس",
       "joomla": "جوملا",
@@ -40,7 +41,10 @@
   },
   "search": {
     "placeholder": "پراجیکٹس تلاش کریں...",
-    "no_results": "کوئی پراجیکٹ نہیں ملا"
+    "no_results": "کوئی پراجیکٹ نہیں ملا",
+    "results_for": "\"{query}\" کے نتائج",
+    "no_query": "کوئی تلاش درج نہیں کی گئی۔",
+    "no_results_for": "{query} کے لیے کوئی نتائج نہیں"
   },
   "email": {
     "preview": "ای میل کا پیش منظر",
@@ -48,7 +52,12 @@
     "from": "بھیجنے والا",
     "to": "وصول کنندہ",
     "date": "تاریخ",
-    "body": "مواد"
+    "body": "مواد",
+    "inbox": "ان باکس",
+    "no_emails": "کوئی ای میل نہیں ملی۔",
+    "confirm_delete": "یہ ای میل حذف کریں؟",
+    "deleted_success": "ای میل کامیابی سے حذف ہوگئی۔",
+    "select_prompt": "دیکھنے کے لیے ایک ای میل منتخب کریں"
   },
   "vitals": {
     "title": "سسٹم کی حیثیت",
@@ -56,7 +65,20 @@
     "database_status": "ڈیٹا بیس کی حیثیت",
     "online": "آن لائن",
     "offline": "آف لائن",
-    "last_checked": "آخری بار چیک کیا گیا"
+    "last_checked": "آخری بار چیک کیا گیا",
+    "uptime_cpu": "اپ ٹائم اور CPU استعمال",
+    "memory_usage": "میموری استعمال",
+    "disk_usage": "ڈسک استعمال",
+    "uptime": "اپ ٹائم",
+    "cpu_usage": "CPU استعمال",
+    "total": "کل",
+    "used": "استعمال شدہ",
+    "free": "خالی",
+    "loading": "لوڈ ہو رہا ہے...",
+    "unavailable": "دستیاب نہیں",
+    "cpu_usage_label": "CPU استعمال %",
+    "memory_label": "میموری (KB)",
+    "disk_usage_label": "ڈسک استعمال %"
   },
   "bcrypt": {
     "title": "Bcrypt جنریٹر",

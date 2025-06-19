@@ -1,6 +1,7 @@
 <?php
-	$query = $_GET['query'] ?? '';
-	$projects = getProjectTiles();
+        require_once 'includes/functions.php';
+        $query = $_GET['query'] ?? '';
+        $projects = getProjectTiles();
 	
 	$filtered = array_filter($projects, function ($p) use ($query) {
 		return stripos($p['name'], $query) !== false;
@@ -18,20 +19,20 @@
 </style>
 
 <div class="container-fluid px-3 py-4">
-	<?php if (!empty($query)): ?>
-		<h4 class="mb-3">
-			<iconify-icon icon="ic:round-search" class="me-1"></iconify-icon>
-			Search Results for “<?= htmlspecialchars($query) ?>”
-		</h4>
-	<?php else: ?>
-		<h4 class="mb-3 text-muted">No search query entered.</h4>
-	<?php endif; ?>
+        <?php if (!empty($query)): ?>
+                <h4 class="mb-3">
+                        <iconify-icon icon="ic:round-search" class="me-1"></iconify-icon>
+                        <?= t('search.results_for', ['query' => htmlspecialchars($query)]) ?>
+                </h4>
+        <?php else: ?>
+                <h4 class="mb-3 text-muted" data-i18n="search.no_query">No search query entered.</h4>
+        <?php endif; ?>
 	
 	<div class="row">
-		<?php if (empty($filtered)): ?>
-			<div class="col-12 text-center text-muted mt-5">
-				<p>No results found for "<strong><?= htmlspecialchars($query) ?></strong>".</p>
-			</div>
+                <?php if (empty($filtered)): ?>
+                        <div class="col-12 text-center text-muted mt-5">
+                                <p><?= t('search.no_results_for', ['query' => '<strong>' . htmlspecialchars($query) . '</strong>']) ?></p>
+                        </div>
 		<?php else: ?>
 			<?php
 			$colors = ['#FCE7F3', '#DCFCE7', '#E0F2FE', '#FEF9C3', '#FFEDD5', '#EDE9FE'];

@@ -17,6 +17,7 @@
     "system_info": "Información del Sistema",
     "add_project": "Añadir Proyecto",
     "more_projects": "Más Proyectos",
+    "explore_more": "Explorar más proyectos",
     "project_types": {
       "wordpress": "WordPress",
       "joomla": "Joomla",
@@ -40,7 +41,10 @@
   },
   "search": {
     "placeholder": "Buscar proyectos...",
-    "no_results": "No se encontraron proyectos"
+    "no_results": "No se encontraron proyectos",
+    "results_for": "Resultados de búsqueda para \"{query}\"",
+    "no_query": "No se ingresó ninguna búsqueda.",
+    "no_results_for": "No hay resultados para {query}"
   },
   "email": {
     "preview": "Vista Previa",
@@ -50,7 +54,11 @@
     "date": "Fecha",
     "body": "Cuerpo",
     "list": "Lista de correo electrónico",
-    "no_emails": "No se encontraron correos electrónicos"
+    "no_emails": "No se encontraron correos electrónicos",
+    "inbox": "Bandeja de entrada",
+    "confirm_delete": "¿Eliminar este correo?",
+    "deleted_success": "Correo eliminado correctamente.",
+    "select_prompt": "Seleccione un correo para ver"
   },
   "vitals": {
     "title": "Estado del Sistema",
@@ -58,7 +66,20 @@
     "database_status": "Estado de la Base de Datos",
     "online": "En Línea",
     "offline": "Desconectado",
-    "last_checked": "Última verificación"
+    "last_checked": "Última verificación",
+    "uptime_cpu": "Tiempo activo y uso de CPU",
+    "memory_usage": "Uso de memoria",
+    "disk_usage": "Uso de disco",
+    "uptime": "Tiempo activo",
+    "cpu_usage": "Uso de CPU",
+    "total": "Total",
+    "used": "Usado",
+    "free": "Libre",
+    "loading": "Cargando...",
+    "unavailable": "No disponible",
+    "cpu_usage_label": "Uso de CPU %",
+    "memory_label": "Memoria (KB)",
+    "disk_usage_label": "Uso de disco %"
   },
   "bcrypt": {
     "title": "Generador Bcrypt",

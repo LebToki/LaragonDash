@@ -13,11 +13,12 @@
 		"bcrypt": "Bcrypt",
 		"settings": "Configurações"
 	},
-	"dashboard": {
-		"system_info": "Informações do Sistema",
-		"add_project": "Adicionar Novo Projeto",
-		"more_projects": "Mais Projetos",
-		"project_types": {
+        "dashboard": {
+                "system_info": "Informações do Sistema",
+                "add_project": "Adicionar Novo Projeto",
+                "more_projects": "Mais Projetos",
+                "explore_more": "Explorar mais projetos",
+                "project_types": {
 			"wordpress": "WordPress",
 			"joomla": "Joomla",
 			"laravel": "Laravel",
@@ -38,26 +39,47 @@
 		"disk_usage": "Uso de Disco",
 		"cpu_usage": "Uso da CPU"
 	},
-	"search": {
-		"placeholder": "Buscar projetos...",
-		"no_results": "Nenhum projeto encontrado"
-	},
-	"email": {
-		"preview": "Pré-visualização do Email",
-		"subject": "Assunto",
-		"from": "De",
-		"to": "Para",
-		"date": "Data",
-		"body": "Corpo"
-	},
-	"vitals": {
-		"title": "Indicadores do Sistema",
-		"server_status": "Status do Servidor",
-		"database_status": "Status do Banco de Dados",
-		"online": "Online",
-		"offline": "Offline",
-		"last_checked": "Última verificação"
-	},
+       "search": {
+               "placeholder": "Buscar projetos...",
+                "no_results": "Nenhum projeto encontrado",
+                "results_for": "Resultados da busca por \"{query}\"",
+                "no_query": "Nenhuma busca informada.",
+                "no_results_for": "Nenhum resultado para {query}"
+       },
+       "email": {
+               "preview": "Pré-visualização do Email",
+               "subject": "Assunto",
+               "from": "De",
+               "to": "Para",
+                "date": "Data",
+                "body": "Corpo",
+                "inbox": "Caixa de Entrada",
+                "no_emails": "Nenhum email encontrado.",
+                "confirm_delete": "Excluir este email?",
+                "deleted_success": "Email excluído com sucesso.",
+                "select_prompt": "Selecione um email para visualizar"
+       },
+       "vitals": {
+               "title": "Indicadores do Sistema",
+               "server_status": "Status do Servidor",
+               "database_status": "Status do Banco de Dados",
+               "online": "Online",
+               "offline": "Offline",
+                "last_checked": "Última verificação",
+                "uptime_cpu": "Tempo de atividade e uso da CPU",
+                "memory_usage": "Uso de memória",
+                "disk_usage": "Uso de disco",
+                "uptime": "Tempo de atividade",
+                "cpu_usage": "Uso da CPU",
+                "total": "Total",
+                "used": "Usado",
+                "free": "Livre",
+                "loading": "Carregando...",
+                "unavailable": "Indisponível",
+                "cpu_usage_label": "Uso da CPU %",
+                "memory_label": "Memória (KB)",
+                "disk_usage_label": "Uso de disco %"
+       },
 	"bcrypt": {
 		"title": "Gerador Bcrypt",
 		"input_placeholder": "Digite o texto para encriptar",

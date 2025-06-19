@@ -31,5 +31,27 @@
 
   "default_footer": "&copy; 2024<?php echo htmlspecialchars(date('Y')); ?>, Tarek Tarabichi",
   "made_with_love": "Dibuat dengan <span style=\"color: #e25555;\">&hearts;</span> dan didukung oleh Laragon",
-  "logout": "Logout"
+  "logout": "Logout",
+  "dashboard.explore_more": "Jelajahi lebih banyak proyek",
+  "search.results_for": "Hasil pencarian untuk \"{query}\"",
+  "search.no_query": "Tidak ada kata kunci pencarian.",
+  "search.no_results_for": "Tidak ada hasil untuk {query}",
+  "email.inbox": "Kotak Masuk",
+  "email.no_emails": "Tidak ada email ditemukan.",
+  "email.confirm_delete": "Hapus email ini?",
+  "email.deleted_success": "Email berhasil dihapus.",
+  "email.select_prompt": "Pilih email untuk dilihat",
+  "vitals.uptime_cpu": "Waktu Aktif & Penggunaan CPU",
+  "vitals.memory_usage": "Penggunaan Memori",
+  "vitals.disk_usage": "Penggunaan Disk",
+  "vitals.uptime": "Waktu Aktif",
+  "vitals.cpu_usage": "Penggunaan CPU",
+  "vitals.total": "Total",
+  "vitals.used": "Terpakai",
+  "vitals.free": "Tersisa",
+  "vitals.loading": "Memuat...",
+  "vitals.unavailable": "Tidak tersedia",
+  "vitals.cpu_usage_label": "Penggunaan CPU %",
+  "vitals.memory_label": "Memori (KB)",
+  "vitals.disk_usage_label": "Penggunaan Disk %"
 }

@@ -17,6 +17,7 @@
     "system_info": "सिस्टम जानकारी",
     "add_project": "नया प्रोजेक्ट जोड़ें",
     "more_projects": "अधिक प्रोजेक्ट्स",
+    "explore_more": "और प्रोजेक्ट्स देखें",
     "project_types": {
       "wordpress": "वर्डप्रेस",
       "joomla": "जूमला",
@@ -40,7 +41,10 @@
   },
   "search": {
     "placeholder": "प्रोजेक्ट खोजें...",
-    "no_results": "कोई प्रोजेक्ट नहीं मिला"
+    "no_results": "कोई प्रोजेक्ट नहीं मिला",
+    "results_for": "\"{query}\" के लिए परिणाम",
+    "no_query": "कोई खोज दर्ज नहीं की गई।",
+    "no_results_for": "{query} के लिए कोई परिणाम नहीं"
   },
   "email": {
     "preview": "ईमेल पूर्वावलोकन",
@@ -48,7 +52,12 @@
     "from": "से",
     "to": "को",
     "date": "तारीख",
-    "body": "संदेश"
+    "body": "संदेश",
+    "inbox": "इनबॉक्स",
+    "no_emails": "कोई ईमेल नहीं मिला।",
+    "confirm_delete": "इस ईमेल को हटाएं?",
+    "deleted_success": "ईमेल सफलतापूर्वक हटाया गया।",
+    "select_prompt": "देखने के लिए एक ईमेल चुनें"
   },
   "vitals": {
     "title": "सिस्टम स्थिति",
@@ -56,7 +65,20 @@
     "database_status": "डेटाबेस स्थिति",
     "online": "ऑनलाइन",
     "offline": "ऑफ़लाइन",
-    "last_checked": "आखिरी जाँच"
+    "last_checked": "आखिरी जाँच",
+    "uptime_cpu": "अपटाइम और CPU उपयोग",
+    "memory_usage": "मेमोरी उपयोग",
+    "disk_usage": "डिस्क उपयोग",
+    "uptime": "अपटाइम",
+    "cpu_usage": "CPU उपयोग",
+    "total": "कुल",
+    "used": "उपयोग", 
+    "free": "खाली",
+    "loading": "लोड हो रहा है...",
+    "unavailable": "उपलब्ध नहीं",
+    "cpu_usage_label": "CPU उपयोग %",
+    "memory_label": "मेमोरी (KB)",
+    "disk_usage_label": "डिस्क उपयोग %"
   },
   "bcrypt": {
     "title": "Bcrypt जनरेटर",
