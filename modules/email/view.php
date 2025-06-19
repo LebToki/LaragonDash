@@ -8,7 +8,7 @@
        if (!is_dir($emailDir)) {
                mkdir($emailDir, 0777, true);
        }
-       $emails = glob($emailDir . '/*.html');
+       $emails = glob($emailDir . '/*.{html,txt}', GLOB_BRACE);
        $current = $_GET['email'] ?? null;
 ?>
 
@@ -44,8 +44,13 @@
 				
                                if ($current && file_exists($emailDir . '/' . $current)) {
                                        echo "<div class='card shadow-sm'><div class='card-body'>";
-                                       include $emailDir . '/' . $current;
-					echo "</div></div>";
+                                       $ext = pathinfo($current, PATHINFO_EXTENSION);
+                                       if ($ext === 'html') {
+                                               include $emailDir . '/' . $current;
+                                       } else {
+                                               echo '<pre>' . nl2br(htmlspecialchars(file_get_contents($emailDir . '/' . $current))) . '</pre>';
+                                       }
+                                       echo "</div></div>";
 				} else {
 					echo "<div class='text-muted'>Select an email to view.</div>";
 				}
