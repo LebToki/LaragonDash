@@ -28,6 +28,8 @@ Compatible with Laragon 6+ - 7+ and 8+ • PHP 7+ - 8+ • Apache/Nginx • Ligh
 
 # ![LaragonDash Projects](assets/images/LaragonDash-Screenshot-Projects-Light.png)
 
+# ![LaragonDash Projects](assets/images/LaragonDash-Screenshot-MailReader-Light.png)
+
 # ![LaragonDash Projects](assets/images/LaragonDash-Screenshot-Bcrypt-Dark.png)
 
 
