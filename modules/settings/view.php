@@ -1,5 +1,12 @@
+<?php
+        if (isset($_GET['page']) && $_GET['page'] === 'language-editor') {
+                include __DIR__ . '/language-editor.php';
+                return;
+        }
+?>
+
 <div class="container py-4">
-	<h4 class="mb-4">🛠️ Settings</h4>
+        <h4 class="mb-4">🛠️ Settings</h4>
 	
 	<div class="row g-4">
 		<div class="col-md-6">
@@ -40,5 +47,9 @@
                                 <?php endforeach; ?>
                         </select>
                 </div>
-	</div>
+
+                <div class="col-12">
+                        <a href="?module=settings&page=language-editor" class="btn btn-outline-secondary w-100">Edit Language Files</a>
+                </div>
+        </div>
 </div>
