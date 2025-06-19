@@ -19,17 +19,27 @@
 			<iconify-icon icon="ph:moon-stars-duotone"></iconify-icon>
 		</button>
 		
-		<!-- Language Dropdown -->
-		<select id="lang-select" class="form-select form-select-sm" aria-label="Language Selector" style="width: auto;">
-			<option value="en">🇬🇧</option>
-			<option value="fr">🇫🇷</option>
-			<option value="es">🇪🇸</option>
-			<option value="de">🇩🇪</option>
-			<option value="pt">🇵🇹</option>
-			<option value="id">🇮🇩</option>
-			<option value="tl">🇵🇭</option>
-			<option value="ar">🇸🇦</option>
-		</select>
+                <!-- Language Dropdown -->
+                <?php
+                        $langFiles = glob(__DIR__ . '/../assets/languages/*.json');
+                        $flags = [
+                                'en' => '🇬🇧',
+                                'fr' => '🇫🇷',
+                                'es' => '🇪🇸',
+                                'de' => '🇩🇪',
+                                'pt' => '🇵🇹',
+                                'id' => '🇮🇩',
+                                'tl' => '🇵🇭',
+                                'ar' => '🇸🇦'
+                        ];
+                ?>
+                <select id="lang-select" class="form-select form-select-sm" aria-label="Language Selector" style="width: auto;">
+                        <?php foreach($langFiles as $file): $code = basename($file, '.json'); ?>
+                                <option value="<?= $code ?>">
+                                        <?= $flags[$code] ?? strtoupper($code) ?>
+                                </option>
+                        <?php endforeach; ?>
+                </select>
 		
 		<!-- User Dropdown -->
 		<div class="dropdown">
