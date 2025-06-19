@@ -40,6 +40,21 @@
 		return $data;
 	}
 	
+	function checkDbStatus()
+	{
+		try {
+			$conn = new PDO('mysql:host=localhost;dbname=your_db_name', 'your_user', 'your_pass');
+			return $conn ? 'online' : 'offline';
+		} catch (PDOException $e) {
+			return 'offline';
+		}
+	}
+	
+	function checkServerStatus()
+	{
+		return @fsockopen("127.0.0.1", 80) ? 'online' : 'offline';
+	}
+	
 	try {
 		$uptime = safeExec('uptime -p') ?: 'Unavailable';
 		$cpuUsage = safeExec("top -bn1 | grep 'Cpu(s)' | awk '{print 100 - $8}'") . '%' ?: '0%';
@@ -78,9 +93,11 @@
 			'memoryUsageLabels' => $memoryUsageLabels,
 			'diskUsageData' => $diskUsageData,
 			'diskUsageLabels' => $diskUsageLabels,
+			'serverStatus' => checkServerStatus(),
+			'databaseStatus' => checkDbStatus(),
+			'lastChecked' => date('Y-m-d H:i:s'),
 		]);
 	} catch (Exception $e) {
 		http_response_code(500);
 		echo json_encode(['error' => $e->getMessage()]);
 	}
-?>

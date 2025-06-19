@@ -21,14 +21,15 @@
 		        aria-label="Toggle Theme">
 			<iconify-icon icon="ph:moon-stars-duotone"></iconify-icon>
 		</button>
-
+		
 		
 		<!-- Language Selector (dynamically populated in app.js) -->
-		
-		
 		<div class="dropdown lang-dropdown">
-			<button class="btn btn-sm btn-outline-secondary dropdown-toggle" type="button" id="langDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-				<span class="fi fi-gb me-1" id="currentLangFlag"></span>
+			<button class="btn btn-sm btn-outline-secondary dropdown-toggle" type="button" id="langDropdown"
+			        data-bs-toggle="dropdown" aria-expanded="false">
+				<span class="fi fi-gb me-1"></span>
+					<!-- where $code = 'gb', 'fr', etc -->
+				
 				<span id="currentLangLabel">English</span>
 			</button>
 			<ul class="dropdown-menu dropdown-menu-end" aria-labelledby="langDropdown" id="languageList">

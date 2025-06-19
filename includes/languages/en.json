@@ -42,9 +42,13 @@
   "search": {
     "placeholder": "Search projects...",
     "no_results": "No projects found",
-    "results_for": "Search Results for \"{query}\"",
+    "results_for": "Results for: {query}",
     "no_query": "No search query entered.",
-    "no_results_for": "No results found for {query}"
+    "no_results_for": "No projects found for {query}."
+  },
+  "projects": {
+    "search_placeholder": "Search projects...",
+    "all_types": "All Types"
   },
   "email": {
     "preview": "Email Preview",

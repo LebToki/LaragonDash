@@ -1,4 +1,12 @@
 <?php
+	
+	//------------------------------------------
+	// At the top of header.php or index.php during development only
+//	if (file_exists(__DIR__ . '/generate_langs_js.php')) {
+//		include_once __DIR__ . '/generate_langs_js.php';
+//	}
+	//------------------------------------------
+	
 	/**
 	 * Main helper functions for LaragonDash
 	 */

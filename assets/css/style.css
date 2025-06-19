@@ -85,11 +85,10 @@ iconify-icon {
   color: #000;
   font-weight: 600;
 }
-
 [data-theme="dark"] .sidebar {
-  background-color: #2c2c3e;
-  border-color: #000;
-  color: #fff;
+  background-color: #000000 !important;
+  border-color: #1b1a1a !important;
+  color: #fff!important;
 }
 
 [data-theme="dark"] .sidebar .nav-link {
