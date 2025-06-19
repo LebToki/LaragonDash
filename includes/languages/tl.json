@@ -93,8 +93,9 @@
 		"edit": "Ubah",
 		"delete": "Hapus",
 		"confirm": "Konfirmasi",
-		"dismiss": "Tutup"
-	},
+                "dismiss": "Tutup",
+                "logout": "Logout"
+        },
 	"titles": {
 		"dashboard": "Dasbor",
 		"search": "Cari Proyek",
