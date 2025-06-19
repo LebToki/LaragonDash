@@ -1,15 +1,8 @@
 <?php
-	$current = $_GET['module'] ?? 'dashboard';
-	
-	// Language detection
-	$lang = $_COOKIE['lang'] ?? 'en';
-	$langFile = __DIR__ . '/../includes/lang/' . $lang . '.json';
-	$trans = [];
-	
-	if (file_exists($langFile)) {
-		$json = file_get_contents($langFile);
-		$trans = json_decode($json, true);
-	}
+        $current = $_GET['module'] ?? 'dashboard';
+
+        require_once __DIR__ . '/lang.php';
+        $trans = getTranslations();
 	
 	$modules = [
 		'dashboard' => ['icon' => 'mdi:view-dashboard-outline', 'label' => $trans['navigation']['dashboard'] ?? 'Dashboard'],
