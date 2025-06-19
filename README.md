@@ -21,10 +21,10 @@ Users who prefer the traditional layout can continue using it until the end of t
 ---
 
 ![Promo](assets/images/screenshots/LaragonDash.jpg)
-![Dashboard Light](assets/images/screenshots/LaragonDash-Screenshot-Dashboard-Light.png)
-![Dashboard Dark](assets/images/screenshots/LaragonDash-Screenshot-Dashboard-Dark.png)
-![MailReader](assets/images/screenshots/LaragonDash-Screenshot-MailReader-Light.png)
-![Bcrypt Tool](assets/images/screenshots//LaragonDash-Screenshot-Bcrypt-Dark.png)
+![Dashboard Light](assets/images/LaragonDash-Screenshot-Dashboard-Light.png)
+![Dashboard Dark](assets/images/LaragonDash-Screenshot-Dashboard-Dark.png)
+![MailReader](assets/images/LaragonDash-Screenshot-MailReader-Light.png)
+![Bcrypt Tool](assets/images//LaragonDash-Screenshot-Bcrypt-Dark.png)
 
 ---
 
