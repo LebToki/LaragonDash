@@ -1,6 +1,5 @@
 # ![LaragonDash Logo](assets/favicon/favicon-32x32.png) LaragonDash
 
-## 🚀 Welcome to LaragonDash v1.0
 ## 🚀 Welcome to LaragonDash v1.1
 
 
