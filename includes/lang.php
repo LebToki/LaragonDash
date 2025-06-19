@@ -1,38 +1,45 @@
 <?php
 	
-function getCurrentLang()
+	function getCurrentLang(): string
 {
-        return $_COOKIE['lang'] ?? 'en';
+return $_COOKIE['lang'] ?? 'en';
 }
 
-function getTranslations($lang = null)
+function getTranslations(string $lang = null): array
 {
-        $lang = $lang ?? getCurrentLang();
-        $path = __DIR__ . "/languages/$lang.json";
-        if (file_exists($path)) {
-                return json_decode(file_get_contents($path), true);
-        }
-        return [];
+$lang = $lang ?? getCurrentLang();
+$path = __DIR__ . "/languages/$lang.json";
+if (file_exists($path)) {
+return json_decode(file_get_contents($path), true);
+}
+return [];
 }
 
 /**
- * Retrieve a translation value using dot notation.
- */
-function t(string $key, string $default = ''): string
+* Translate key with optional replacements.
+*/
+function t(string $key, array $replace = [], string $default = ''): string
 {
-        static $cache = null;
-        if ($cache === null) {
-                $cache = getTranslations();
-        }
+static $translations = null;
+if ($translations === null) {
+$translations = getTranslations();
+}
 
-        $parts = explode('.', $key);
-        $value = $cache;
-        foreach ($parts as $part) {
-                if (!is_array($value) || !array_key_exists($part, $value)) {
-                        return $default;
-                }
-                $value = $value[$part];
-        }
+$value = $translations;
+foreach (explode('.', $key) as $part) {
+if (!isset($value[$part])) {
+return $default ?: $key;
+}
+$value = $value[$part];
+}
 
-        return is_string($value) ? $value : $default;
+if (!is_string($value)) {
+return $default;
+}
+
+foreach ($replace as $search => $val) {
+$value = str_replace('{' . $search . '}', $val, $value);
+}
+
+return $value;
 }

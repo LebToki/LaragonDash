@@ -170,6 +170,6 @@ Use `data-i18n="module.key"` for inline translations.
 ## 📄 License
 
 This project is licensed under the **Creative Commons Attribution 4.0** license (CC BY 4.0).  
-Made with 💙 by [Tarek Tarabichi](https://2tinteractive.com)  
+Made with 💙 by [Tarek Tarabichi](https://2tinteractive.com)
 
 Part of the toolset: **LaragonDash**, **CRMHub**, **bMessenger**, **SignOS**
