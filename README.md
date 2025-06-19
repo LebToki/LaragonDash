@@ -1,6 +1,6 @@
 # ![LaragonDash Logo](assets/favicon/favicon-32x32.png) **LaragonDash**
 
-> 🚀 A modern, modular, multilingual dashboard for Laragon 6+  
+> 🚀 A modern, modular, multilingual dashboard for Laragon 6+ - 7+ and 8+  
 > Built for developers who want more clarity, control, and customization.
 
 ---
