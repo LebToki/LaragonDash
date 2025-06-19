@@ -150,6 +150,7 @@ Just create:
 ├── index.php
 ├── style.css
 ├── script.js
+
 ```
 
 Optional: include a `lang.json` file inside your module to localize text.  
@@ -170,4 +171,5 @@ Use `data-i18n="module.key"` for inline translations.
 
 This project is licensed under the **Creative Commons Attribution 4.0** license (CC BY 4.0).  
 Made with 💙 by [Tarek Tarabichi](https://2tinteractive.com)  
+
 Part of the toolset: **LaragonDash**, **CRMHub**, **bMessenger**, **SignOS**
