@@ -1,0 +1,1 @@
+<?php // DB or config details here ?>
