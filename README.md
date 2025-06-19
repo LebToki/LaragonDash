@@ -1,23 +1,28 @@
 # ![LaragonDash Logo](assets/favicon/favicon-32x32.png) LaragonDash
 
-## 🚀 Welcome to LaragonDash v1.1
+## 🚀 Welcome to LaragonDash
 
-
-**LaragonDash** is the natural evolution of the original [Laragon Dashboard](https://github.com/LebToki/Laragon-Dashboard). It’s **modular**, **future-proof**, and built for developers who want speed, control, and an intuitive interface to manage their local stack.
+**LaragonDash** is the natural evolution of the
+original [Laragon Dashboard](https://github.com/LebToki/Laragon-Dashboard). It’s **modular**, **future-proof**, and
+built for developers who want speed, control, and an intuitive interface to manage their local stack.
 
 ---
 
-> Following the success and adoption of the original Laragon Dashboard by the community, we’re proud to introduce `LaragonDash v1.0`.  
-> Following the success and adoption of the original Laragon Dashboard by the community, we’re proud to introduce `LaragonDash v1.1`.
-> This spin-off delivers a modern MVC-inspired layout, support for modules, improved theming, and smarter tooling — while still preserving the simplicity developers loved about the original.
+> Following the success and adoption of the original Laragon Dashboard by the community, we’re proud to introduce
+`LaragonDash v1.1`.
+> This spin-off delivers a modern MVC-inspired layout, support for modules, improved theming, and smarter tooling —
+> while still preserving the simplicity developers loved about the original.
 
-> ⚙️ **LaragonDash** is fully compatible with Laragon 6+ and will continue to receive updates and improvements as the new primary branch of development.
+> ⚙️ **LaragonDash** is fully compatible with Laragon 6+ and will continue to receive updates and improvements as the
+> new primary branch of development.
 
 ---
 
 💡 **Prefer the classic look?**  
-The original [Laragon Dashboard](https://github.com/LebToki/Laragon-Dashboard) will remain available in its current form.  
-Users who prefer the traditional layout can continue using it until the end of the year, while all future development and new features will be released under **LaragonDash**.
+The original [Laragon Dashboard](https://github.com/LebToki/Laragon-Dashboard) will remain available in its current
+form.  
+Users who prefer the traditional layout can continue using it until the end of the year, while all future development
+and new features will be released under **LaragonDash**.
 
 ---
 
@@ -30,6 +35,7 @@ Users who prefer the traditional layout can continue using it until the end of t
 ---
 
 ## 🧩 Modular System
+
 LaragonDash is structured as **modular** components under `/modules/` allowing you to plug and play:
 
 - 🔍 **Search** – Quickly find your projects
@@ -37,6 +43,7 @@ LaragonDash is structured as **modular** components under `/modules/` allowing y
   @@ -67,63 +67,74 @@ You can also build and register your own modules!
   $domainSuffix = '.local';
   $ignore_dirs = array('.', '..', 'logs', 'access-logs', 'vendor', 'favicon_io', 'assets');
+
 ```
 
 4. Update mailbox path in .env or config.php:
@@ -52,10 +59,10 @@ LaragonDash/
 ├── assets/
 ├── includes/
 ├── modules/
-│   ├── search/
-│   ├── mail/
-│   ├── bcrypt/
-│   └── vitals/
+│ ├── search/
+│ ├── mail/
+│ ├── bcrypt/
+│ └── vitals/
 ├── index.php
 └── README.md
 
@@ -104,8 +111,6 @@ All translations reside in `includes/languages/`. Want to contribute your own? S
 This project is licensed under the Attribution License.
 This work by Tarek Tarabichi is licensed under
 CC BY 4.0
-
-
 
 💙 Credits
 Made with 💙 by Tarek Tarabichi
