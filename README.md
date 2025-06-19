@@ -56,7 +56,7 @@ LaragonDash/
 
 ## 🌐 Language Support
 
-> All translations reside in `/assets/languages/`  
+> All translations reside in `/includes/languages/`  
 > Add your own `xx.json` to contribute!
 
 | Code   | Language             | Flag |
