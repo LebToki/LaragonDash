@@ -1,0 +1,158 @@
+{
+  "app": {
+    "title": "LaragonDash - Панель управления локальными проектами",
+    "description": "LaragonDash - это удобная панель управления для разработчиков, помогающая организовывать, просматривать и управлять проектами Laragon.",
+    "author": "Тарек Тарабичи из 2TInteractive"
+  },
+  "navigation": {
+    "dashboard": "Панель управления",
+    "search": "Поиск",
+    "projects": "Проекты",
+    "email": "Почта",
+    "vitals": "Состояние системы",
+    "bcrypt": "Bcrypt",
+    "settings": "Настройки"
+  },
+  "dashboard": {
+    "system_info": "Системная информация",
+    "add_project": "Добавить проект",
+    "more_projects": "Еще проекты",
+    "project_types": {
+      "wordpress": "WordPress",
+      "joomla": "Joomla",
+      "laravel": "Laravel",
+      "drupal": "Drupal",
+      "symfony": "Symfony",
+      "python": "Python",
+      "codeigniter": "CodeIgniter",
+      "unknown": "Неизвестно"
+    }
+  },
+  "system": {
+    "php_version": "Версия PHP",
+    "server_software": "Серверное ПО",
+    "document_root": "Корневая директория",
+    "date": "Дата",
+    "uptime": "Время работы",
+    "memory_usage": "Использование памяти",
+    "disk_usage": "Использование диска",
+    "cpu_usage": "Нагрузка CPU"
+  },
+  "search": {
+    "placeholder": "Поиск проектов...",
+    "no_results": "Проекты не найдены"
+  },
+  "email": {
+    "preview": "Просмотр письма",
+    "subject": "Тема",
+    "from": "От кого",
+    "to": "Кому",
+    "date": "Дата",
+    "body": "Содержимое"
+  },
+  "vitals": {
+    "title": "Состояние системы",
+    "server_status": "Статус сервера",
+    "database_status": "Статус БД",
+    "online": "В сети",
+    "offline": "Не в сети",
+    "last_checked": "Проверено"
+  },
+  "bcrypt": {
+    "title": "Инструменты Bcrypt",
+    "generate_tab": "Создать хеш",
+    "verify_tab": "Проверить хеш",
+    "info_tab": "Информация о хеше",
+    "strength_tab": "Надёжность пароля",
+    "input_placeholder": "Введите пароль для шифрования",
+    "password": "Пароль",
+    "hash_to_verify": "Bcrypt хеш",
+    "enter_hash_placeholder": "Вставьте bcrypt хеш сюда",
+    "generate": "Создать",
+    "verify": "Проверить",
+    "analyze": "Анализировать",
+    "check_strength": "Проверить надёжность",
+    "copy": "Копировать",
+    "copied": "Скопировано!",
+    "generating": "Создание...",
+    "verifying": "Проверка...",
+    "analyzing": "Анализ...",
+    "checking": "Проверка...",
+    "generated_hash": "Bcrypt хеш создан",
+    "verify_success": "✅ Пароль совпадает!",
+    "verify_failed": "❌ Пароль не совпадает",
+    "hash_info": "Информация о хеше",
+    "hash_algorithm": "Алгоритм",
+    "hash_cost": "Фактор стоимости",
+    "hash_salt": "Соль",
+    "hash_value": "Значение хеша",
+    "password_strength": "Надёжность пароля",
+    "strength_very_weak": "Очень слабый",
+    "strength_weak": "Слабый",
+    "strength_moderate": "Средний",
+    "strength_strong": "Надёжный",
+    "strength_very_strong": "Очень надёжный",
+    "strength_tips": "Советы по созданию надёжного пароля:",
+    "strength_tip_length": "• Используйте не менее 12 символов",
+    "strength_tip_upper": "• Добавьте заглавные буквы",
+    "strength_tip_lower": "• Добавьте строчные буквы",
+    "strength_tip_number": "• Добавьте цифры",
+    "strength_tip_special": "• Добавьте специальные символы",
+    "error_enter_password": "Пожалуйста, введите пароль для создания хеша.",
+    "error_verify_fields": "Для проверки нужны и пароль, и хеш.",
+    "error_invalid_hash": "Неверный формат bcrypt хеша.",
+    "error_enter_hash": "Пожалуйста, введите bcrypt хеш для анализа.",
+    "error_enter_password_strength": "Пожалуйста, введите пароль для проверки надёжности."
+  },
+  "settings": {
+    "title": "Настройки",
+    "appearance": {
+      "title": "Внешний вид",
+      "theme": "Тема",
+      "light": "Светлая",
+      "dark": "Тёмная",
+      "system": "Системная"
+    },
+    "general": {
+      "title": "Основные",
+      "language": "Язык",
+      "save": "Сохранить изменения"
+    }
+  },
+  "alerts": {
+    "changes_saved": "Изменения сохранены",
+    "error_occurred": "Произошла ошибка",
+    "project_not_found": "Проект не найден",
+    "module_not_found": "Модуль не найден"
+  },
+  "buttons": {
+    "save": "Сохранить",
+    "cancel": "Отмена",
+    "close": "Закрыть",
+    "edit": "Редактировать",
+    "delete": "Удалить",
+    "confirm": "Подтвердить",
+    "dismiss": "Закрыть",
+    "logout": "Выйти"
+  },
+  "titles": {
+    "dashboard": "Панель управления",
+    "search": "Поиск проектов",
+    "projects": "Проекты",
+    "email": "Просмотр письма",
+    "vitals": "Состояние системы",
+    "bcrypt": "Инструменты Bcrypt",
+    "settings": "Настройки"
+  },
+  "tooltips": {
+    "theme_toggle": "Переключить тему",
+    "refresh": "Обновить",
+    "help": "Помощь",
+    "notifications": "Уведомления"
+  },
+  "errors": {
+    "404": "Страница не найдена",
+    "403": "Доступ запрещён",
+    "500": "Внутренняя ошибка сервера"
+  }
+}

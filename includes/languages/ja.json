@@ -1,0 +1,158 @@
+{
+  "app": {
+    "title": "LaragonDash - ローカルプロジェクトダッシュボード",
+    "description": "LaragonDashは、Laragonプロジェクトを整理、プレビュー、管理するためのクリーンな開発者向けダッシュボードです。",
+    "author": "2TInteractive タレック・タラビチ"
+  },
+  "navigation": {
+    "dashboard": "ダッシュボード",
+    "search": "検索",
+    "projects": "プロジェクト",
+    "email": "メール",
+    "vitals": "システム情報",
+    "bcrypt": "Bcrypt",
+    "settings": "設定"
+  },
+  "dashboard": {
+    "system_info": "システム情報",
+    "add_project": "新しいプロジェクトを追加",
+    "more_projects": "その他のプロジェクト",
+    "project_types": {
+      "wordpress": "WordPress",
+      "joomla": "Joomla",
+      "laravel": "Laravel",
+      "drupal": "Drupal",
+      "symfony": "Symfony",
+      "python": "Python",
+      "codeigniter": "CodeIgniter",
+      "unknown": "不明"
+    }
+  },
+  "system": {
+    "php_version": "PHPバージョン",
+    "server_software": "サーバーソフトウェア",
+    "document_root": "ドキュメントルート",
+    "date": "日付",
+    "uptime": "稼働時間",
+    "memory_usage": "メモリ使用量",
+    "disk_usage": "ディスク使用量",
+    "cpu_usage": "CPU使用率"
+  },
+  "search": {
+    "placeholder": "プロジェクトを検索...",
+    "no_results": "プロジェクトが見つかりません"
+  },
+  "email": {
+    "preview": "メールプレビュー",
+    "subject": "件名",
+    "from": "差出人",
+    "to": "宛先",
+    "date": "日付",
+    "body": "本文"
+  },
+  "vitals": {
+    "title": "システムステータス",
+    "server_status": "サーバーステータス",
+    "database_status": "データベースステータス",
+    "online": "オンライン",
+    "offline": "オフライン",
+    "last_checked": "最終確認"
+  },
+  "bcrypt": {
+    "title": "Bcrypt開発者ツール",
+    "generate_tab": "ハッシュ生成",
+    "verify_tab": "ハッシュ検証",
+    "info_tab": "ハッシュ情報",
+    "strength_tab": "パスワード強度",
+    "input_placeholder": "ハッシュ化するパスワードを入力",
+    "password": "パスワード",
+    "hash_to_verify": "Bcryptハッシュ",
+    "enter_hash_placeholder": "Bcryptハッシュをここに貼り付け",
+    "generate": "生成",
+    "verify": "検証",
+    "analyze": "分析",
+    "check_strength": "強度を確認",
+    "copy": "コピー",
+    "copied": "コピーしました！",
+    "generating": "生成中...",
+    "verifying": "検証中...",
+    "analyzing": "分析中...",
+    "checking": "確認中...",
+    "generated_hash": "Bcryptハッシュを生成しました",
+    "verify_success": "✅ パスワードが一致しました！",
+    "verify_failed": "❌ パスワードが一致しません",
+    "hash_info": "ハッシュ情報",
+    "hash_algorithm": "アルゴリズム",
+    "hash_cost": "コスト係数",
+    "hash_salt": "ソルト",
+    "hash_value": "ハッシュ値",
+    "password_strength": "パスワード強度",
+    "strength_very_weak": "非常に弱い",
+    "strength_weak": "弱い",
+    "strength_moderate": "普通",
+    "strength_strong": "強い",
+    "strength_very_strong": "非常に強い",
+    "strength_tips": "より強力なパスワードのヒント：",
+    "strength_tip_length": "• 12文字以上使用する",
+    "strength_tip_upper": "• 大文字を含める",
+    "strength_tip_lower": "• 小文字を含める",
+    "strength_tip_number": "• 数字を含める",
+    "strength_tip_special": "• 特殊文字を含める",
+    "error_enter_password": "ハッシュを生成するためのパスワードを入力してください。",
+    "error_verify_fields": "検証にはパスワードとハッシュの両方が必要です。",
+    "error_invalid_hash": "無効なBcryptハッシュ形式です。",
+    "error_enter_hash": "分析するBcryptハッシュを入力してください。",
+    "error_enter_password_strength": "強度を確認するためのパスワードを入力してください。"
+  },
+  "settings": {
+    "title": "設定",
+    "appearance": {
+      "title": "外観",
+      "theme": "テーマ",
+      "light": "ライト",
+      "dark": "ダーク",
+      "system": "システム"
+    },
+    "general": {
+      "title": "一般",
+      "language": "言語",
+      "save": "変更を保存"
+    }
+  },
+  "alerts": {
+    "changes_saved": "変更が保存されました",
+    "error_occurred": "エラーが発生しました",
+    "project_not_found": "プロジェクトが見つかりません",
+    "module_not_found": "モジュールが見つかりません"
+  },
+  "buttons": {
+    "save": "保存",
+    "cancel": "キャンセル",
+    "close": "閉じる",
+    "edit": "編集",
+    "delete": "削除",
+    "confirm": "確認",
+    "dismiss": "閉じる",
+    "logout": "ログアウト"
+  },
+  "titles": {
+    "dashboard": "ダッシュボード",
+    "search": "プロジェクトを検索",
+    "projects": "プロジェクト",
+    "email": "メールプレビュー",
+    "vitals": "システムステータス",
+    "bcrypt": "Bcryptジェネレーター",
+    "settings": "設定"
+  },
+  "tooltips": {
+    "theme_toggle": "テーマを切り替え",
+    "refresh": "更新",
+    "help": "ヘルプ",
+    "notifications": "通知"
+  },
+  "errors": {
+    "404": "ページが見つかりません",
+    "403": "アクセスが拒否されました",
+    "500": "サーバー内部エラー"
+  }
+}
