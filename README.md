@@ -1,117 +1,175 @@
-# ![LaragonDash Logo](assets/favicon/favicon-32x32.png) LaragonDash
+# ![LaragonDash Logo](assets/favicon/favicon-32x32.png) **LaragonDash**
 
-## 🚀 Welcome to LaragonDash
-
-**LaragonDash** is the natural evolution of the
-original [Laragon Dashboard](https://github.com/LebToki/Laragon-Dashboard). It’s **modular**, **future-proof**, and
-built for developers who want speed, control, and an intuitive interface to manage their local stack.
+> 🚀 A modern, modular, multilingual dashboard for Laragon 6+ - 7+ and 8+  
+> Built for developers who want more clarity, control, and customization.
 
 ---
 
-> Following the success and adoption of the original Laragon Dashboard by the community, we’re proud to introduce
-`LaragonDash v1.1`.
-> This spin-off delivers a modern MVC-inspired layout, support for modules, improved theming, and smarter tooling —
-> while still preserving the simplicity developers loved about the original.
+## ✨ What is LaragonDash?
 
-> ⚙️ **LaragonDash** is fully compatible with Laragon 6+ and will continue to receive updates and improvements as the
-> new primary branch of development.
+**LaragonDash** is a powerful evolution of the original [Laragon Dashboard](https://github.com/LebToki/Laragon-Dashboard) — redesigned for the future. It keeps everything developers loved, but adds:
 
----
+- ✅ **Modular system** for plug-and-play tools
+- ✅ **Live language switching** (RTL/LTR support)
+- ✅ **Modern UI/UX with theming**
+- ✅ **No database required**
 
-💡 **Prefer the classic look?**  
-The original [Laragon Dashboard](https://github.com/LebToki/Laragon-Dashboard) will remain available in its current
-form.  
-Users who prefer the traditional layout can continue using it until the end of the year, while all future development
-and new features will be released under **LaragonDash**.
-
----
-
-![Promo](assets/images/LaragonDash.png)
-![Dashboard Light](assets/images/LaragonDash-Screenshot-Dashboard-Light.png)
-![Dashboard Dark](assets/images/LaragonDash-Screenshot-Dashboard-Dark.png)
-![MailReader](assets/images/LaragonDash-Screenshot-MailReader-Light.png)
-![Bcrypt Tool](assets/images//LaragonDash-Screenshot-Bcrypt-Dark.png)
-
----
-
-## 🧩 Modular System
-
-LaragonDash is structured as **modular** components under `/modules/` allowing you to plug and play:
-
-- 🔍 **Search** – Quickly find your projects
-- 📬 **Mail Viewer** – Read your local test emails
-  @@ -67,63 +67,74 @@ You can also build and register your own modules!
-  $domainSuffix = '.local';
-  $ignore_dirs = array('.', '..', 'logs', 'access-logs', 'vendor', 'favicon_io', 'assets');
-
+```txt
+Compatible with Laragon 6+ - 7+ and 8+ • PHP 7+ - 8+ • Apache/Nginx • Lightweight & open source
 ```
 
-4. Update mailbox path in .env or config.php:
+---
+
+> ⚙️ LaragonDash is the new primary branch for updates.  
+> The original dashboard will remain available for legacy users until end of 2025.
+
+---
+
+## 🧩 Modular Architecture
+
+All modules are located in `/modules/`. Drop in your own tools or clone from the growing library:
+
+| Module         | Description                         |
+|----------------|-------------------------------------|
+| 🔍 **Search**    | Live filter across project tiles    |
+| 📬 **Email**     | Read/send/delete HTML & TXT mails   |
+| 🧪 **Bcrypt**    | Encrypt + verify hashes securely    |
+| ❤️ **Vitals**    | CPU, memory, disk & uptime monitor  |
+| ⚙️ **Settings**  | Customize ignored dirs, default lang |
+| 🗂 **Projects**  | Auto-detect WordPress, Laravel, etc |
 
 ```php
-define('SENDMAIL_OUTPUT_DIR', '/path/to/laragon/tmp');
-```
-
-### Enjoy a smoother local development experience!
-
-📂 Module Directory Structure
 LaragonDash/
 ├── assets/
 ├── includes/
 ├── modules/
-│ ├── search/
-│ ├── mail/
-│ ├── bcrypt/
-│ └── vitals/
+│   ├── bcrypt/
+│   ├── email/
+│   ├── search/
+│   ├── settings/
+│   └── vitals/
 ├── index.php
 └── README.md
-
-📆 Changelog Summary
-v1.1 — June 2025
-Language loader with RTL support
-Dynamic language dropdown with emoji flags
-Fallback to English if translation missing
-Tajawal font used automatically for Arabic
-Settings page to edit ignored directories
-Email viewer handles HTML/TXT and delete
-Bcrypt generator with verify helper
-Search results ranked by relevance
-Vitals charts auto refresh
-
-v1.0 — June 2025
-Initial modular release
-Theme toggle with persistent mode
-Sidebar + Navbar toggle with icons
-WordPress auto-admin link
-Search module with live filter
-System Vitals with CPU + memory + uptime
-Bcrypt Generator Tool
-Improved code structure and error handling
-Multi-language JSON structure for UI
-
-🗣 Language Support
-All translations reside in /lang/. Want to contribute your own? Simply add a language-code.json file with:
-All translations reside in `includes/languages/`. Want to contribute your own? Simply add a `code.json` file with:
-
 ```
+
+---
+
+## 🌐 Language Support
+
+> All translations reside in `/includes/languages/`  
+> Add your own `xx.json` to contribute!
+
+| Code   | Language             | Flag |
+|--------|----------------------|------|
+| `en`   | English              | 🇬🇧   |
+| `fr`   | French               | 🇫🇷   |
+| `es`   | Spanish              | 🇪🇸   |
+| `de`   | German               | 🇩🇪   |
+| `pt`   | Portuguese           | 🇵🇹   |
+| `pt-BR`| Brazilian Portuguese | 🇧🇷   |
+| `ar`   | Arabic (RTL)         | 🇸🇦   |
+| `ur`   | Urdu (RTL)           | 🇵🇰   |
+| `hi`   | Hindi                | 🇮🇳   |
+| `tl`   | Tagalog              | 🇵🇭   |
+| `id`   | Indonesian           | 🇮🇩   |
+| `tr`   | Turkish              | 🇹🇷   |
+| `ru`   | Russian              | 🇷🇺   |
+| `ja`   | Japanese             | 🇯🇵   |
+| `ko`   | Korean               | 🇰🇷   |
+| `vi`   | Vietnamese           | 🇻🇳   |
+| `zh-CN`| Simplified Chinese   | 🇨🇳   |
+
+---
+
+## 🗓️ Changelog Summary
+
+<details>
+<summary><strong>v1.2 – June 19, 2025</strong></summary>
+
+- 🔄 Language auto-detection + RTL direction
+- 🌍 Flag dropdown with live translations
+- 🛠 Server vitals (CPU/RAM/Disk) module
+- ⏳ PHP + Apache version inspection
+- ⚙️ Modular bootstrap with dynamic includes
+- 🧪 WordPress core version + update checker
+</details>
+
+<details>
+<summary><strong>v1.1 – June 2025</strong></summary>
+
+- ✨ Mail reader UI with toggle/delete
+- 🔒 Bcrypt hasher with dual verify mode
+- 🌓 Light/Dark theme toggle with memory
+- 🔍 Search tile filtering
+- ⚙️ Settings with directory ignore control
+</details>
+
+<details>
+<summary><strong>v1.0 – Initial Release</strong></summary>
+
+- 📦 Modular MVC structure
+- 🎨 Modern dashboard layout
+- 📂 Auto-detect WordPress/Laravel/etc.
+- 🌐 Multilingual foundation
+</details>
+
+---
+
+## 💻 How to Add a New Language
+
+Just drop a new JSON file inside `/assets/languages/` named `xx.json`.  
+Here’s a quick example for `xx.json`:
+
+```json
 {
-  "Dashboard": "Dashboard",
-  "Search": "Search",
-  "Projects": "Projects"
+  "navigation": {
+    "dashboard": "Dashboard",
+    "search": "Search",
+    "projects": "Projects"
+  },
+  "buttons": {
+    "logout": "Logout",
+    "save": "Save"
+  }
 }
 ```
 
-⭐ Get Involved
-⭐ Star the repo to show support
-🛠 Fork and contribute modules or enhancements
-🗣 Join Discussions to shape the future
-🌍 Help translate the UI
+✅ It will be picked up automatically in the language dropdown!  
+✅ Arabic/Urdu will trigger RTL mode with `Tajawal` or `Noto Nastaliq Urdu`.
 
-📜 License
-This project is licensed under the Attribution License.
-This work by Tarek Tarabichi is licensed under
-CC BY 4.0
+---
 
-💙 Credits
-Made with 💙 by Tarek Tarabichi
-Part of the growing tools family: Laragon Dashboard · LaragonDash · SignOS · CRMHub · bMessenger
+## 🛠 Developers
+
+Want to contribute your own module?
+
+Just create:
+
+```bash
+/modules/yourtool/
+├── index.php
+├── style.css
+├── script.js
+
+```
+
+Optional: include a `lang.json` file inside your module to localize text.  
+Use `data-i18n="module.key"` for inline translations.
+
+---
+
+## 🌍 Get Involved
+
+⭐ Star the repo  
+🛠 Submit your own module  
+🧠 Join discussions  
+🗣 Help translate
+
+---
+
+## 📄 License
+
+This project is licensed under the **Creative Commons Attribution 4.0** license (CC BY 4.0).  
+Made with 💙 by [Tarek Tarabichi](https://2tinteractive.com)  
+
+Part of the toolset: **LaragonDash**, **CRMHub**, **bMessenger**, **SignOS**
