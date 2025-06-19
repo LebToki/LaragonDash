@@ -13,11 +13,12 @@
 		"bcrypt": "Bcrypt",
 		"settings": "Einstellungen"
 	},
-	"dashboard": {
-		"system_info": "Systeminformationen",
-		"add_project": "Neues Projekt hinzufügen",
-		"more_projects": "Weitere Projekte",
-		"project_types": {
+        "dashboard": {
+                "system_info": "Systeminformationen",
+                "add_project": "Neues Projekt hinzufügen",
+                "more_projects": "Weitere Projekte",
+                "explore_more": "Weitere Projekte entdecken",
+                "project_types": {
 			"wordpress": "WordPress",
 			"joomla": "Joomla",
 			"laravel": "Laravel",
@@ -38,26 +39,47 @@
 		"disk_usage": "Speicherausnutzung",
 		"cpu_usage": "CPU-Auslastung"
 	},
-	"search": {
-		"placeholder": "Projekte durchsuchen...",
-		"no_results": "Keine Projekte gefunden"
-	},
-	"email": {
-		"preview": "E-Mail-Vorschau",
-		"subject": "Betreff",
-		"from": "Von",
-		"to": "An",
-		"date": "Datum",
-		"body": "Nachrichtentext"
-	},
-	"vitals": {
-		"title": "Systemwerte",
-		"server_status": "Serverstatus",
-		"database_status": "Datenbankstatus",
-		"online": "Online",
-		"offline": "Offline",
-		"last_checked": "Zuletzt geprüft"
-	},
+        "search": {
+                "placeholder": "Projekte durchsuchen...",
+                "no_results": "Keine Projekte gefunden",
+                "results_for": "Suchergebnisse für \"{query}\"",
+                "no_query": "Keine Suchanfrage eingegeben.",
+                "no_results_for": "Keine Ergebnisse für {query}"
+        },
+        "email": {
+                "preview": "E-Mail-Vorschau",
+                "subject": "Betreff",
+                "from": "Von",
+                "to": "An",
+                "date": "Datum",
+                "body": "Nachrichtentext",
+                "inbox": "Posteingang",
+                "no_emails": "Keine E-Mails gefunden.",
+                "confirm_delete": "Diese E-Mail löschen?",
+                "deleted_success": "E-Mail erfolgreich gelöscht.",
+                "select_prompt": "Wählen Sie eine E-Mail zum Anzeigen"
+        },
+        "vitals": {
+                "title": "Systemwerte",
+                "server_status": "Serverstatus",
+                "database_status": "Datenbankstatus",
+                "online": "Online",
+                "offline": "Offline",
+                "last_checked": "Zuletzt geprüft",
+                "uptime_cpu": "Betriebszeit & CPU-Auslastung",
+                "memory_usage": "Speicherauslastung",
+                "disk_usage": "Festplattennutzung",
+                "uptime": "Betriebszeit",
+                "cpu_usage": "CPU-Auslastung",
+                "total": "Gesamt",
+                "used": "Verwendet",
+                "free": "Frei",
+                "loading": "Lade...",
+                "unavailable": "Nicht verfügbar",
+                "cpu_usage_label": "CPU-Auslastung %",
+                "memory_label": "Speicher (KB)",
+                "disk_usage_label": "Festplattennutzung %"
+        },
 	"bcrypt": {
 		"title": "Bcrypt-Entwicklertools",
 		"generate_tab": "Hash generieren",

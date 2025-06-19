@@ -1,11 +1,33 @@
+<?php
+require_once __DIR__ . '/lang.php';
+$trans = getTranslations();
+
+// simple helper since not defined globally
+function t($key, $default = '') {
+    global $trans;
+    $parts = explode('.', $key);
+    $value = $trans;
+    foreach ($parts as $p) {
+        if (!isset($value[$p])) {
+            return $default ?: $key;
+        }
+        $value = $value[$p];
+    }
+    return $value;
+}
+
+$title = t('app.title', 'LaragonDash');
+$description = t('app.description');
+$author = t('app.author');
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<title>LaragonDash – Local Project Dashboard for Developers</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content="LaragonDash is a clean, local developer dashboard to organize, preview, and manage your Laragon projects effortlessly.">
-	<meta name="author" content="Tarek Tarabichi from 2TInteractive">
+        <meta charset="UTF-8">
+        <title><?= htmlspecialchars($title) ?></title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="<?= htmlspecialchars($description) ?>">
+        <meta name="author" content="<?= htmlspecialchars($author) ?>">
 	<meta name="robots" content="index, nofollow">
 	<meta name="keywords" content="Laragon, Dashboard, Localhost, PHP, Projects, Developer Tools, Open Source, 2TInteractive">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">

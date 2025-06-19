@@ -17,6 +17,7 @@
     "system_info": "System Information",
     "add_project": "Add New Project",
     "more_projects": "More Projects",
+    "explore_more": "Explore more projects",
     "project_types": {
       "wordpress": "WordPress",
       "joomla": "Joomla",
@@ -40,7 +41,10 @@
   },
   "search": {
     "placeholder": "Search projects...",
-    "no_results": "No projects found"
+    "no_results": "No projects found",
+    "results_for": "Search Results for \"{query}\"",
+    "no_query": "No search query entered.",
+    "no_results_for": "No results found for {query}"
   },
   "email": {
     "preview": "Email Preview",
@@ -48,7 +52,12 @@
     "from": "From",
     "to": "To",
     "date": "Date",
-    "body": "Body"
+    "body": "Body",
+    "inbox": "Inbox",
+    "no_emails": "No emails found.",
+    "confirm_delete": "Delete this email?",
+    "deleted_success": "Email deleted successfully.",
+    "select_prompt": "Select an email to view."
   },
   "vitals": {
     "title": "System Vitals",
@@ -56,7 +65,20 @@
     "database_status": "Database Status",
     "online": "Online",
     "offline": "Offline",
-    "last_checked": "Last Checked"
+    "last_checked": "Last Checked",
+    "uptime_cpu": "Uptime & CPU Usage",
+    "memory_usage": "Memory Usage",
+    "disk_usage": "Disk Usage",
+    "uptime": "Uptime",
+    "cpu_usage": "CPU Usage",
+    "total": "Total",
+    "used": "Used",
+    "free": "Free",
+    "loading": "Loading...",
+    "unavailable": "Unavailable",
+    "cpu_usage_label": "CPU Usage %",
+    "memory_label": "Memory (KB)",
+    "disk_usage_label": "Disk Usage %"
   },
   "bcrypt": {
     "title": "Bcrypt Developer Tools",
