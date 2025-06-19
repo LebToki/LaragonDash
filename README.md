@@ -62,7 +62,9 @@ $ignore_dirs = array('.', '..', 'logs', 'access-logs', 'vendor', 'favicon_io', '
 
 4. Update mailbox path in .env or config.php:
 
+```php
 define('SENDMAIL_OUTPUT_DIR', '/path/to/laragon/tmp');
+```
 
 ### Enjoy a smoother local development experience!
 
@@ -93,11 +95,13 @@ Multi-language JSON structure for UI
 🗣 Language Support
 All translations reside in /lang/. Want to contribute your own? Simply add a language-code.json file with:
 
+```
 {
   "Dashboard": "Dashboard",
   "Search": "Search",
   "Projects": "Projects"
 }
+```
 
 ⭐ Get Involved
  ⭐ Star the repo to show support
