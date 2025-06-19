@@ -84,7 +84,7 @@ Multi-language JSON structure for UI
 
 🗣 Language Support
 All translations reside in /lang/. Want to contribute your own? Simply add a language-code.json file with:
-All translations reside in `assets/languages/`. Want to contribute your own? Simply add a `code.json` file with:
+All translations reside in `includes/languages/`. Want to contribute your own? Simply add a `code.json` file with:
 
 ```
 {

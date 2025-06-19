@@ -93,7 +93,8 @@
     "edit": "ترمیم کریں",
     "delete": "حذف کریں",
     "confirm": "تصدیق کریں",
-    "dismiss": "بند کریں"
+    "dismiss": "بند کریں",
+    "logout": "Logout"
   },
   "titles": {
     "dashboard": "ڈیش بورڈ",

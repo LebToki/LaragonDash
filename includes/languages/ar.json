@@ -93,7 +93,8 @@
     "edit": "تعديل",
     "delete": "حذف",
     "confirm": "تأكيد",
-    "dismiss": "تجاهل"
+    "dismiss": "تجاهل",
+    "logout": "Logout"
   },
   "titles": {
     "dashboard": "لوحة التحكم",

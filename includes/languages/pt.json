@@ -93,8 +93,9 @@
 		"edit": "Editar",
 		"delete": "Excluir",
 		"confirm": "Confirmar",
-		"dismiss": "Dispensar"
-	},
+                "dismiss": "Dispensar",
+                "logout": "Logout"
+        },
 	"titles": {
 		"dashboard": "Painel",
 		"search": "Buscar Projetos",
