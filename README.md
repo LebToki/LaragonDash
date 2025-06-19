@@ -28,9 +28,11 @@ Compatible with Laragon 6+ - 7+ and 8+ • PHP 7+ - 8+ • Apache/Nginx • Ligh
 
 # ![LaragonDash Projects](assets/images/LaragonDash-Screenshot-Projects-Light.png)
 
-# ![LaragonDash Projects](assets/images/LaragonDash-Screenshot-MailReader-Light.png)
+# ![LaragonDash SendMail Client](assets/images/LaragonDash-Screenshot-MailReader-Light.png)
 
-# ![LaragonDash Projects](assets/images/LaragonDash-Screenshot-Bcrypt-Dark.png)
+# ![LaragonDash Languages Editor](assets/images/LaragonDash-Screenshot-LanguageEditor-details-Light.png)
+
+# ![LaragonDash Bcrypt Generator](assets/images/LaragonDash-Screenshot-Bcrypt-Dark.png)
 
 
 ---
