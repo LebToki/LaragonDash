@@ -45,10 +45,10 @@
     if (typeof availableLanguages === "object" && langSelect) {
       langSelect.innerHTML = "";
       
-      Object.entries(availableLanguages).forEach(([code, { label, flag }]) => {
+      Object.entries(availableLanguages).forEach(([lang, { label, code }]) => {
         const option = document.createElement("option");
-        option.value = code;
-        option.textContent = `${flag} ${label}`;
+        option.value = lang;
+        option.innerHTML = `<span class="fi fi-${code}"></span> ${label}`;
         langSelect.appendChild(option);
       });
       
