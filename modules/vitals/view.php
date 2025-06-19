@@ -45,58 +45,46 @@
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
-	document.addEventListener("DOMContentLoaded", function () {
-		fetch("modules/vitals/data.php")
-			.then(response => response.json())
-			.then(data => {
-				document.getElementById("uptime").textContent = data.uptime || "Unavailable";
-				document.getElementById("cpuUsage").textContent = data.cpuUsage || "Unavailable";
-				document.getElementById("memTotal").textContent = data.memoryDetails?.total ?? "-";
-				document.getElementById("memUsed").textContent = data.memoryDetails?.used ?? "-";
-				document.getElementById("memFree").textContent = data.memoryDetails?.free ?? "-";
-				
-				new Chart(document.getElementById("cpuChart"), {
-					type: "bar",
-					data: {
-						labels: data.uptimeLabels,
-						datasets: [{
-							label: "CPU Usage %",
-							data: data.uptimeData,
-							backgroundColor: "rgba(54, 162, 235, 0.6)"
-						}]
-					}
-				});
-				
-				new Chart(document.getElementById("memChart"), {
-					type: "pie",
-					data: {
-						labels: data.memoryUsageLabels,
-						datasets: [{
-							label: "Memory (KB)",
-							data: data.memoryUsageData,
-							backgroundColor: [
-								"rgba(75, 192, 192, 0.6)",
-								"rgba(255, 99, 132, 0.6)",
-								"rgba(255, 206, 86, 0.6)"
-							]
-						}]
-					}
-				});
-				
-				new Chart(document.getElementById("diskChart"), {
-					type: "bar",
-					data: {
-						labels: data.diskUsageLabels,
-						datasets: [{
-							label: "Disk Usage %",
-							data: data.diskUsageData,
-							backgroundColor: "rgba(153, 102, 255, 0.6)"
-						}]
-					}
-				});
-			})
-			.catch(error => {
-				console.error("Vitals fetch error:", error);
-			});
-	});
+        document.addEventListener("DOMContentLoaded", function () {
+                const cpuCtx = document.getElementById("cpuChart");
+                const memCtx = document.getElementById("memChart");
+                const diskCtx = document.getElementById("diskChart");
+
+                let cpuChart = new Chart(cpuCtx, { type: "line", data: { labels: [], datasets: [{ label: "CPU %", data: [], borderColor: "#36A2EB", tension: 0.3 }] }});
+                let memChart = new Chart(memCtx, { type: "doughnut", data: { labels: ["Total","Used","Free"], datasets: [{ data: [0,0,0], backgroundColor:["#4BC0C0","#FF6384","#FFCE56"] }] }});
+                let diskChart = new Chart(diskCtx, { type: "bar", data: { labels: [], datasets: [{ label: "Disk %", data: [], backgroundColor: "#9966FF" }] }});
+
+                function updateCharts(data) {
+                        document.getElementById("uptime").textContent = data.uptime || "Unavailable";
+                        document.getElementById("cpuUsage").textContent = data.cpuUsage || "Unavailable";
+                        document.getElementById("memTotal").textContent = data.memoryDetails?.total ?? "-";
+                        document.getElementById("memUsed").textContent = data.memoryDetails?.used ?? "-";
+                        document.getElementById("memFree").textContent = data.memoryDetails?.free ?? "-";
+
+                        cpuChart.data.labels.push(data.charts.uptimeLabels[0]);
+                        cpuChart.data.datasets[0].data.push(parseFloat(data.charts.uptimeData[0]));
+                        if (cpuChart.data.labels.length > 10) {
+                                cpuChart.data.labels.shift();
+                                cpuChart.data.datasets[0].data.shift();
+                        }
+                        cpuChart.update();
+
+                        memChart.data.datasets[0].data = data.charts.memoryUsageData;
+                        memChart.update();
+
+                        diskChart.data.labels = data.charts.diskUsageLabels;
+                        diskChart.data.datasets[0].data = data.charts.diskUsageData;
+                        diskChart.update();
+                }
+
+                function fetchVitals() {
+                        fetch("includes/api/vitals.php")
+                                .then(r => r.json())
+                                .then(updateCharts)
+                                .catch(err => console.error("Vitals fetch error:", err));
+                }
+
+                fetchVitals();
+                setInterval(fetchVitals, 5000);
+        });
 </script>

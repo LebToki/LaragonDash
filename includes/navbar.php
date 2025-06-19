@@ -15,9 +15,9 @@
 		</form>
 		
 		<!-- Theme Toggle -->
-		<button class="btn btn-sm btn-outline-secondary" id="themeToggleBtn" data-theme-toggle>🌓</button>
-			<iconify-icon icon="ph:moon-stars-duotone"></iconify-icon>
-		</button>
+                <button class="btn btn-sm btn-outline-secondary" id="themeToggleBtn" data-theme-toggle>
+                        <iconify-icon icon="ph:moon-stars-duotone"></iconify-icon>
+                </button>
 		
 		<!-- Language Dropdown -->
 		<select id="lang-select" class="form-select form-select-sm" aria-label="Language Selector" style="width: auto;">

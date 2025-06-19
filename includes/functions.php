@@ -1,6 +1,11 @@
 <?php
 // Load Settings
-	$laraconfig = include __DIR__ . '/config/settings.php';
+$laraconfig = include __DIR__ . '/config/settings.php';
+
+// Load additional configuration if available
+if (file_exists(dirname(__DIR__) . '/config.php')) {
+    require_once dirname(__DIR__) . '/config.php';
+}
 	
 	/**
 	 * Get the proper URL scheme (http or https) based on SSL settings.
@@ -42,7 +47,7 @@
 	/**
 	 * Get list of project tiles from directories.
 	 */
-	function getProjectTiles(string $search = ''): array {
+        function getProjectTiles(string $search = ''): array {
 		global $laraconfig;
 		$path = $laraconfig['ProjectPath'] ?? '..';
 		$ignored = $laraconfig['IgnoreDirs'] ?? ['.', '..', 'logs', 'vendor', 'assets'];
@@ -66,8 +71,26 @@
 				'admin' => $type['admin']
 			];
 		}
-		return $tiles;
-	}
+                return $tiles;
+        }
+
+        /**
+         * Search projects and rank them by similarity to query.
+         */
+        function searchAndRankProjects(array $projects, string $query): array {
+                if ($query === '') return $projects;
+                $scored = [];
+                foreach ($projects as $p) {
+                        similar_text(strtolower($query), strtolower($p['name']), $percent);
+                        $score = $percent;
+                        if (stripos($p['name'], $query) !== false) {
+                                $score += 50;
+                        }
+                        $scored[] = ['score' => $score, 'project' => $p];
+                }
+                usort($scored, fn($a, $b) => $b['score'] <=> $a['score']);
+                return array_column($scored, 'project');
+        }
 	
 	/**
 	 * Get basic system info.

@@ -4,8 +4,12 @@
 	
 	require_once 'includes/functions.php';
 	
-	$emails = glob('emails/*.html');
-	$current = $_GET['email'] ?? null;
+       $emailDir = defined('SENDMAIL_OUTPUT_DIR') ? rtrim(SENDMAIL_OUTPUT_DIR, '/\\') : __DIR__ . '/../../emails';
+       if (!is_dir($emailDir)) {
+               mkdir($emailDir, 0777, true);
+       }
+       $emails = glob($emailDir . '/*.{html,txt}', GLOB_BRACE);
+       $current = $_GET['email'] ?? null;
 ?>
 
 <div class="container-fluid py-3">
@@ -33,15 +37,20 @@
 		<!-- Email Viewer -->
 		<div class="col-md-8">
 			<?php
-				if (isset($_POST['delete']) && in_array("emails/" . $_POST['delete'], $emails)) {
-					unlink("emails/" . $_POST['delete']);
+                               if (isset($_POST['delete']) && in_array($emailDir . '/' . $_POST['delete'], $emails)) {
+                                       unlink($emailDir . '/' . $_POST['delete']);
 					echo "<div class='alert alert-success'>Email deleted.</div>";
 				}
 				
-				if ($current && file_exists("emails/" . $current)) {
-					echo "<div class='card shadow-sm'><div class='card-body'>";
-					include "emails/" . $current;
-					echo "</div></div>";
+                               if ($current && file_exists($emailDir . '/' . $current)) {
+                                       echo "<div class='card shadow-sm'><div class='card-body'>";
+                                       $ext = pathinfo($current, PATHINFO_EXTENSION);
+                                       if ($ext === 'html') {
+                                               include $emailDir . '/' . $current;
+                                       } else {
+                                               echo '<pre>' . nl2br(htmlspecialchars(file_get_contents($emailDir . '/' . $current))) . '</pre>';
+                                       }
+                                       echo "</div></div>";
 				} else {
 					echo "<div class='text-muted'>Select an email to view.</div>";
 				}
