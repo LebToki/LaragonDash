@@ -11,6 +11,10 @@ iconify-icon {
   font-family: initial !important;
 }
 
+select#lang-select {
+  font-family: 'Segoe UI Emoji', 'Noto Color Emoji', 'Apple Color Emoji', sans-serif;
+}
+
 [data-theme="dark"] body,
 [data-theme="dark"] {
   background-color: #1e1e2f;

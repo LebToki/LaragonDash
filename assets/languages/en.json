@@ -1,1 +1,28 @@
-{"greeting": "Welcome to LaragonDash"}
+{
+  "title": "Welcome to the Laragon Dashboard",
+  "header": "My Development Server",
+  "welcome_back": "Welcome back!",
+  "servers_tab": "Servers",
+  "inbox_tab": "Mailbox",
+  "vitals_tab": "Server Stats",
+  "settings_tab": "Settings",
+  "breadcrumb_server_servers": "My development server applications",
+  "breadcrumb_server_mailbox": "My development server mailbox",
+  "breadcrumb_server_vitals": "My development server vitals",
+  "server_status": "Server Status",
+  "uptime": "Uptime",
+  "memory_usage": "Memory Usage (MB)",
+  "disk_usage": "Disk Usage",
+  "good_morning": "Good morning",
+  "good_afternoon": "Good afternoon",
+  "good_evening": "Good evening",
+  "document_root": "Document Root",
+  "manage_mysql": "Manage MySQL",
+  "logged-messages": "Logged Messages",
+  "email-list": "Email List",
+  "no-emails-found": "No emails found",
+  "delete": "Delete",
+  "default_footer": "&copy; 2024 <?php echo htmlspecialchars(date('Y')); ?>, Tarek Tarabichi",
+  "made_with_love": "Made with <span style=\"color: #e25555;\">&hearts;</span> and powered by Laragon"
+}
+

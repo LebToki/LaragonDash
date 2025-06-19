@@ -1,39 +1,28 @@
 {
-	"title": "Welcome sa Laragon Dashboard",
-	"header": "Aking Development Server",
-	"welcome_back": "Maligayang Pagbabalik!",
-
-	"servers_tab": "Mga Server",
-	"inbox_tab": "Mailbox",
-	"vitals_tab": "Mga Vitals ng Server",
-	"settings_tab": "Mga Setting",
-
-	"breadcrumb_server_servers": "Aking Development Server Servers at Applications",
-	"breadcrumb_server_mailbox": "Aking Development Server Mailbox",
-	"breadcrumb_server_vitals": "My Development Server Vitals",
-
-	"server_status": "Katayuan ng Server",
-	"uptime": "Uptime",
-	"memory_usage": "Paggamit ng Memorya (sa MB)",
-	"disk_usage": "Paggamit ng Disk",
-
-	"good-morning": "magandang umaga",
-	"good_afternoon": "Magandang hapon",
-	"good_evening": "Magandang gabi",
-
-	"document_root": "Dokumentong Root",
-	"manage_mysql": "Pamahalaan ang MySQL",
-
-	"logged-messages": "Mga Naka-log na Mensahe",
-	"email-list": "Listahan ng Email",
-	"no-emails-found": "Walang Nahanap na mga Email",
-	"delete": "Burahin",
-	
-	"default_footer": "&copy; 2024    <?php echo htmlspecialchars(date('Y')); ?>, Tarek Tarabichi",
-	"made_with_love": "Ginawa gamit ang <span style=\"color: #e25555;\">&hearts;</span> at pinalakas ng Laragon"
-
-
-
-
-
+  "title": "Maligayang pagdating sa Laragon Dashboard",
+  "header": "Ang aking development server",
+  "welcome_back": "Maligayang pagbabalik!",
+  "servers_tab": "Mga Server",
+  "inbox_tab": "Inbox",
+  "vitals_tab": "Mga statistics ng server",
+  "settings_tab": "Mga Setting",
+  "breadcrumb_server_servers": "Mga server at aplikasyon ng aking development server",
+  "breadcrumb_server_mailbox": "Inbox ng aking development server",
+  "breadcrumb_server_vitals": "Statistics ng aking development server",
+  "server_status": "Status ng server",
+  "uptime": "Uptime",
+  "memory_usage": "Paggamit ng memorya (MB)",
+  "disk_usage": "Paggamit ng disk",
+  "good_morning": "Magandang umaga",
+  "good_afternoon": "Magandang hapon",
+  "good_evening": "Magandang gabi",
+  "document_root": "Root na direktoryo",
+  "manage_mysql": "Pamamahala ng MySQL",
+  "logged-messages": "Mga naitalang mensahe",
+  "email-list": "Listahan ng email",
+  "no-emails-found": "Walang nahanap na mga email",
+  "delete": "Burahin",
+  "default_footer": "&copy; 2024 <?php echo htmlspecialchars(date('Y')); ?>, Tarek Tarabichi",
+  "made_with_love": "Ginawa gamit ang <span style=\"color: #e25555;\">&hearts;</span> at pinalakas ng Laragon"
 }
+
