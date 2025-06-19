@@ -17,6 +17,7 @@
     "system_info": "معلومات النظام",
     "add_project": "إضافة مشروع جديد",
     "more_projects": "المزيد من المشاريع",
+    "explore_more": "استكشاف المزيد من المشاريع",
     "project_types": {
       "wordpress": "ووردبريس",
       "joomla": "جوملا",
@@ -40,7 +41,10 @@
   },
   "search": {
     "placeholder": "ابحث في المشاريع...",
-    "no_results": "لم يتم العثور على مشاريع"
+    "no_results": "لم يتم العثور على مشاريع",
+    "results_for": "نتائج البحث عن \"{query}\"",
+    "no_query": "لم يتم إدخال أي بحث.",
+    "no_results_for": "لا توجد نتائج لـ {query}"
   },
   "email": {
     "preview": "معاينة البريد",
@@ -48,7 +52,12 @@
     "from": "من",
     "to": "إلى",
     "date": "التاريخ",
-    "body": "المحتوى"
+    "body": "المحتوى",
+    "inbox": "صندوق الوارد",
+    "no_emails": "لا توجد رسائل بريد.",
+    "confirm_delete": "حذف هذا البريد؟",
+    "deleted_success": "تم حذف البريد بنجاح.",
+    "select_prompt": "اختر بريدًا لعرضه"
   },
   "vitals": {
     "title": "مؤشرات النظام",
@@ -56,7 +65,20 @@
     "database_status": "حالة قاعدة البيانات",
     "online": "متصل",
     "offline": "غير متصل",
-    "last_checked": "آخر فحص"
+    "last_checked": "آخر فحص",
+    "uptime_cpu": "مدة التشغيل واستخدام المعالج",
+    "memory_usage": "استخدام الذاكرة",
+    "disk_usage": "استخدام القرص",
+    "uptime": "مدة التشغيل",
+    "cpu_usage": "استخدام المعالج",
+    "total": "الإجمالي",
+    "used": "المستخدم",
+    "free": "المتاح",
+    "loading": "جارٍ التحميل...",
+    "unavailable": "غير متوفر",
+    "cpu_usage_label": "نسبة استخدام المعالج",
+    "memory_label": "الذاكرة (KB)",
+    "disk_usage_label": "نسبة استخدام القرص"
   },
   "bcrypt": {
     "title": "أدوات مطوري Bcrypt",

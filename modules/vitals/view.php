@@ -1,29 +1,30 @@
 <?php
-	// modules/vitals/view.php
+        // modules/vitals/view.php
+        require_once 'includes/functions.php';
 ?>
 <div class="container-fluid py-4">
 	<div class="row mb-4">
 		<div class="col-12 col-lg-6">
 			<div class="card shadow-sm">
-				<div class="card-header bg-primary text-white">
-					<i class="ri-time-line"></i> Uptime & CPU Usage
-				</div>
-				<div class="card-body">
-					<p><strong>Uptime:</strong> <span id="uptime">Loading...</span></p>
-					<p><strong>CPU Usage:</strong> <span id="cpuUsage">Loading...</span></p>
+                                <div class="card-header bg-primary text-white">
+                                        <i class="ri-time-line"></i> <span data-i18n="vitals.uptime_cpu">Uptime & CPU Usage</span>
+                                </div>
+                                <div class="card-body">
+                                        <p><strong data-i18n="vitals.uptime">Uptime:</strong> <span id="uptime" data-i18n="vitals.loading">Loading...</span></p>
+                                        <p><strong data-i18n="vitals.cpu_usage">CPU Usage:</strong> <span id="cpuUsage" data-i18n="vitals.loading">Loading...</span></p>
 					<canvas id="cpuChart" height="100"></canvas>
 				</div>
 			</div>
 		</div>
 		<div class="col-12 col-lg-6">
 			<div class="card shadow-sm">
-				<div class="card-header bg-success text-white">
-					<i class="ri-brain-line"></i> Memory Usage
-				</div>
-				<div class="card-body">
-					<p>Total: <span id="memTotal">-</span> KB</p>
-					<p>Used: <span id="memUsed">-</span> KB</p>
-					<p>Free: <span id="memFree">-</span> KB</p>
+                                <div class="card-header bg-success text-white">
+                                        <i class="ri-brain-line"></i> <span data-i18n="vitals.memory_usage">Memory Usage</span>
+                                </div>
+                                <div class="card-body">
+                                        <p data-i18n="vitals.total">Total: <span id="memTotal">-</span> KB</p>
+                                        <p data-i18n="vitals.used">Used: <span id="memUsed">-</span> KB</p>
+                                        <p data-i18n="vitals.free">Free: <span id="memFree">-</span> KB</p>
 					<canvas id="memChart" height="100"></canvas>
 				</div>
 			</div>
@@ -32,9 +33,9 @@
 	<div class="row">
 		<div class="col-12">
 			<div class="card shadow-sm">
-				<div class="card-header bg-dark text-white">
-					<i class="ri-hard-drive-2-line"></i> Disk Usage
-				</div>
+                                <div class="card-header bg-dark text-white">
+                                        <i class="ri-hard-drive-2-line"></i> <span data-i18n="vitals.disk_usage">Disk Usage</span>
+                                </div>
 				<div class="card-body">
 					<canvas id="diskChart" height="100"></canvas>
 				</div>
@@ -49,8 +50,9 @@
 		fetch("modules/vitals/data.php")
 			.then(response => response.json())
 			.then(data => {
-				document.getElementById("uptime").textContent = data.uptime || "Unavailable";
-				document.getElementById("cpuUsage").textContent = data.cpuUsage || "Unavailable";
+                                const unavailable = "<?= t('vitals.unavailable') ?>";
+                                document.getElementById("uptime").textContent = data.uptime || unavailable;
+                                document.getElementById("cpuUsage").textContent = data.cpuUsage || unavailable;
 				document.getElementById("memTotal").textContent = data.memoryDetails?.total ?? "-";
 				document.getElementById("memUsed").textContent = data.memoryDetails?.used ?? "-";
 				document.getElementById("memFree").textContent = data.memoryDetails?.free ?? "-";
@@ -60,7 +62,7 @@
 					data: {
 						labels: data.uptimeLabels,
 						datasets: [{
-							label: "CPU Usage %",
+                                                        label: "<?= t('vitals.cpu_usage_label') ?>",
 							data: data.uptimeData,
 							backgroundColor: "rgba(54, 162, 235, 0.6)"
 						}]
@@ -72,7 +74,7 @@
 					data: {
 						labels: data.memoryUsageLabels,
 						datasets: [{
-							label: "Memory (KB)",
+                                                        label: "<?= t('vitals.memory_label') ?>",
 							data: data.memoryUsageData,
 							backgroundColor: [
 								"rgba(75, 192, 192, 0.6)",
@@ -88,7 +90,7 @@
 					data: {
 						labels: data.diskUsageLabels,
 						datasets: [{
-							label: "Disk Usage %",
+                                                        label: "<?= t('vitals.disk_usage_label') ?>",
 							data: data.diskUsageData,
 							backgroundColor: "rgba(153, 102, 255, 0.6)"
 						}]

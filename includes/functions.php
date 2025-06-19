@@ -1,6 +1,7 @@
 <?php
 // Load LaragonDash settings
-	$laraconfig = include __DIR__ . '/config/settings.php';
+        $laraconfig = include __DIR__ . '/config/settings.php';
+        require_once __DIR__ . '/lang.php';
 	
 	/**
 	 * Determine whether to use HTTP or HTTPS based on SSL settings.
