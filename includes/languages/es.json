@@ -96,7 +96,7 @@
     "delete": "Eliminar",
     "confirm": "Confirmar",
     "dismiss": "Descartar",
-    "logout": "Logout"
+    "logout": "Cerrar Sesión"
   },
   "titles": {
     "dashboard": "Inicio",
