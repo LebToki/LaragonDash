@@ -232,26 +232,32 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         .form-label {
             font-weight: 500;
             margin-bottom: 0.5rem;
-            color: #4a5568;
+            color: #495057;
         }
         
-        .form-control, .form-select, .form-range {
-            padding: 0.75rem 1rem;
-            border-radius: 0.5rem;
-            border: 1px solid var(--border);
-            transition: border-color 0.2s, box-shadow 0.2s;
+        .form-control, .form-range {
+            border-radius: var(--border-radius);
+            border: 1px solid #ced4da;
+            padding: 0.5rem 0.75rem;
+            font-size: 0.9375rem;
+            transition: var(--transition);
         }
         
-        .form-control:focus, .form-select:focus {
-            border-color: var(--primary);
-            box-shadow: 0 0 0 0.25rem rgba(74, 110, 224, 0.25);
+        .form-control:focus, .form-range:focus {
+            border-color: #86b7fe;
+            box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+        }
+        
+        .input-group-text {
+            background-color: #f8f9fa;
+            border: 1px solid #ced4da;
         }
         
         .btn {
-            padding: 0.75rem 1.5rem;
-            border-radius: 0.5rem;
             font-weight: 500;
-            transition: all 0.2s;
+            padding: 0.5rem 1.25rem;
+            border-radius: var(--border-radius);
+            transition: var(--transition);
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
@@ -263,121 +269,235 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
         
         .btn-primary:hover {
-            background-color: #3a5bc7;
-            border-color: #3a5bc7;
+            background-color: var(--primary-hover);
+            border-color: var(--primary-hover);
             transform: translateY(-1px);
         }
         
         .btn-outline-secondary {
-            color: var(--text-muted);
-            border-color: var(--border);
+            border-color: #ced4da;
         }
         
         .btn-outline-secondary:hover {
-            background-color: var(--light);
-            color: var(--dark);
+            background-color: #f8f9fa;
+            color: #212529;
         }
         
         .result-box {
             margin-top: 1.5rem;
-            padding: 1.5rem;
-            border-radius: 0.75rem;
-            background-color: var(--light);
+            padding: 1.25rem;
+            background: #f8f9fa;
+            border-radius: var(--border-radius);
             border-left: 4px solid var(--primary);
+            box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+        }
+        
+        .result-box h5 {
+            color: var(--dark);
+            font-weight: 600;
+            display: flex;
+            align-items: center;
         }
         
         .hash-display {
-            font-family: 'Consolas', 'Monaco', monospace;
-            word-break: break-all;
-            background: white;
+            background: #f1f3f5;
             padding: 1rem;
-            border-radius: 0.5rem;
-            border: 1px solid var(--border);
+            border-radius: var(--border-radius);
+            margin: 1rem 0;
+            word-break: break-all;
+            font-family: 'Fira Code', 'Courier New', monospace;
+            font-size: 0.875rem;
             position: relative;
-            padding-right: 3rem;
         }
         
-        .copy-btn {
-            position: absolute;
-            right: 0.5rem;
-            top: 50%;
-            transform: translateY(-50%);
-            background: none;
-            border: none;
-            color: var(--primary);
-            cursor: pointer;
-            padding: 0.25rem 0.5rem;
-            border-radius: 0.25rem;
+        .hash-display code {
+            background: transparent;
+            color: #212529;
+            padding: 0;
+            font-size: inherit;
         }
         
         .strength-meter {
-            height: 8px;
+            height: 0.5rem;
             background: #e9ecef;
-            border-radius: 4px;
+            border-radius: 1rem;
             margin: 1rem 0;
             overflow: hidden;
+            width: 100%;
         }
         
         .strength-meter-fill {
             height: 100%;
             width: 0%;
-            transition: width 0.5s ease, background-color 0.5s ease;
+            border-radius: 1rem;
+            transition: width 0.4s ease, background-color 0.4s ease;
         }
         
-        .strength-very-weak { width: 20%; background-color: #dc3545; }
+        .strength-very_weak { width: 20%; background-color: var(--danger); }
         .strength-weak { width: 40%; background-color: #fd7e14; }
-        .strength-moderate { width: 60%; background-color: #ffc107; }
-        .strength-strong { width: 80%; background-color: #28a745; }
-        .strength-very-strong { width: 100%; background-color: #20c997; }
-        
-        .strength-tips {
-            margin-top: 1.5rem;
-            padding: 1rem 1.25rem;
-            background-color: #f8f9fa;
-            border-radius: 0.5rem;
-            border-left: 4px solid var(--warning);
-        }
+        .strength-moderate { width: 60%; background-color: var(--warning); }
+        .strength-strong { width: 80%; background-color: #20c997; }
+        .strength-very_strong { width: 100%; background-color: var(--success); }
         
         .hash-info-item {
+            margin: 1rem 0;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid #e9ecef;
             display: flex;
-            margin-bottom: 0.75rem;
-            padding-bottom: 0.75rem;
-            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
         }
         
         .hash-info-label {
             font-weight: 500;
-            width: 150px;
-            color: #4a5568;
+            color: var(--secondary);
+            min-width: 120px;
+            margin-bottom: 0.25rem;
         }
         
         .hash-info-value {
+            color: var(--dark);
+            word-break: break-word;
             flex: 1;
-            font-family: 'Consolas', 'Monaco', monospace;
-            word-break: break-all;
+            min-width: 0;
         }
         
-        .loading {
-            display: inline-block;
-            width: 1rem;
-            height: 1rem;
-            border: 2px solid rgba(255, 255, 255, 0.3);
-            border-radius: 50%;
-            border-top-color: white;
-            animation: spin 1s ease-in-out infinite;
-            margin-right: 0.5rem;
+        .strength-tips {
+            margin-top: 1.5rem;
+            padding: 1.25rem;
+            background: #f8f9fa;
+            border-radius: var(--border-radius);
+            border-left: 4px solid var(--warning);
         }
         
-        @keyframes spin {
-            to { transform: rotate(360deg); }
+        .strength-tips h6 {
+            color: var(--dark);
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.75rem;
         }
         
-        .alert {
-            border-radius: 0.5rem;
-            padding: 1rem 1.25rem;
-            margin-bottom: 1rem;
+        .strength-tips ul {
+            margin-bottom: 0;
+            padding-left: 1.25rem;
         }
         
+        .strength-tips li {
+            margin: 0.5rem 0;
+            color: var(--secondary);
+        }
+        
+        /* Toast notifications */
+        .toast {
+            background: rgba(33, 37, 41, 0.95);
+            border: none;
+            border-radius: var(--border-radius);
+            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+        }
+        
+        .toast-header {
+            border-bottom: none;
+            background: rgba(255, 255, 255, 0.05);
+            color: #fff;
+        }
+        
+        .toast-body {
+            color: #f8f9fa;
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .tool-container {
+                margin: 0;
+                border-radius: 0;
+                box-shadow: none;
+            }
+            
+            .tool-header {
+                border-radius: 0;
+            }
+            
+            .tab-content {
+                padding: 1.25rem;
+            }
+            
+            .nav-tabs {
+                padding: 0 1rem;
+                overflow-x: auto;
+                flex-wrap: nowrap;
+                white-space: nowrap;
+                -webkit-overflow-scrolling: touch;
+            }
+            
+            .nav-tabs .nav-link {
+                padding: 0.75rem 1rem;
+                font-size: 0.875rem;
+            }
+            
+            .hash-info-item {
+                flex-direction: column;
+            }
+            
+            .hash-info-label {
+                margin-bottom: 0.5rem;
+                width: 100%;
+            }
+        }
+        
+        /* Dark mode support */
+        @media (prefers-color-scheme: dark) {
+            body {
+                background-color: #1a1d21;
+                color: #e9ecef;
+            }
+            
+            .tool-container, .result-box, .strength-tips {
+                background-color: #2d333b;
+                color: #e9ecef;
+            }
+            
+            .form-control, .form-range, .input-group-text {
+                background-color: #2d333b;
+                border-color: #444c56;
+                color: #e9ecef;
+            }
+            
+            .form-control:focus, .form-range:focus {
+                background-color: #2d333b;
+                border-color: #539bf5;
+                box-shadow: 0 0 0 0.25rem rgba(65, 132, 228, 0.25);
+            }
+            
+            .hash-display, .hash-display code {
+                background-color: #22272e;
+                color: #adbac7;
+            }
+            
+            .hash-info-label, .strength-tips li {
+                color: #768390;
+            }
+            
+            .hash-info-value, .result-box h5 {
+                color: #e9ecef;
+            }
+            
+            .nav-tabs {
+                background-color: #22272e;
+                border-bottom-color: #444c56;
+            }
+            
+            .nav-tabs .nav-link {
+                color: #adbac7;
+            }
+            
+            .nav-tabs .nav-link.active {
+                color: #539bf5;
+            }
+            
+            .strength-meter {
+                background-color: #373e47;
+            }
+        }
         @media (max-width: 768px) {
             .tool-container {
                 margin: 1rem;
@@ -412,9 +532,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </style>
 </head>
 <body>
+    <!-- Toast Container -->
+    <div id="toastContainer" class="position-fixed bottom-0 end-0 p-3" style="z-index: 11"></div>
+    
     <div class="tool-container">
         <div class="tool-header">
-            <h1><?= htmlspecialchars(t('bcrypt.title', 'Bcrypt Tools')) ?></h1>
+            <h1><i class="bi bi-shield-lock me-2"></i><?= htmlspecialchars(t('bcrypt.title', 'Bcrypt Tools')) ?></h1>
         </div>
         <div class="nav-tabs">
             <ul class="nav nav-tabs">
@@ -437,19 +560,40 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <form id="generateForm">
                     <div class="form-group">
                         <label for="password" class="form-label"><?= t('bcrypt.input_placeholder', 'Enter text to hash') ?></label>
-                        <input type="password" id="password" name="password" class="form-control" required>
+                        <div class="input-group">
+                            <input type="password" id="password" name="password" class="form-control" required>
+                            <button class="btn btn-outline-secondary" type="button" id="togglePassword">
+                                <i class="bi bi-eye"></i>
+                            </button>
+                        </div>
                     </div>
                     <div class="form-group">
-                        <label for="cost" class="form-label"><?= t('bcrypt.cost', 'Cost') ?></label>
-                        <input type="number" id="cost" name="cost" class="form-control" value="10" min="4" max="31">
+                        <label for="cost" class="form-label">
+                            <?= t('bcrypt.cost', 'Cost') ?>: <span id="costValue">10</span>
+                            <i class="bi bi-info-circle ms-1" data-bs-toggle="tooltip" title="<?= t('bcrypt.cost_tooltip', 'Higher values are more secure but slower to compute. Recommended: 10-12') ?>"></i>
+                        </label>
+                        <input type="range" class="form-range" id="cost" name="cost" min="4" max="31" value="10">
+                        <div class="d-flex justify-content-between">
+                            <small class="text-muted">4 (<?= t('bcrypt.fast', 'Fast') ?>)</small>
+                            <small class="text-muted">10-12 (<?= t('bcrypt.recommended', 'Recommended') ?>)</small>
+                            <small class="text-muted">31 (<?= t('bcrypt.secure', 'Very Secure') ?>)</small>
+                        </div>
                     </div>
                     <button type="submit" class="btn btn-primary"><?= t('bcrypt.generate', 'Generate') ?></button>
                 </form>
-                <div id="generateResult" class="result-box" style="display: none;">
-                    <strong><?= t('bcrypt.generated_hash', 'Generated Bcrypt Hash') ?>:</strong>
-                    <div class="hash-display">
-                        <span id="generateHash"></span>
-                        <button class="copy-btn" onclick="copyToClipboard('generateHash')"><?= t('bcrypt.copy', 'Copy') ?></button>
+                <div id="generateResult" class="result-box mt-4" style="display: none;">
+                    <h5 class="mb-3">
+                        <i class="bi bi-hash me-2"></i><?= t('bcrypt.generated_hash', 'Generated Hash') ?>
+                        <button class="btn btn-sm btn-outline-primary float-end" onclick="copyToClipboard('generateHash')">
+                            <i class="bi bi-clipboard me-1"></i><?= t('bcrypt.copy', 'Copy') ?>
+                        </button>
+                    </h5>
+                    <div class="hash-display p-3">
+                        <code id="generateHash" class="text-break"></code>
+                    </div>
+                    <div class="mt-2 text-muted small">
+                        <i class="bi bi-info-circle me-1"></i>
+                        <?= t('bcrypt.hash_warning', 'This is a one-way hash. The original password cannot be retrieved.') ?>
                     </div>
                 </div>
             </div>
@@ -457,15 +601,25 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <form id="verifyForm">
                     <div class="form-group">
                         <label for="passwordVerify" class="form-label"><?= t('bcrypt.input_placeholder', 'Enter text to verify') ?></label>
-                        <input type="password" id="passwordVerify" name="password" class="form-control" required>
+                        <div class="input-group">
+                            <input type="password" id="passwordVerify" name="password" class="form-control" required>
+                            <button class="btn btn-outline-secondary" type="button" id="toggleVerifyPassword">
+                                <i class="bi bi-eye"></i>
+                            </button>
+                        </div>
                     </div>
                     <div class="form-group">
                         <label for="hashVerify" class="form-label"><?= t('bcrypt.hash', 'Hash') ?></label>
-                        <input type="text" id="hashVerify" name="hash" class="form-control" required>
+                        <div class="input-group">
+                            <input type="text" id="hashVerify" name="hash" class="form-control" required>
+                            <button class="btn btn-outline-secondary" type="button" onclick="copyToClipboard('hashVerify')" data-bs-toggle="tooltip" title="<?= t('bcrypt.copy', 'Copy') ?>">
+                                <i class="bi bi-clipboard"></i>
+                            </button>
+                        </div>
                     </div>
                     <button type="submit" class="btn btn-primary"><?= t('bcrypt.verify', 'Verify') ?></button>
                 </form>
-                <div id="verifyResult" class="result-box" style="display: none;">
+                <div id="verifyResult" class="alert mt-4" style="display: none;">
                     <strong><?= t('bcrypt.verify_result', 'Verify Result') ?>:</strong>
                     <div id="verifyMessage"></div>
                 </div>
@@ -474,27 +628,46 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <form id="analyzeForm">
                     <div class="form-group">
                         <label for="hashAnalyze" class="form-label"><?= t('bcrypt.hash', 'Hash') ?></label>
-                        <input type="text" id="hashAnalyze" name="hash" class="form-control" required>
+                        <div class="input-group">
+                            <input type="text" id="hashAnalyze" name="hash" class="form-control" required>
+                            <button class="btn btn-outline-secondary" type="button" onclick="copyToClipboard('hashAnalyze')" data-bs-toggle="tooltip" title="<?= t('bcrypt.copy', 'Copy') ?>">
+                                <i class="bi bi-clipboard"></i>
+                            </button>
+                        </div>
                     </div>
                     <button type="submit" class="btn btn-primary"><?= t('bcrypt.analyze', 'Analyze') ?></button>
                 </form>
-                <div id="analyzeResult" class="result-box" style="display: none;">
-                    <strong><?= t('bcrypt.hash_info', 'Hash Info') ?>:</strong>
-                    <div class="hash-info-item">
-                        <span class="hash-info-label"><?= t('bcrypt.algorithm', 'Algorithm') ?>:</span>
-                        <span class="hash-info-value" id="analyzeAlgorithm"></span>
-                    </div>
-                    <div class="hash-info-item">
-                        <span class="hash-info-label"><?= t('bcrypt.cost', 'Cost') ?>:</span>
-                        <span class="hash-info-value" id="analyzeCost"></span>
-                    </div>
-                    <div class="hash-info-item">
-                        <span class="hash-info-label"><?= t('bcrypt.salt', 'Salt') ?>:</span>
-                        <span class="hash-info-value" id="analyzeSalt"></span>
-                    </div>
-                    <div class="hash-info-item">
-                        <span class="hash-info-label"><?= t('bcrypt.hash_value', 'Hash Value') ?>:</span>
-                        <span class="hash-info-value" id="analyzeHashValue"></span>
+                <div id="analyzeResult" class="result-box mt-4" style="display: none;">
+                    <h5 class="mb-3">
+                        <i class="bi bi-info-circle me-2"></i><?= t('bcrypt.hash_analysis', 'Hash Analysis') ?>
+                    </h5>
+                    <div class="hash-info">
+                        <div class="hash-info-item">
+                            <span class="hash-info-label"><?= t('bcrypt.algorithm', 'Algorithm') ?>:</span>
+                            <span class="hash-info-value" id="analyzeAlgorithm"></span>
+                        </div>
+                        <div class="hash-info-item">
+                            <span class="hash-info-label"><?= t('bcrypt.cost', 'Cost') ?>:</span>
+                            <span class="hash-info-value" id="analyzeCost"></span>
+                        </div>
+                        <div class="hash-info-item">
+                            <span class="hash-info-label"><?= t('bcrypt.salt', 'Salt') ?>:</span>
+                            <div class="d-flex align-items-center">
+                                <code id="analyzeSalt" class="text-break me-2"></code>
+                                <button class="btn btn-sm btn-outline-secondary" onclick="copyToClipboard('analyzeSalt')" data-bs-toggle="tooltip" title="<?= t('bcrypt.copy', 'Copy') ?>">
+                                    <i class="bi bi-clipboard"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="hash-info-item">
+                            <span class="hash-info-label"><?= t('bcrypt.hash_value', 'Hash Value') ?>:</span>
+                            <div class="d-flex align-items-center">
+                                <code id="analyzeHashValue" class="text-break me-2"></code>
+                                <button class="btn btn-sm btn-outline-secondary" onclick="copyToClipboard('analyzeHashValue')" data-bs-toggle="tooltip" title="<?= t('bcrypt.copy', 'Copy') ?>">
+                                    <i class="bi bi-clipboard"></i>
+                                </button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -502,107 +675,304 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <form id="checkStrengthForm">
                     <div class="form-group">
                         <label for="passwordStrength" class="form-label"><?= t('bcrypt.input_placeholder', 'Enter text to check strength') ?></label>
-                        <input type="password" id="passwordStrength" name="password" class="form-control" required>
+                        <div class="input-group">
+                            <input type="password" id="passwordStrength" name="password" class="form-control" required>
+                            <button class="btn btn-outline-secondary" type="button" id="toggleStrengthPassword">
+                                <i class="bi bi-eye"></i>
+                            </button>
+                        </div>
+                        <div class="d-flex justify-content-between mt-2">
+                            <small class="text-muted" id="passwordLength">0 <?= t('bcrypt.characters', 'characters') ?></small>
+                        </div>
                     </div>
                     <button type="submit" class="btn btn-primary"><?= t('bcrypt.check_strength', 'Check Strength') ?></button>
                 </form>
-                <div id="checkStrengthResult" class="result-box" style="display: none;">
-                    <strong><?= t('bcrypt.strength', 'Strength') ?>:</strong>
-                    <div class="strength-meter">
-                        <div class="strength-meter-fill" id="strengthMeterFill"></div>
+                <div id="checkStrengthResult" class="result-box mt-4" style="display: none;">
+                    <h5 class="mb-3">
+                        <i class="bi bi-shield-check me-2"></i><?= t('bcrypt.password_strength', 'Password Strength') ?>
+                    </h5>
+                    <div class="mb-3">
+                        <div class="d-flex justify-content-between mb-1">
+                            <span id="strengthText" class="fw-bold"></span>
+                            <span id="strengthScore" class="badge bg-primary">0/5</span>
+                        </div>
+                        <div class="strength-meter mb-2">
+                            <div class="strength-meter-fill" id="strengthMeterFill"></div>
+                        </div>
+                        <div id="strengthMessage" class="small text-muted"></div>
                     </div>
-                    <div id="strengthMessage"></div>
-                    <div class="strength-tips" id="strengthTips"></div>
+                    <div class="strength-tips" id="strengthTips">
+                        <h6 class="fw-bold">
+                            <i class="bi bi-lightbulb me-2"></i><?= t('bcrypt.tips_to_improve', 'Tips to improve your password') ?>
+                        </h6>
+                        <ul class="mb-0">
+                            <li><?= t('bcrypt.tip_length', 'Use at least 12 characters') ?></li>
+                            <li><?= t('bcrypt.tip_uppercase', 'Include uppercase letters (A-Z)') ?></li>
+                            <li><?= t('bcrypt.tip_lowercase', 'Include lowercase letters (a-z)') ?></li>
+                            <li><?= t('bcrypt.tip_numbers', 'Include numbers (0-9)') ?></li>
+                            <li><?= t('bcrypt.tip_special', 'Include special characters (!@#$%^&*)') ?></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        const generateForm = document.getElementById('generateForm');
-        const verifyForm = document.getElementById('verifyForm');
-        const analyzeForm = document.getElementById('analyzeForm');
-        const checkStrengthForm = document.getElementById('checkStrengthForm');
+        // Initialize tooltips
+        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+        var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+            return new bootstrap.Tooltip(tooltipTriggerEl);
+        });
+
+        // Toggle password visibility
+        function setupPasswordToggle(inputId, buttonId) {
+            const input = document.getElementById(inputId);
+            const button = document.getElementById(buttonId);
+            
+            if (input && button) {
+                button.addEventListener('click', function() {
+                    const type = input.getAttribute('type') === 'password' ? 'text' : 'password';
+                    input.setAttribute('type', type);
+                    const icon = button.querySelector('i');
+                    if (icon) {
+                        icon.classList.toggle('bi-eye');
+                        icon.classList.toggle('bi-eye-slash');
+                    }
+                });
+            }
+        }
+
+        // Setup password toggles
+        document.addEventListener('DOMContentLoaded', function() {
+            setupPasswordToggle('password', 'togglePassword');
+            setupPasswordToggle('verifyPassword', 'toggleVerifyPassword');
+            setupPasswordToggle('strengthPassword', 'toggleStrengthPassword');
+            
+            // Update cost factor display
+            const costSlider = document.getElementById('cost');
+            const costValue = document.getElementById('costValue');
+            
+            if (costSlider && costValue) {
+                costValue.textContent = costSlider.value;
+                costSlider.addEventListener('input', function() {
+                    costValue.textContent = this.value;
+                });
+            }
+        });
+
+        // Form submission handlers
+        async function handleFormSubmit(formElement, endpoint, successCallback) {
+            const submitBtn = formElement.querySelector('button[type="submit"]');
+            const originalBtnText = submitBtn.innerHTML;
+            const spinner = formElement.querySelector('.spinner-border');
+            
+            try {
+                // Show loading state
+                if (spinner) spinner.classList.remove('d-none');
+                submitBtn.disabled = true;
+                
+                const formData = new FormData(formElement);
+                const response = await fetch('', {
+                    method: 'POST',
+                    headers: {
+                        'X-Requested-With': 'XMLHttpRequest'
+                    },
+                    body: formData
+                });
+                
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                
+                const data = await response.json();
+                
+                if (data.success) {
+                    successCallback(data);
+                } else {
+                    showToast(data.message || 'An error occurred', 'danger');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                showToast('An error occurred while processing your request', 'danger');
+            } finally {
+                // Reset button state
+                if (spinner) spinner.classList.add('d-none');
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = originalBtnText;
+            }
+        }
         
-        generateForm.addEventListener('submit', async (e) => {
-            e.preventDefault();
-            const formData = new FormData(generateForm);
-            const response = await fetch('', {
-                method: 'POST',
-                body: formData
+        // Show toast notification
+        function showToast(message, type = 'info') {
+            const toastContainer = document.getElementById('toastContainer');
+            if (!toastContainer) return;
+            
+            const toastId = 'toast-' + Date.now();
+            const toast = document.createElement('div');
+            toast.id = toastId;
+            toast.className = `toast align-items-center text-white bg-${type} border-0`;
+            toast.setAttribute('role', 'alert');
+            toast.setAttribute('aria-live', 'assertive');
+            toast.setAttribute('aria-atomic', 'true');
+            
+            toast.innerHTML = `
+                <div class="d-flex">
+                    <div class="toast-body">
+                        ${message}
+                    </div>
+                    <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+                </div>
+            `;
+            
+            toastContainer.appendChild(toast);
+            const bsToast = new bootstrap.Toast(toast, { autohide: true, delay: 5000 });
+            bsToast.show();
+            
+            // Remove toast after it's hidden
+            toast.addEventListener('hidden.bs.toast', function() {
+                toast.remove();
             });
-            const data = await response.json();
-            if (data.success) {
+        }
+        
+        // Generate hash form
+        document.getElementById('generateForm')?.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const form = e.target;
+            
+            await handleFormSubmit(form, '', (data) => {
                 document.getElementById('generateHash').textContent = data.hash;
                 document.getElementById('generateResult').style.display = 'block';
-            } else {
-                alert(data.message);
-            }
+                showToast('Hash generated successfully!', 'success');
+            });
         });
         
-        verifyForm.addEventListener('submit', async (e) => {
+        // Verify hash form
+        document.getElementById('verifyForm')?.addEventListener('submit', async (e) => {
             e.preventDefault();
-            const formData = new FormData(verifyForm);
-            const response = await fetch('', {
-                method: 'POST',
-                body: formData
+            const form = e.target;
+            
+            await handleFormSubmit(form, '', (data) => {
+                const resultDiv = document.getElementById('verifyResult');
+                resultDiv.className = `alert alert-${data.valid ? 'success' : 'danger'}`;
+                resultDiv.innerHTML = `
+                    <i class="bi ${data.valid ? 'bi-check-circle-fill' : 'bi-x-circle-fill'}"></i>
+                    ${data.message}
+                `;
+                resultDiv.style.display = 'block';
             });
-            const data = await response.json();
-            if (data.success) {
-                document.getElementById('verifyMessage').textContent = data.message;
-                document.getElementById('verifyResult').style.display = 'block';
-            } else {
-                alert(data.message);
-            }
         });
         
-        analyzeForm.addEventListener('submit', async (e) => {
+        // Analyze hash form
+        document.getElementById('analyzeForm')?.addEventListener('submit', async (e) => {
             e.preventDefault();
-            const formData = new FormData(analyzeForm);
-            const response = await fetch('', {
-                method: 'POST',
-                body: formData
-            });
-            const data = await response.json();
-            if (data.success) {
+            const form = e.target;
+            
+            await handleFormSubmit(form, '', (data) => {
                 document.getElementById('analyzeAlgorithm').textContent = data.algorithm;
                 document.getElementById('analyzeCost').textContent = data.cost;
                 document.getElementById('analyzeSalt').textContent = data.salt;
                 document.getElementById('analyzeHashValue').textContent = data.hash_value;
                 document.getElementById('analyzeResult').style.display = 'block';
-            } else {
-                alert(data.message);
-            }
-        });
-        
-        checkStrengthForm.addEventListener('submit', async (e) => {
-            e.preventDefault();
-            const formData = new FormData(checkStrengthForm);
-            const response = await fetch('', {
-                method: 'POST',
-                body: formData
             });
-            const data = await response.json();
-            if (data.success) {
-                const strengthMeterFill = document.getElementById('strengthMeterFill');
-                strengthMeterFill.className = `strength-meter-fill strength-${data.strength}`;
-                document.getElementById('strengthMessage').textContent = data.message;
-                const strengthTips = document.getElementById('strengthTips');
-                strengthTips.innerHTML = '';
-                data.tips.forEach((tip) => {
-                    const tipElement = document.createElement('div');
-                    tipElement.textContent = tip;
-                    strengthTips.appendChild(tipElement);
-                });
-                document.getElementById('checkStrengthResult').style.display = 'block';
-            } else {
-                alert(data.message);
-            }
         });
         
+        // Check password strength
+        document.getElementById('checkStrengthForm')?.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const form = e.target;
+            
+            await handleFormSubmit(form, '', (data) => {
+                const strengthMeterFill = document.getElementById('strengthMeterFill');
+                const strengthText = document.getElementById('strengthText');
+                const strengthTips = document.getElementById('strengthTips');
+                
+                // Update strength meter
+                strengthMeterFill.className = `strength-meter-fill strength-${data.strength}`;
+                
+                // Update strength text
+                const strengthLabels = {
+                    'very_weak': '<?= t('bcrypt.very_weak', 'Very Weak') ?>',
+                    'weak': '<?= t('bcrypt.weak', 'Weak') ?>',
+                    'moderate': '<?= t('bcrypt.moderate', 'Moderate') ?>',
+                    'strong': '<?= t('bcrypt.strong', 'Strong') ?>',
+                    'very_strong': '<?= t('bcrypt.very_strong', 'Very Strong') ?>'
+                };
+                
+                strengthText.textContent = strengthLabels[data.strength] || '';
+                
+                // Update tips
+                if (Array.isArray(data.tips) && data.tips.length > 0) {
+                    strengthTips.innerHTML = `
+                        <h6><i class="bi bi-lightbulb"></i> <?= t('bcrypt.tips_to_improve', 'Tips to improve your password') ?></h6>
+                        <ul class="mb-0">
+                            ${data.tips.map(tip => `<li>${tip}</li>`).join('')}
+                        </ul>
+                    `;
+                } else {
+                    strengthTips.innerHTML = '';
+                }
+                
+                document.getElementById('checkStrengthResult').style.display = 'block';
+            });
+        });
+        
+        // Copy to clipboard function
         function copyToClipboard(id) {
-            const text = document.getElementById(id).textContent;
+            const element = document.getElementById(id);
+            if (!element) return;
+            
+            const text = element.textContent || element.innerText;
             navigator.clipboard.writeText(text).then(() => {
-                alert('Copied to clipboard!');
+                showToast('<?= t('bcrypt.copied', 'Copied to clipboard!') ?>', 'success');
+            }).catch(err => {
+                console.error('Failed to copy text: ', err);
+                showToast('<?= t('bcrypt.copy_failed', 'Failed to copy') ?>', 'danger');
+            });
+        }
+        
+        // Real-time password strength check
+        const strengthPasswordInput = document.getElementById('strengthPassword');
+        if (strengthPasswordInput) {
+            strengthPasswordInput.addEventListener('input', function() {
+                const password = this.value;
+                const lengthDisplay = document.getElementById('passwordLength');
+                
+                if (lengthDisplay) {
+                    lengthDisplay.textContent = `${password.length} <?= t('bcrypt.characters', 'characters') ?>`;
+                }
+                
+                // Only check strength if we have a password
+                if (password.length > 0) {
+                    const formData = new FormData();
+                    formData.append('action', 'check_strength');
+                    formData.append('password', password);
+                    
+                    fetch('', {
+                        method: 'POST',
+                        headers: {
+                            'X-Requested-With': 'XMLHttpRequest'
+                        },
+                        body: formData
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.success) {
+                            const strengthMeterFill = document.getElementById('strengthMeterFill');
+                            if (strengthMeterFill) {
+                                strengthMeterFill.className = `strength-meter-fill strength-${data.strength}`;
+                            }
+                        }
+                    });
+                } else {
+                    // Reset strength meter if password is empty
+                    const strengthMeterFill = document.getElementById('strengthMeterFill');
+                    if (strengthMeterFill) {
+                        strengthMeterFill.className = 'strength-meter-fill';
+                        strengthMeterFill.style.width = '0%';
+                    }
+                }
             });
         }
     </script>
