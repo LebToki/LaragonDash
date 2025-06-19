@@ -179,6 +179,7 @@ ul.list-unstyled.small.lh-lg {
 
 #lang-select {
   min-width: 120px;
+  font-family: 'Poppins', 'Segoe UI Emoji', 'Noto Color Emoji', 'Apple Color Emoji', sans-serif;
 }
 
 /* Toast */

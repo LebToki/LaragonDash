@@ -107,10 +107,34 @@ if (file_exists(dirname(__DIR__) . '/config.php')) {
 	/**
 	 * Get system vitals (extend as needed).
 	 */
-	function getServerVitals(): array {
-		return [
-			'Uptime' => getUptime(),
-			'Memory' => getMemoryUsage(),
-			'Disk' => getDiskUsage(),
-		];
-	}
+       function getServerVitals(): array {
+               return [
+                       'Uptime' => getUptime(),
+                       'Memory' => getMemoryUsage(),
+                       'Disk' => getDiskUsage(),
+               ];
+       }
+
+       /**
+        * List available language codes based on JSON files in assets/languages.
+        */
+       function getAvailableLanguages(): array {
+               $files = glob(__DIR__ . '/../assets/languages/*.json');
+               $codes = array_map(fn($f) => basename($f, '.json'), $files);
+               sort($codes);
+               return $codes;
+       }
+
+       /**
+        * Convert a country code into its flag emoji.
+        */
+       function flagEmoji(string $cc): string {
+               if (strlen($cc) !== 2) return '';
+               $codepoints = [
+                       0x1F1E6 + ord(strtoupper($cc[0])) - 65,
+                       0x1F1E6 + ord(strtoupper($cc[1])) - 65
+               ];
+               return mb_convert_encoding('&#' . $codepoints[0] . ';', 'UTF-8', 'HTML-ENTITIES') .
+                      mb_convert_encoding('&#' . $codepoints[1] . ';', 'UTF-8', 'HTML-ENTITIES');
+       }
+

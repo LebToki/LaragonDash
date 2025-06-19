@@ -1,13 +1,13 @@
 # ![LaragonDash Logo](assets/favicon/favicon-32x32.png) LaragonDash
 
-## 🚀 Welcome to LaragonDash v1.0
+## 🚀 Welcome to LaragonDash v1.1
 
 
 **LaragonDash** is the natural evolution of the original [Laragon Dashboard](https://github.com/LebToki/Laragon-Dashboard). It’s **modular**, **future-proof**, and built for developers who want speed, control, and an intuitive interface to manage their local stack.
 
 ---
 
-> Following the success and adoption of the original Laragon Dashboard by the community, we’re proud to introduce `LaragonDash v1.0`.  
+> Following the success and adoption of the original Laragon Dashboard by the community, we’re proud to introduce `LaragonDash v1.1`.
 > This spin-off delivers a modern MVC-inspired layout, support for modules, improved theming, and smarter tooling — while still preserving the simplicity developers loved about the original.
 
 > ⚙️ **LaragonDash** is fully compatible with Laragon 6+ and will continue to receive updates and improvements as the new primary branch of development.
@@ -89,6 +89,15 @@ LaragonDash/
 └── README.md
 
 📆 Changelog Summary
+v1.1 — June 2025
+Language loader with RTL support
+Dynamic language dropdown with emoji flags
+Settings page to edit ignored directories
+Email viewer handles HTML/TXT and delete
+Bcrypt generator with verify helper
+Search results ranked by relevance
+Vitals charts auto refresh
+
 v1.0 — June 2025
 Initial modular release
 Theme toggle with persistent mode
@@ -101,7 +110,7 @@ Improved code structure and error handling
 Multi-language JSON structure for UI
 
 🗣 Language Support
-All translations reside in /lang/. Want to contribute your own? Simply add a language-code.json file with:
+All translations reside in `assets/languages/`. Want to contribute your own? Simply add a `code.json` file with:
 
 ```
 {

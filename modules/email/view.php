@@ -16,7 +16,7 @@
 	<div class="row">
 		<!-- Sidebar: Email list -->
 		<div class="col-md-4 col-lg-3 border-end">
-			<h5 class="mb-3">📥 Inbox</h5>
+                        <h5 class="mb-3" data-i18n="inbox">📥 Inbox</h5>
 			<div class="list-group small">
 				<?php foreach ($emails as $emailFile):
 					$filename = basename($emailFile);
@@ -25,10 +25,10 @@
 					?>
 					<a href="?module=email&email=<?= urlencode($filename) ?>" class="list-group-item list-group-item-action <?= $active ?>">
 						<?= htmlspecialchars($subject) ?>
-						<form method="post" action="?module=email" class="d-inline float-end" onsubmit="return confirm('Delete this email?');">
-							<input type="hidden" name="delete" value="<?= htmlspecialchars($filename) ?>">
-							<button class="btn btn-sm btn-link text-danger p-0 ms-2" title="Delete">&times;</button>
-						</form>
+                                                <form method="post" action="?module=email" class="d-inline float-end" onsubmit="return confirm('Delete this email?');">
+                                                        <input type="hidden" name="delete" value="<?= htmlspecialchars($filename) ?>">
+                                                        <button class="btn btn-sm btn-link text-danger p-0 ms-2" title="Delete" data-i18n="delete">&times;</button>
+                                                </form>
 					</a>
 				<?php endforeach; ?>
 			</div>
@@ -52,7 +52,7 @@
                                        }
                                        echo "</div></div>";
 				} else {
-					echo "<div class='text-muted'>Select an email to view.</div>";
+                                       echo "<div class='text-muted' data-i18n='select_email'>Select an email to view.</div>";
 				}
 			?>
 		</div>
