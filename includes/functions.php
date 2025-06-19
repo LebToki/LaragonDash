@@ -1,6 +1,11 @@
 <?php
 // Load Settings
-	$laraconfig = include __DIR__ . '/config/settings.php';
+$laraconfig = include __DIR__ . '/config/settings.php';
+
+// Load additional configuration if available
+if (file_exists(dirname(__DIR__) . '/config.php')) {
+    require_once dirname(__DIR__) . '/config.php';
+}
 	
 	/**
 	 * Get the proper URL scheme (http or https) based on SSL settings.
@@ -42,7 +47,7 @@
 	/**
 	 * Get list of project tiles from directories.
 	 */
-	function getProjectTiles(string $search = ''): array {
+        function getProjectTiles(string $search = ''): array {
 		global $laraconfig;
 		$path = $laraconfig['ProjectPath'] ?? '..';
 		$ignored = $laraconfig['IgnoreDirs'] ?? ['.', '..', 'logs', 'vendor', 'assets'];
@@ -66,8 +71,26 @@
 				'admin' => $type['admin']
 			];
 		}
-		return $tiles;
-	}
+                return $tiles;
+        }
+
+        /**
+         * Search projects and rank them by similarity to query.
+         */
+        function searchAndRankProjects(array $projects, string $query): array {
+                if ($query === '') return $projects;
+                $scored = [];
+                foreach ($projects as $p) {
+                        similar_text(strtolower($query), strtolower($p['name']), $percent);
+                        $score = $percent;
+                        if (stripos($p['name'], $query) !== false) {
+                                $score += 50;
+                        }
+                        $scored[] = ['score' => $score, 'project' => $p];
+                }
+                usort($scored, fn($a, $b) => $b['score'] <=> $a['score']);
+                return array_column($scored, 'project');
+        }
 	
 	/**
 	 * Get basic system info.
@@ -84,10 +107,34 @@
 	/**
 	 * Get system vitals (extend as needed).
 	 */
-	function getServerVitals(): array {
-		return [
-			'Uptime' => getUptime(),
-			'Memory' => getMemoryUsage(),
-			'Disk' => getDiskUsage(),
-		];
-	}
+       function getServerVitals(): array {
+               return [
+                       'Uptime' => getUptime(),
+                       'Memory' => getMemoryUsage(),
+                       'Disk' => getDiskUsage(),
+               ];
+       }
+
+       /**
+        * List available language codes based on JSON files in assets/languages.
+        */
+       function getAvailableLanguages(): array {
+               $files = glob(__DIR__ . '/../assets/languages/*.json');
+               $codes = array_map(fn($f) => basename($f, '.json'), $files);
+               sort($codes);
+               return $codes;
+       }
+
+       /**
+        * Convert a country code into its flag emoji.
+        */
+       function flagEmoji(string $cc): string {
+               if (strlen($cc) !== 2) return '';
+               $codepoints = [
+                       0x1F1E6 + ord(strtoupper($cc[0])) - 65,
+                       0x1F1E6 + ord(strtoupper($cc[1])) - 65
+               ];
+               return mb_convert_encoding('&#' . $codepoints[0] . ';', 'UTF-8', 'HTML-ENTITIES') .
+                      mb_convert_encoding('&#' . $codepoints[1] . ';', 'UTF-8', 'HTML-ENTITIES');
+       }
+

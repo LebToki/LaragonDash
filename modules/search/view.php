@@ -1,10 +1,7 @@
 <?php
 	$query = $_GET['query'] ?? '';
-	$projects = getProjectTiles();
-	
-	$filtered = array_filter($projects, function ($p) use ($query) {
-		return stripos($p['name'], $query) !== false;
-	});
+        $projects = getProjectTiles();
+        $filtered = searchAndRankProjects($projects, $query);
 ?>
 <style>
     body.dark .card-footer {
@@ -14,10 +11,13 @@
 
 </style>
 <div class="container-fluid px-3 py-4">
-	<h4 class="mb-3">
-		<iconify-icon icon="ic:round-search" class="me-1"></iconify-icon>
-		Search Results for “<?= htmlspecialchars($query) ?>”
-	</h4>
+        <h4 class="mb-3">
+                <iconify-icon icon="ic:round-search" class="me-1"></iconify-icon>
+                Search Results for “<?= htmlspecialchars($query) ?>”
+        </h4>
+        <form class="mb-4" method="get" action="?module=search">
+                <input type="text" class="form-control" name="query" value="<?= htmlspecialchars($query) ?>" placeholder="Search projects...">
+        </form>
 	
 	<div class="row">
 		<?php if (empty($filtered)): ?>
