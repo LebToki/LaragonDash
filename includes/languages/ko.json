@@ -1,0 +1,158 @@
+{
+  "app": {
+    "title": "LaragonDash - 로컬 프로젝트 대시보드",
+    "description": "LaragonDash은 로컬 Laragon 프로젝트를 쉽게 구성, 미리보기 및 관리할 수 있는 깔끔한 개발자 대시보드입니다.",
+    "author": "2TInteractive의 Tarek Tarabichi"
+  },
+  "navigation": {
+    "dashboard": "대시보드",
+    "search": "검색",
+    "projects": "프로젝트",
+    "email": "이메일",
+    "vitals": "시스템 상태",
+    "bcrypt": "Bcrypt",
+    "settings": "설정"
+  },
+  "dashboard": {
+    "system_info": "시스템 정보",
+    "add_project": "새 프로젝트 추가",
+    "more_projects": "더 많은 프로젝트",
+    "project_types": {
+      "wordpress": "워드프레스",
+      "joomla": "줌라",
+      "laravel": "라라벨",
+      "drupal": "드루팔",
+      "symfony": "심포니",
+      "python": "파이썬",
+      "codeigniter": "코드이그나이터",
+      "unknown": "알 수 없음"
+    }
+  },
+  "system": {
+    "php_version": "PHP 버전",
+    "server_software": "서버 소프트웨어",
+    "document_root": "문서 루트",
+    "date": "날짜",
+    "uptime": "가동 시간",
+    "memory_usage": "메모리 사용량",
+    "disk_usage": "디스크 사용량",
+    "cpu_usage": "CPU 사용량"
+  },
+  "search": {
+    "placeholder": "프로젝트 검색...",
+    "no_results": "검색 결과가 없습니다"
+  },
+  "email": {
+    "preview": "이메일 미리보기",
+    "subject": "제목",
+    "from": "보낸 사람",
+    "to": "받는 사람",
+    "date": "날짜",
+    "body": "내용"
+  },
+  "vitals": {
+    "title": "시스템 상태",
+    "server_status": "서버 상태",
+    "database_status": "데이터베이스 상태",
+    "online": "온라인",
+    "offline": "오프라인",
+    "last_checked": "마지막 확인"
+  },
+  "bcrypt": {
+    "title": "Bcrypt 개발자 도구",
+    "generate_tab": "해시 생성",
+    "verify_tab": "해시 검증",
+    "info_tab": "해시 정보",
+    "strength_tab": "비밀번호 강도",
+    "input_placeholder": "암호화할 비밀번호 입력",
+    "password": "비밀번호",
+    "hash_to_verify": "Bcrypt 해시",
+    "enter_hash_placeholder": "Bcrypt 해시를 여기에 붙여넣기",
+    "generate": "생성",
+    "verify": "검증",
+    "analyze": "분석",
+    "check_strength": "강도 확인",
+    "copy": "복사",
+    "copied": "복사됨!",
+    "generating": "생성 중...",
+    "verifying": "검증 중...",
+    "analyzing": "분석 중...",
+    "checking": "확인 중...",
+    "generated_hash": "Bcrypt 해시가 생성되었습니다",
+    "verify_success": "✅ 비밀번호가 일치합니다!",
+    "verify_failed": "❌ 비밀번호가 일치하지 않습니다",
+    "hash_info": "해시 정보",
+    "hash_algorithm": "알고리즘",
+    "hash_cost": "비용 계수",
+    "hash_salt": "솔트",
+    "hash_value": "해시 값",
+    "password_strength": "비밀번호 강도",
+    "strength_very_weak": "매우 약함",
+    "strength_weak": "약함",
+    "strength_moderate": "보통",
+    "strength_strong": "강함",
+    "strength_very_strong": "매우 강함",
+    "strength_tips": "더 강력한 비밀번호를 위한 팁:",
+    "strength_tip_length": "• 12자 이상 사용하세요",
+    "strength_tip_upper": "• 대문자를 포함하세요",
+    "strength_tip_lower": "• 소문자를 포함하세요",
+    "strength_tip_number": "• 숫자를 포함하세요",
+    "strength_tip_special": "• 특수문자를 포함하세요",
+    "error_enter_password": "해시를 생성할 비밀번호를 입력해주세요.",
+    "error_verify_fields": "검증을 위해 비밀번호와 해시가 모두 필요합니다.",
+    "error_invalid_hash": "잘못된 Bcrypt 해시 형식입니다.",
+    "error_enter_hash": "분석할 Bcrypt 해시를 입력해주세요.",
+    "error_enter_password_strength": "강도를 확인할 비밀번호를 입력해주세요."
+  },
+  "settings": {
+    "title": "설정",
+    "appearance": {
+      "title": "모양",
+      "theme": "테마",
+      "light": "라이트",
+      "dark": "다크",
+      "system": "시스템"
+    },
+    "general": {
+      "title": "일반",
+      "language": "언어",
+      "save": "변경 사항 저장"
+    }
+  },
+  "alerts": {
+    "changes_saved": "변경 사항이 저장되었습니다",
+    "error_occurred": "오류가 발생했습니다",
+    "project_not_found": "프로젝트를 찾을 수 없습니다",
+    "module_not_found": "모듈을 찾을 수 없습니다"
+  },
+  "buttons": {
+    "save": "저장",
+    "cancel": "취소",
+    "close": "닫기",
+    "edit": "수정",
+    "delete": "삭제",
+    "confirm": "확인",
+    "dismiss": "닫기",
+    "logout": "로그아웃"
+  },
+  "titles": {
+    "dashboard": "대시보드",
+    "search": "프로젝트 검색",
+    "projects": "프로젝트",
+    "email": "이메일 미리보기",
+    "vitals": "시스템 상태",
+    "bcrypt": "Bcrypt 생성기",
+    "settings": "설정"
+  },
+  "tooltips": {
+    "theme_toggle": "테마 전환",
+    "refresh": "새로고침",
+    "help": "도움말",
+    "notifications": "알림"
+  },
+  "errors": {
+    "404": "페이지를 찾을 수 없습니다",
+    "403": "접근이 거부되었습니다",
+    "500": "내부 서버 오류"
+  }
+}
