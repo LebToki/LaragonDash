@@ -1,16 +1,5 @@
 <?php
-$config = include __DIR__ . '/../../includes/config/settings.php';
-$ignored = $config['IgnoreDirs'] ?? [];
-$saved = isset($_GET['saved']);
-?>
-<div class="container py-4">
-    <h4 class="mb-4" data-i18n="settings">🛠️ Settings</h4>
-
-    <?php if ($saved): ?>
-        <div class="alert alert-success" data-i18n="settings_saved">Settings saved.</div>
-    <?php endif; ?>
-
-    <div class="row g-4 mb-4">
+                                        echo '<option value="' . $code . '">' . flagEmoji($code) . ' ' . strtoupper($code) . '</option>';
         <!-- Theme Toggle -->
         <div class="col-md-6">
             <label class="form-label" data-i18n="theme_mode">Theme Mode</label>

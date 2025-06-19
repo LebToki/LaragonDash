@@ -92,6 +92,8 @@ LaragonDash/
 v1.1 — June 2025
 Language loader with RTL support
 Dynamic language dropdown with emoji flags
+Fallback to English if translation missing
+Tajawal font used automatically for Arabic
 Settings page to edit ignored directories
 Email viewer handles HTML/TXT and delete
 Bcrypt generator with verify helper

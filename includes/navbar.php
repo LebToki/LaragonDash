@@ -1,12 +1,12 @@
 <nav class="navbar navbar-light bg-white shadow-sm px-4">
-	<div class="d-flex align-items-center gap-3">
-		<img src="../assets/images/laragondash-logo.png" style="height: 50px;" alt="LaragonDash Logo">
+        <div class="d-flex align-items-center gap-3">
+                <img src="assets/images/laragondash-logo.png" style="height: 50px;" alt="LaragonDash Logo">
 	</div>
 	
 	<div class="d-flex align-items-center gap-3 ms-auto">
 		
 		<!-- Search Box -->
-		<form class="d-flex" action="../index.php" method="GET" role="search">
+                <form class="d-flex" action="index.php" method="GET" role="search">
 			<input type="hidden" name="module" value="search">
                         <input class="form-control me-2 form-control-sm" type="search" name="query" placeholder="Search projects..." aria-label="Search" data-i18n-placeholder="search">
 			<button class="btn btn-sm btn-outline-secondary" type="submit">
@@ -23,19 +23,8 @@
                 <select id="lang-select" class="form-select form-select-sm" aria-label="Language Selector" style="width: auto;">
                         <?php
                                 $available = getAvailableLanguages();
-                                $flagMap = [
-                                        'en' => 'gb',
-                                        'fr' => 'fr',
-                                        'es' => 'es',
-                                        'de' => 'de',
-                                        'pt' => 'pt',
-                                        'id' => 'id',
-                                        'tl' => 'ph',
-                                        'ar' => 'sa'
-                                ];
                                 foreach ($available as $code):
-                                        $flag = $flagMap[$code] ?? $code;
-                                        echo '<option value="' . $code . '">' . flagEmoji($flag) . '</option>';
+                                        echo '<option value="' . $code . '">' . flagEmoji($code) . '</option>';
                                 endforeach;
                         ?>
                 </select>

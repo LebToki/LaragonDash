@@ -8,6 +8,14 @@ body {
   color: #333;
 }
 
+html[dir='rtl'] body {
+  font-family: 'Tajawal', sans-serif;
+}
+
+iconify-icon {
+  font-family: initial !important;
+}
+
 [data-theme="dark"] body,
 [data-theme="dark"] {
   background-color: #1e1e2f;
@@ -179,7 +187,7 @@ ul.list-unstyled.small.lh-lg {
 
 #lang-select {
   min-width: 120px;
-  font-family: 'Poppins', 'Segoe UI Emoji', 'Noto Color Emoji', 'Apple Color Emoji', sans-serif;
+  font-family: inherit;
 }
 
 /* Toast */

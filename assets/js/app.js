@@ -64,7 +64,7 @@
     
     // Language selector and translations
     const langSelect = document.getElementById("lang-select");
-    const currentLang = localStorage.getItem("lang") || "en";
+    let currentLang = localStorage.getItem("lang") || "en";
     if (langSelect) {
       langSelect.value = currentLang;
       langSelect.addEventListener("change", () => {
@@ -75,7 +75,8 @@
 
     function applyTranslations(lang) {
       fetch(`assets/languages/${lang}.json`)
-        .then(r => r.json())
+        .then(r => r.ok ? r.json() : Promise.reject())
+        .catch(() => fetch('assets/languages/en.json').then(r => r.json()).then(d => { lang = 'en'; return d; }))
         .then(data => {
           document.documentElement.lang = lang;
           if (lang === 'ar') {
@@ -95,7 +96,8 @@
               el.setAttribute('placeholder', data[key]);
             }
           });
-        });
+        })
+        .catch(() => {});
     }
 
     applyTranslations(currentLang);

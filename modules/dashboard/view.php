@@ -36,8 +36,8 @@
 		</div>
 		
 		<!-- Right Column: System Info -->
-		<div class="col-lg-3 col-12 mt-4 mt-lg-0">
-			<div class="bg-white border rounded p-3 shadow-sm" style="font-family: Poppins,sans-serif;">
+                <div class="col-lg-3 col-12 mt-4 mt-lg-0">
+                        <div class="bg-white border rounded p-3 shadow-sm">
 				<h6 class="fw-bold mb-3">
 					<iconify-icon icon="mdi:server" class="me-1"></iconify-icon> System Information
 				</h6>
