@@ -1,18 +1,143 @@
 {
-
-
-
-
-
-	"title": "Bienvenido al Panel de Laragon",
-	"header": "Mi servidor de desarrollo",
-	"welcome_back": "¡Bienvenido de nuevo!",
-
-	"servers_tab": "Servidores",
-	"inbox_tab": "Buzón",
-	"vitals_tab": "Valores del servidor",
-	"settings_tab": "Configuración",
-
+  "app": {
+    "title": "LaragonDash – Panel de Proyectos Local",
+    "description": "LaragonDash es un panel de desarrollo limpio para organizar, previsualizar y gestionar tus proyectos Laragon sin esfuerzo.",
+    "author": "Tarek Tarabichi de 2TInteractive"
+  },
+  "navigation": {
+    "dashboard": "Inicio",
+    "search": "Buscar",
+    "projects": "Proyectos",
+    "email": "Correo",
+    "vitals": "Estado",
+    "bcrypt": "Bcrypt",
+    "settings": "Ajustes"
+  },
+  "dashboard": {
+    "system_info": "Información del Sistema",
+    "add_project": "Añadir Proyecto",
+    "more_projects": "Más Proyectos",
+    "project_types": {
+      "wordpress": "WordPress",
+      "joomla": "Joomla",
+      "laravel": "Laravel",
+      "drupal": "Drupal",
+      "symfony": "Symfony",
+      "python": "Python",
+      "codeigniter": "CodeIgniter",
+      "unknown": "Desconocido"
+    }
+  },
+  "system": {
+    "php_version": "Versión de PHP",
+    "server_software": "Software del Servidor",
+    "document_root": "Directorio Raíz",
+    "date": "Fecha",
+    "uptime": "Tiempo Activo",
+    "memory_usage": "Uso de Memoria",
+    "disk_usage": "Uso de Disco",
+    "cpu_usage": "Uso de CPU"
+  },
+  "search": {
+    "placeholder": "Buscar proyectos...",
+    "no_results": "No se encontraron proyectos"
+  },
+  "email": {
+    "preview": "Vista Previa",
+    "subject": "Asunto",
+    "from": "De",
+    "to": "Para",
+    "date": "Fecha",
+    "body": "Cuerpo"
+  },
+  "vitals": {
+    "title": "Estado del Sistema",
+    "server_status": "Estado del Servidor",
+    "database_status": "Estado de la Base de Datos",
+    "online": "En Línea",
+    "offline": "Desconectado",
+    "last_checked": "Última verificación"
+  },
+  "bcrypt": {
+    "title": "Generador Bcrypt",
+    "input_placeholder": "Ingrese texto para hashear",
+    "generate": "Generar",
+    "copy": "Copiar",
+    "copied": "¡Copiado!"
+  },
+  "settings": {
+    "title": "Configuración",
+    "appearance": {
+      "title": "Apariencia",
+      "theme": "Tema",
+      "light": "Claro",
+      "dark": "Oscuro",
+      "system": "Sistema"
+    },
+    "general": {
+      "title": "General",
+      "language": "Idioma",
+      "save": "Guardar Cambios"
+    }
+  },
+  "alerts": {
+    "changes_saved": "Cambios guardados correctamente",
+    "error_occurred": "Ocurrió un error",
+    "project_not_found": "Proyecto no encontrado",
+    "module_not_found": "Módulo no encontrado"
+  },
+  "buttons": {
+    "save": "Guardar",
+    "cancel": "Cancelar",
+    "close": "Cerrar",
+    "edit": "Editar",
+    "delete": "Eliminar",
+    "confirm": "Confirmar",
+    "dismiss": "Descartar"
+  },
+  "titles": {
+    "dashboard": "Inicio",
+    "search": "Buscar Proyectos",
+    "projects": "Proyectos",
+    "email": "Vista Previa de Correo",
+    "vitals": "Estado del Sistema",
+    "bcrypt": "Generador Bcrypt",
+    "settings": "Configuración"
+  },
+  "tooltips": {
+    "theme_toggle": "Cambiar tema",
+    "refresh": "Actualizar",
+    "help": "Ayuda",
+    "notifications": "Notificaciones"
+  },
+  "errors": {
+    "404": "Página no encontrada",
+    "403": "Acceso denegado",
+    "500": "Error interno del servidor"
+  },
+  "servers_tab": "Servidores",
+  "inbox_tab": "Buzón",
+  "vitals_tab": "Valores del servidor",
+  "settings_tab": "Configuración",
+  "breadcrumb_server_servers": "Mis servidores y aplicaciones de desarrollo",
+  "breadcrumb_server_mailbox": "Mi buzón del servidor de desarrollo",
+  "breadcrumb_server_vitals": "Mis valores vitales del servidor de desarrollo",
+  "server_status": "Estado del servidor",
+  "tiempo de actividad": "Tiempo de actividad",
+  "memory_usage": "Uso de memoria (en MB)",
+  "disk_usage": "Uso del disco",
+  "good_morning": "buenos, días",
+  "good_afternoon": "Buenas tardes",
+  "good_evening": "Buenas noches",
+  "logged-messages": "Mensajes registrados",
+  "email-list": "Lista de correo electrónico",
+  "no-emails-found": "No se encontraron correos electrónicos",
+  "delete": "Eliminar",
+  "document_root": "Raíz del documento",
+  "manage_mysql": "Administrar MySQL",
+  "default_footer": "&copy; 2024        <?php echo htmlspecialchars(fecha('Y')); ?>, Tarek Tarabichi",
+  "made_with_love": "Hecho con <span style=\"color: #e25555;\">&hearts;</span> y desarrollado por Laragon",
+  "welcome_back": "¡Bienvenido de nuevo!"
 	"breadcrumb_server_servers": "Mis servidores y aplicaciones de desarrollo",
 	"breadcrumb_server_mailbox": "Mi buzón del servidor de desarrollo",
 	"breadcrumb_server_vitals": "Mis valores vitales del servidor de desarrollo",

@@ -1,1 +1,118 @@
-{"greeting": "Welcome to LaragonDash"}
+{
+  "app": {
+    "title": "LaragonDash – Local Project Dashboard",
+    "description": "LaragonDash is a clean, local developer dashboard to organize, preview, and manage your Laragon projects effortlessly.",
+    "author": "Tarek Tarabichi from 2TInteractive"
+  },
+  "navigation": {
+    "dashboard": "Dashboard",
+    "search": "Search",
+    "projects": "Projects",
+    "email": "Email",
+    "vitals": "Vitals",
+    "bcrypt": "Bcrypt",
+    "settings": "Settings"
+  },
+  "dashboard": {
+    "system_info": "System Information",
+    "add_project": "Add New Project",
+    "more_projects": "More Projects",
+    "project_types": {
+      "wordpress": "WordPress",
+      "joomla": "Joomla",
+      "laravel": "Laravel",
+      "drupal": "Drupal",
+      "symfony": "Symfony",
+      "python": "Python",
+      "codeigniter": "CodeIgniter",
+      "unknown": "Unknown"
+    }
+  },
+  "system": {
+    "php_version": "PHP Version",
+    "server_software": "Server Software",
+    "document_root": "Document Root",
+    "date": "Date",
+    "uptime": "Uptime",
+    "memory_usage": "Memory Usage",
+    "disk_usage": "Disk Usage",
+    "cpu_usage": "CPU Usage"
+  },
+  "search": {
+    "placeholder": "Search projects...",
+    "no_results": "No projects found"
+  },
+  "email": {
+    "preview": "Email Preview",
+    "subject": "Subject",
+    "from": "From",
+    "to": "To",
+    "date": "Date",
+    "body": "Body"
+  },
+  "vitals": {
+    "title": "System Vitals",
+    "server_status": "Server Status",
+    "database_status": "Database Status",
+    "online": "Online",
+    "offline": "Offline",
+    "last_checked": "Last checked"
+  },
+  "bcrypt": {
+    "title": "Bcrypt Generator",
+    "input_placeholder": "Enter text to hash",
+    "generate": "Generate",
+    "copy": "Copy",
+    "copied": "Copied!"
+  },
+  "settings": {
+    "title": "Settings",
+    "appearance": {
+      "title": "Appearance",
+      "theme": "Theme",
+      "light": "Light",
+      "dark": "Dark",
+      "system": "System"
+    },
+    "general": {
+      "title": "General",
+      "language": "Language",
+      "save": "Save Changes"
+    }
+  },
+  "alerts": {
+    "changes_saved": "Changes saved successfully",
+    "error_occurred": "An error occurred",
+    "project_not_found": "Project not found",
+    "module_not_found": "Module not found"
+  },
+  "buttons": {
+    "save": "Save",
+    "cancel": "Cancel",
+    "close": "Close",
+    "edit": "Edit",
+    "delete": "Delete",
+    "confirm": "Confirm",
+    "dismiss": "Dismiss"
+  },
+  "titles": {
+    "dashboard": "Dashboard",
+    "search": "Search Projects",
+    "projects": "Projects",
+    "email": "Email Preview",
+    "vitals": "System Vitals",
+    "bcrypt": "Bcrypt Generator",
+    "settings": "Settings"
+  },
+  "tooltips": {
+    "theme_toggle": "Toggle theme",
+    "refresh": "Refresh",
+    "help": "Help",
+    "notifications": "Notifications"
+  },
+  "errors": {
+    "404": "Page not found",
+    "403": "Access denied",
+    "500": "Internal server error"
+  }
+}
