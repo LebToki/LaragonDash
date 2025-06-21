@@ -68,6 +68,7 @@ LaragonDash/
 
 Replace the Root Folder
 Simply overwrite your existing root directory with the one from the repo.
+or even create a project (directory too) depends on your preference as I have introduced a variable that reads the root from a config file ProjectPath you simply need to update it to match the location of your www folder
 
 **Configure settings.php**
 
