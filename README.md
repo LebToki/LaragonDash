@@ -63,15 +63,19 @@ LaragonDash/
 ├── index.php
 └── README.md
 ```
+
 **Quick Setup Guide**
+
 Replace the Root Folder
 Simply overwrite your existing root directory with the one from the repo.
 
 **Configure settings.php**
+
 Locate /Includes/config/settings.php and adjust the following to match your setup:
 
 ```
-/Includes/config/settings.php
+├── Includes/config/settings.php
+
 ```
 
 ```
@@ -85,7 +89,8 @@ Locate /Includes/config/settings.php and adjust the following to match your setu
 ?>
 ```
 
-**That’s it! You’re ready to go. 🚀**
+## That’s it! You’re ready to go. 🚀
+
 ---
 
 ## 🌐 Language Support
