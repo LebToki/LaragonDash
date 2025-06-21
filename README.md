@@ -63,7 +63,29 @@ LaragonDash/
 ├── index.php
 └── README.md
 ```
+**Quick Setup Guide**
+Replace the Root Folder
+Simply overwrite your existing root directory with the one from the repo.
 
+**Configure settings.php**
+Locate /Includes/config/settings.php and adjust the following to match your setup:
+
+```
+/Includes/config/settings.php
+```
+
+```
+<?php
+    return [
+        'SSLEnabled' => 1,                     // Enable or disable SSL
+        'Port'       => 443,                      // Your local server port
+        'ProjectPath' => 'D:/laragon8/www/',   // Update to your Laragon www path
+        'IgnoreDirs' => ['.', '..', 'templates', 'app', 'includes', 'modules', '.idea', 'logs', 'vendor', 'assets'], // Exclude unwanted directories
+    ];
+?>
+```
+
+**That’s it! You’re ready to go. 🚀**
 ---
 
 ## 🌐 Language Support
@@ -204,6 +226,12 @@ Use `data-i18n="module.key"` for inline translations.
 🧠 Join discussions  
 🗣 Help translate
 
+---
+**Found a Bug? Let Me Know!**
+If you run into any issues, please report them on the repo. 
+Your feedback helps improve LaragonDash for everyone in the community.
+
+Happy coding, and thanks for being part of this! 💻✨
 ---
 
 ## 📄 License
