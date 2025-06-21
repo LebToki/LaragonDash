@@ -81,10 +81,13 @@ Locate /Includes/config/settings.php and adjust the following to match your setu
 ```
 <?php
     return [
-        'SSLEnabled' => 1,                     // Enable or disable SSL
+        'SSLEnabled' => 1,                        // Enable or disable SSL
         'Port'       => 443,                      // Your local server port
-        'ProjectPath' => 'D:/laragon8/www/',   // Update to your Laragon www path
-        'IgnoreDirs' => ['.', '..', 'templates', 'app', 'includes', 'modules', '.idea', 'logs', 'vendor', 'assets'], // Exclude unwanted directories
+        // Update to your Laragon www path
+        'ProjectPath' => 'D:/laragon8/www/',   
+        // Exclude unwanted files and directories
+        'IgnoreDirs' => ['.', '..', 'templates', 'app', 'includes', 'modules', '.idea', 'logs', 'vendor', 'assets'], 
+        
     ];
 ?>
 ```
