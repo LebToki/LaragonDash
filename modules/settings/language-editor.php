@@ -33,10 +33,6 @@
 		$content = file_get_contents($filePath);
 	}
 	
-	// Add for debugging
-	error_log("Selected: $selected");
-	error_log("FilePath: $filePath");
-	error_log("LangDir: $langDir");
 ?>
 
 <div class="container py-4">
