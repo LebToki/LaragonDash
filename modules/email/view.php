@@ -1,39 +1,22 @@
 <?php
-	
-	// Handle deletion BEFORE any output or includes
-	if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['delete'])) {
-		$emailDir = 'D:/laragon/bin/sendmail/output/';
-		$target = basename($_POST['delete']);
-		$fullPath = $emailDir . $target;
-		
-		if (file_exists($fullPath)) {
-			unlink($fullPath);
-			echo "<script>location.href='?module=email&deleted=1';</script>";
-			exit;
-		}
-	}
-	
-	// Now safe to include UI-related files
-	require_once 'includes/functions.php';
-	
-	
-	$emailDir = 'D:/laragon/bin/sendmail/output/';
-	$emails = glob($emailDir . '*.{eml,txt}', GLOB_BRACE);
-	
-	usort($emails, fn($a, $b) => strcmp(basename($b), basename($a))); // DESC by filename
-	
-	$current = $_GET['email'] ?? null;
-	
-	// Handle deletion
-	if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['delete'])) {
-		$target = basename($_POST['delete']);
-		$fullPath = $emailDir . $target;
-		if (in_array($fullPath, $emails) && file_exists($fullPath)) {
-			unlink($fullPath);
-			header("Location: ?module=email&deleted=1");
-			exit;
-		}
-	}
+        require_once 'includes/functions.php';
+
+        $emailDir = $laraconfig['email_output_path'] ?? 'D:/laragon/bin/sendmail/output/';
+        $emails = glob($emailDir . '*.{eml,txt}', GLOB_BRACE);
+        usort($emails, fn($a, $b) => strcmp(basename($b), basename($a))); // DESC by filename
+
+        $current = $_GET['email'] ?? null;
+
+        // Handle deletion
+        if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['delete'])) {
+                $target = basename($_POST['delete']);
+                $fullPath = $emailDir . $target;
+                if (in_array($fullPath, $emails) && file_exists($fullPath)) {
+                        unlink($fullPath);
+                        header("Location: ?module=email&deleted=1");
+                        exit;
+                }
+        }
 ?>
 
 <div class="container-fluid py-4">
