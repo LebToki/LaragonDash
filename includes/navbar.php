@@ -1,7 +1,10 @@
 <nav class="navbar navbar-light bg-white shadow-sm px-4">
-	<div class="d-flex align-items-center gap-3">
-		<img src="../assets/images/laragondash-logo.png" style="height: 50px;" alt="LaragonDash Logo">
-	</div>
+        <div class="d-flex align-items-center gap-3">
+                <button class="btn btn-sm btn-outline-secondary d-lg-none" id="sidebarToggle" aria-label="<?= t('tooltips.toggle_sidebar', [], 'Toggle sidebar') ?>">
+                        <i class="ri-menu-line"></i>
+                </button>
+                <img src="../assets/images/laragondash-logo.png" style="height: 50px;" alt="LaragonDash Logo">
+        </div>
 	
 	<div class="d-flex align-items-center gap-3 ms-auto">
 		
