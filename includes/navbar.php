@@ -19,11 +19,12 @@
 			</button>
 		</form>
 		
-		<!-- Theme Toggle -->
-		<button class="btn btn-sm btn-outline-secondary d-flex align-items-center gap-1" id="themeToggleBtn"
-		        aria-label="Toggle Theme">
-			<iconify-icon icon="ph:moon-stars-duotone"></iconify-icon>
-		</button>
+                <!-- Theme Toggle -->
+                <?php $nextTheme = ($theme === 'dark') ? 'light' : 'dark'; ?>
+                <button class="btn btn-sm btn-outline-secondary d-flex align-items-center gap-1" id="themeToggleBtn"
+                        aria-label="Switch to <?= $nextTheme ?> theme">
+                        <iconify-icon icon="ph:moon-stars-duotone"></iconify-icon>
+                </button>
 		
 		
 		<!-- Language Selector (dynamically populated in app.js) -->
