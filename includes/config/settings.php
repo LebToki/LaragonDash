@@ -1,4 +1,5 @@
 <?php
+
         return [
                 'SSLEnabled' => 1,
                 'Port'       => 443,
@@ -7,4 +8,5 @@
                 // Path where Laragon stores outgoing emails
                 'email_output_path' => 'D:/laragon/bin/sendmail/output/',
         ];
+
 ?>

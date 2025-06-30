@@ -13,26 +13,26 @@
 	$message = '';
 	$content = '';
 	
-	if ($_SERVER['REQUEST_METHOD'] === 'POST' && $filePath) {
-		$json = $_POST['json'] ?? '';
-		$decoded = json_decode($json, true);
-		
-		if (json_last_error() !== JSON_ERROR_NONE) {
-			$message = '<div class="alert alert-danger">❌ Invalid JSON: ' . json_last_error_msg() . '</div>';
-		} else {
-			file_put_contents($filePath, json_encode($decoded, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
-			$message = '<div class="alert alert-success">✅ Language file saved.</div>';
-		}
-	}
+        if ($_SERVER['REQUEST_METHOD'] === 'POST' && $filePath) {
+                if (!verifyCsrfToken($_POST['csrf_token'] ?? null)) {
+                        $message = '<div class="alert alert-danger">Invalid CSRF token</div>';
+                } else {
+                        $json = $_POST['json'] ?? '';
+                        $decoded = json_decode($json, true);
+
+                        if (json_last_error() !== JSON_ERROR_NONE) {
+                                $message = '<div class="alert alert-danger">❌ Invalid JSON: ' . json_last_error_msg() . '</div>';
+                        } else {
+                                file_put_contents($filePath, json_encode($decoded, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
+                                $message = '<div class="alert alert-success">✅ Language file saved.</div>';
+                        }
+                }
+        }
 	
 	if ($filePath && file_exists($filePath)) {
 		$content = file_get_contents($filePath);
 	}
 	
-	// Add for debugging
-	error_log("Selected: $selected");
-	error_log("FilePath: $filePath");
-	error_log("LangDir: $langDir");
 ?>
 
 <div class="container py-4">
@@ -58,8 +58,9 @@
 	<?= $message ?>
 	
 	<?php if ($selected): ?>
-		<form method="post" onsubmit="return validateJson();">
-			<input type="hidden" name="file" value="<?= htmlspecialchars($selected) ?>">
+                <form method="post" onsubmit="return validateJson();">
+                        <input type="hidden" name="csrf_token" value="<?= htmlspecialchars(getCsrfToken()) ?>">
+                        <input type="hidden" name="file" value="<?= htmlspecialchars($selected) ?>">
 			<textarea id="json-editor" name="json" rows="20" class="form-control mb-2"><?= htmlspecialchars($content) ?></textarea>
 			<div class="mb-2">
 				<button type="button" class="btn btn-sm btn-secondary" onclick="addGroup()">

@@ -88,6 +88,7 @@ Locate /Includes/config/settings.php and adjust the following to match your setu
         'ProjectPath' => 'D:/laragon8/www/',
         // Exclude unwanted files and directories
         'IgnoreDirs' => ['.', '..', 'templates', 'app', 'includes', 'modules', '.idea', 'logs', 'vendor', 'assets'],
+
         // Where Laragon stores outgoing emails
         'email_output_path' => 'D:/laragon/bin/sendmail/output/',
 

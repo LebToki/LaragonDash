@@ -1,4 +1,5 @@
 <?php
+
         require_once 'includes/functions.php';
 
         $emailDir = $laraconfig['email_output_path'] ?? 'D:/laragon/bin/sendmail/output/';
@@ -7,8 +8,12 @@
 
         $current = $_GET['email'] ?? null;
 
+
+
+
         // Handle deletion
         if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['delete'])) {
+
                 $target = basename($_POST['delete']);
                 $fullPath = $emailDir . $target;
                 if (in_array($fullPath, $emails) && file_exists($fullPath)) {
@@ -47,8 +52,9 @@
 							<a href="?module=email&email=<?= urlencode($name) ?>" class="text-decoration-none text-dark flex-grow-1">
 								<?= htmlspecialchars($title) ?>
 							</a>
-							<form method="post" onsubmit="return confirm('Delete this email?')" class="ms-2">
-								<input type="hidden" name="delete" value="<?= htmlspecialchars($name) ?>">
+                                                        <form method="post" onsubmit="return confirm('Delete this email?')" class="ms-2">
+                                                                <input type="hidden" name="csrf_token" value="<?= htmlspecialchars(getCsrfToken()) ?>">
+                                                                <input type="hidden" name="delete" value="<?= htmlspecialchars($name) ?>">
 								<button class="btn btn-sm btn-outline-danger" title="Delete">&times;</button>
 							</form>
 						</div>
