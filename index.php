@@ -7,9 +7,9 @@
 	<div class="row">
 		
 		<!-- Sidebar -->
-		<div class="col-auto p-0">
-			<?php include 'includes/sidebar.php'; ?>
-		</div>
+                <div id="sidebarWrapper" class="col-auto p-0">
+                        <?php include 'includes/sidebar.php'; ?>
+                </div>
 		
 		<!-- Main Content -->
 		<div class="col ps-md-4 pt-4">

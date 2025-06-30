@@ -172,6 +172,7 @@
   },
   "tooltips": {
     "theme_toggle": "Toggle theme",
+    "toggle_sidebar": "Toggle sidebar",
     "refresh": "Refresh",
     "help": "Help",
     "notifications": "Notifications"
