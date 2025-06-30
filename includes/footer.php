@@ -14,6 +14,7 @@
                 data-bs-dismiss="toast" aria-label="Close"></button>
     </div>
 </div>
+<div id="themeStatus" class="visually-hidden" role="status" aria-live="polite"></div>
 
 </body>
 </html>

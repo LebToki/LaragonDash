@@ -1,6 +1,22 @@
 document.addEventListener("DOMContentLoaded", () => {
   const themeBtn = document.getElementById("themeToggleBtn");
   const toast = document.getElementById("toastContent");
+  const status = document.getElementById("themeStatus") || (() => {
+    const el = document.createElement("div");
+    el.id = "themeStatus";
+    el.className = "visually-hidden";
+    el.setAttribute("role", "status");
+    el.setAttribute("aria-live", "polite");
+    document.body.appendChild(el);
+    return el;
+  })();
+
+  const updateAriaLabel = () => {
+    const current = document.body.dataset.theme || "light";
+    const next = current === "dark" ? "light" : "dark";
+    if (themeBtn) themeBtn.setAttribute("aria-label", `Switch to ${next} theme`);
+  };
+  updateAriaLabel();
 
   if (themeBtn) {
     themeBtn.addEventListener("click", () => {
@@ -16,6 +32,8 @@ document.addEventListener("DOMContentLoaded", () => {
       }
       document.documentElement.classList.remove("theme-dark", "theme-light");
       document.documentElement.classList.add(`theme-${newTheme}`);
+      updateAriaLabel();
+      if (status) status.textContent = `Theme changed to ${newTheme}`;
     });
   }
   const langData = window.availableLanguages?.[currentLang];
