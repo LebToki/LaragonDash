@@ -57,7 +57,7 @@
 	</div>
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js" integrity="sha384-XcdcwHqIPULERb2yDEM4R0XaQKU3YnDsrTmjACBZyfdVVqjh6xQ4/DCMd7XLcA6Y" crossorigin="anonymous"></script>
 <script>
 	document.addEventListener("DOMContentLoaded", function () {
 		fetch("modules/vitals/data.php")
