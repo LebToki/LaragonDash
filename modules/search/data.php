@@ -3,8 +3,9 @@
 	
 	header('Content-Type: application/json');
 	
-	$query = strtolower(trim($_GET['q'] ?? ''));
-	$projects = getProjectTiles();
+        $query = strtolower(trim($_GET['q'] ?? ''));
+        // use cached project list
+        $projects = getProjectTiles();
 	
 	$filtered = array_filter($projects, function ($project) use ($query) {
 		if ($query === '') return false;

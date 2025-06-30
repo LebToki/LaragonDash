@@ -9,8 +9,9 @@
 	 * @param string $search
 	 * @return array
 	 */
-	function getDashboardProjects(string $type = '', string $search = ''): array {
-		$projects = getProjectTiles(); // Assumes global helper returns full list
+        function getDashboardProjects(string $type = '', string $search = ''): array {
+                // getProjectTiles() now returns cached data when available
+                $projects = getProjectTiles();
 		$filtered = [];
 		
 		foreach ($projects as $project) {
