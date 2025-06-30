@@ -179,7 +179,7 @@ Secure file access with path validation
 
 ## 💻 How to Add a New Language
 
-Just drop a new JSON file inside `/assets/languages/` named `xx.json`.  
+Just drop a new JSON file inside `/includes/languages/` named `xx.json`.
 Here’s a quick example for `xx.json`:
 
 ```json
