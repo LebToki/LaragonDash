@@ -85,7 +85,7 @@ Locate /Includes/config/settings.php and adjust the following to match your setu
         'SSLEnabled' => 1,                        // Enable or disable SSL
         'Port'       => 443,                      // Your local server port
         // Update to your Laragon www path
-        'ProjectPath' => 'D:/laragon8/www/',   
+        'ProjectPath' => 'D:/laragon8/www/',
         // Exclude unwanted files and directories
         'IgnoreDirs' => ['.', '..', 'templates', 'app', 'includes', 'modules', '.idea', 'logs', 'vendor', 'assets'],
 
@@ -182,7 +182,7 @@ Secure file access with path validation
 
 ## 💻 How to Add a New Language
 
-Just drop a new JSON file inside `/assets/languages/` named `xx.json`.  
+Just drop a new JSON file inside `/includes/languages/` named `xx.json`.
 Here’s a quick example for `xx.json`:
 
 ```json

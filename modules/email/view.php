@@ -8,13 +8,11 @@
 
         $current = $_GET['email'] ?? null;
 
-        // Handle deletion BEFORE rendering anything
+
+
+
+        // Handle deletion
         if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['delete'])) {
-                if (!verifyCsrfToken($_POST['csrf_token'] ?? null)) {
-                        header('HTTP/1.1 400 Bad Request');
-                        echo 'Invalid CSRF token';
-                        exit;
-                }
 
                 $target = basename($_POST['delete']);
                 $fullPath = $emailDir . $target;

@@ -1,7 +1,10 @@
 <nav class="navbar navbar-light bg-white shadow-sm px-4">
-	<div class="d-flex align-items-center gap-3">
-		<img src="../assets/images/laragondash-logo.png" style="height: 50px;" alt="LaragonDash Logo">
-	</div>
+        <div class="d-flex align-items-center gap-3">
+                <button class="btn btn-sm btn-outline-secondary d-lg-none" id="sidebarToggle" aria-label="<?= t('tooltips.toggle_sidebar', [], 'Toggle sidebar') ?>">
+                        <i class="ri-menu-line"></i>
+                </button>
+                <img src="../assets/images/laragondash-logo.png" style="height: 50px;" alt="LaragonDash Logo">
+        </div>
 	
 	<div class="d-flex align-items-center gap-3 ms-auto">
 		
@@ -16,11 +19,12 @@
 			</button>
 		</form>
 		
-		<!-- Theme Toggle -->
-		<button class="btn btn-sm btn-outline-secondary d-flex align-items-center gap-1" id="themeToggleBtn"
-		        aria-label="Toggle Theme">
-			<iconify-icon icon="ph:moon-stars-duotone"></iconify-icon>
-		</button>
+                <!-- Theme Toggle -->
+                <?php $nextTheme = ($theme === 'dark') ? 'light' : 'dark'; ?>
+                <button class="btn btn-sm btn-outline-secondary d-flex align-items-center gap-1" id="themeToggleBtn"
+                        aria-label="Switch to <?= $nextTheme ?> theme">
+                        <iconify-icon icon="ph:moon-stars-duotone"></iconify-icon>
+                </button>
 		
 		
 		<!-- Language Selector (dynamically populated in app.js) -->

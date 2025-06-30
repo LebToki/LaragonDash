@@ -80,37 +80,66 @@ $theme = $_COOKIE['theme'] ?? $_GET['theme'] ?? 'light';
 		return ['name' => 'Unknown', 'icon' => 'mdi:folder-outline', 'admin' => ''];
 	}
 	
-	/**
-	 * Generate a list of valid project tiles
-	 */
-	function getProjectTiles(string $search = ''): array
-	{
-		global $laraconfig;
-		$basePath = $laraconfig['ProjectPath'] ?? '..';
-		$ignored = $laraconfig['IgnoreDirs'] ?? ['.', '..', 'logs', 'vendor', 'assets'];
-		$tiles = [];
-		
-		foreach (scandir($basePath) as $dir) {
-			if (in_array($dir, $ignored)) continue;
-			
-			$fullPath = "$basePath/$dir";
-			if (!is_dir($fullPath)) continue;
-			
-			if (!empty($search) && stripos($dir, $search) === false) continue;
-			
-			$type = detectProjectType($fullPath);
-			
-			$tiles[] = [
-				'name' => $dir,
-				'type' => $type['name'],
-				'icon' => $type['icon'],
-				'link' => getURLScheme() . "://$dir.local",
-				'admin' => $type['admin']
-			];
-		}
-		
-		return $tiles;
-	}
+        /**
+         * Load project tiles from cache or regenerate them.
+         */
+        function getProjectTiles(string $search = ''): array
+        {
+                global $laraconfig;
+
+                $basePath  = $laraconfig['ProjectPath'] ?? '..';
+                $ignored   = $laraconfig['IgnoreDirs'] ?? ['.', '..', 'logs', 'vendor', 'assets'];
+                $cacheDir  = dirname(__DIR__) . '/cache';
+                $cacheFile = "$cacheDir/projects.json";
+                $ttl       = 300; // seconds
+
+                $tiles = [];
+
+                if (file_exists($cacheFile)) {
+                        $cacheTime = filemtime($cacheFile);
+                        $dirTime   = filemtime($basePath);
+
+                        if ((time() - $cacheTime) < $ttl && $dirTime < $cacheTime) {
+                                $data = json_decode(file_get_contents($cacheFile), true);
+                                if (is_array($data)) {
+                                        $tiles = $data;
+                                }
+                        }
+                }
+
+                if (empty($tiles)) {
+                        foreach (scandir($basePath) as $dir) {
+                                if (in_array($dir, $ignored)) continue;
+
+                                $fullPath = "$basePath/$dir";
+                                if (!is_dir($fullPath)) continue;
+
+                                $type = detectProjectType($fullPath);
+
+                                $tiles[] = [
+                                        'name'  => $dir,
+                                        'type'  => $type['name'],
+                                        'icon'  => $type['icon'],
+                                        'link'  => getURLScheme() . "://$dir.local",
+                                        'admin' => $type['admin']
+                                ];
+                        }
+
+                        if (!is_dir($cacheDir)) {
+                                @mkdir($cacheDir, 0777, true);
+                        }
+                        file_put_contents($cacheFile, json_encode($tiles));
+                }
+
+                if ($search) {
+                        $tiles = array_filter($tiles, function ($tile) use ($search) {
+                                return stripos($tile['name'], $search) !== false;
+                        });
+                        $tiles = array_values($tiles);
+                }
+
+                return $tiles;
+        }
 	
 	/**
 	 * Basic server info
