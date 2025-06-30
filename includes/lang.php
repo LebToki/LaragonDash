@@ -11,7 +11,8 @@
 	function getTranslations(): array
 	{
 		$lang = getCurrentLang();
-		$langFile = __DIR__ . "/../assets/lang/$lang.json";
+        // Load translation from the unified languages directory
+        $langFile = __DIR__ . "/languages/$lang.json";
 		if (file_exists($langFile)) {
 			$json = file_get_contents($langFile);
 			return json_decode($json, true) ?? [];
