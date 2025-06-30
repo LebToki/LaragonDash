@@ -2,8 +2,9 @@
 	require_once '../../includes/functions.php';
 	require_once '../../includes/lang.php';
 	
-	$query = $_GET['query'] ?? '';
-	$projects = getProjectTiles();
+        $query = $_GET['query'] ?? '';
+        // getProjectTiles() uses cached data when possible
+        $projects = getProjectTiles();
 	
 	// Simple filter (case-insensitive search in name or path)
 	$filtered = array_filter($projects, function ($p) use ($query) {

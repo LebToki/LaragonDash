@@ -3,14 +3,14 @@
 	require_once 'includes/lang.php';
 	require_once 'functions.php';
 	
-	$types = getProjectTypes(); // e.g., from scanning project folders
+        $types = getProjectTypes(); // list is cached by getProjectTiles()
 	
 	// Get filters from request
 	$type = $_GET['type'] ?? '';
 	$search = $_GET['search'] ?? '';
 	
-	// Get projects
-	$projects = getProjectTiles();
+        // Get projects from cache if available
+        $projects = getProjectTiles();
 	
 	// Pagination
 //	$itemsPerPage = 24;

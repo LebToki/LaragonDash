@@ -2,7 +2,8 @@
 	require_once 'includes/functions.php';
 	require_once 'includes/lang.php';
 	
-	$projects = getProjectTiles();
+        // Projects are cached by getProjectTiles()
+        $projects = getProjectTiles();
 	$types = array_unique(array_column($projects, 'type'));
 	sort($types);
 	$colors = ['#FCE7F3', '#DCFCE7', '#E0F2FE', '#FEF9C3', '#FFEDD5', '#EDE9FE'];
