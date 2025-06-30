@@ -1,20 +1,26 @@
 <?php
-	
-	// Handle deletion BEFORE any output or includes
-	if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['delete'])) {
-		$emailDir = 'D:/laragon/bin/sendmail/output/';
-		$target = basename($_POST['delete']);
-		$fullPath = $emailDir . $target;
-		
-		if (file_exists($fullPath)) {
-			unlink($fullPath);
-			echo "<script>location.href='?module=email&deleted=1';</script>";
-			exit;
-		}
-	}
-	
-	// Now safe to include UI-related files
-	require_once 'includes/functions.php';
+
+        require_once 'includes/functions.php';
+
+        // Handle deletion BEFORE rendering anything
+        if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['delete'])) {
+                if (!verifyCsrfToken($_POST['csrf_token'] ?? null)) {
+                        header('HTTP/1.1 400 Bad Request');
+                        echo 'Invalid CSRF token';
+                        exit;
+                }
+
+                $emailDir = 'D:/laragon/bin/sendmail/output/';
+                $target = basename($_POST['delete']);
+                $fullPath = $emailDir . $target;
+
+                if (file_exists($fullPath)) {
+                        unlink($fullPath);
+                        echo "<script>location.href='?module=email&deleted=1';</script>";
+                        exit;
+                }
+        }
+
 	
 	
 	$emailDir = 'D:/laragon/bin/sendmail/output/';
@@ -24,10 +30,16 @@
 	
 	$current = $_GET['email'] ?? null;
 	
-	// Handle deletion
-	if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['delete'])) {
-		$target = basename($_POST['delete']);
-		$fullPath = $emailDir . $target;
+        // Handle deletion
+        if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['delete'])) {
+                if (!verifyCsrfToken($_POST['csrf_token'] ?? null)) {
+                        header('HTTP/1.1 400 Bad Request');
+                        echo 'Invalid CSRF token';
+                        exit;
+                }
+
+                $target = basename($_POST['delete']);
+                $fullPath = $emailDir . $target;
 		if (in_array($fullPath, $emails) && file_exists($fullPath)) {
 			unlink($fullPath);
 			header("Location: ?module=email&deleted=1");
@@ -64,8 +76,9 @@
 							<a href="?module=email&email=<?= urlencode($name) ?>" class="text-decoration-none text-dark flex-grow-1">
 								<?= htmlspecialchars($title) ?>
 							</a>
-							<form method="post" onsubmit="return confirm('Delete this email?')" class="ms-2">
-								<input type="hidden" name="delete" value="<?= htmlspecialchars($name) ?>">
+                                                        <form method="post" onsubmit="return confirm('Delete this email?')" class="ms-2">
+                                                                <input type="hidden" name="csrf_token" value="<?= htmlspecialchars(getCsrfToken()) ?>">
+                                                                <input type="hidden" name="delete" value="<?= htmlspecialchars($name) ?>">
 								<button class="btn btn-sm btn-outline-danger" title="Delete">&times;</button>
 							</form>
 						</div>

@@ -16,7 +16,8 @@
 
 <div class="container py-4">
 	<h4 class="mb-4">⚙️ System Configuration</h4>
-	<form method="post" action="update.php">
+        <form method="post" action="update.php">
+                <input type="hidden" name="csrf_token" value="<?= htmlspecialchars(getCsrfToken()) ?>">
 		<!-- Ignored Folders -->
 		<div class="mb-3">
 			<label class="form-label">Ignored Directories</label>

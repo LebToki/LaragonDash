@@ -3,10 +3,16 @@
 	
 	$configPath = realpath(__DIR__ . '/../../includes/config/settings.php');
 	
-	if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-		header('Location: ../../index.php?module=settings');
-		exit;
-	}
+        if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+                header('Location: ../../index.php?module=settings');
+                exit;
+        }
+
+        if (!verifyCsrfToken($_POST['csrf_token'] ?? null)) {
+                header('HTTP/1.1 400 Bad Request');
+                echo 'Invalid CSRF token';
+                exit;
+        }
 	
 	$config = is_file($configPath) ? include $configPath : [];
 
