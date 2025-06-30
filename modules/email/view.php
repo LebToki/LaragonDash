@@ -2,6 +2,12 @@
 
         require_once 'includes/functions.php';
 
+        $emailDir = $laraconfig['email_output_path'] ?? 'D:/laragon/bin/sendmail/output/';
+        $emails = glob($emailDir . '*.{eml,txt}', GLOB_BRACE);
+        usort($emails, fn($a, $b) => strcmp(basename($b), basename($a))); // DESC by filename
+
+        $current = $_GET['email'] ?? null;
+
         // Handle deletion BEFORE rendering anything
         if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['delete'])) {
                 if (!verifyCsrfToken($_POST['csrf_token'] ?? null)) {
@@ -10,42 +16,14 @@
                         exit;
                 }
 
-                $emailDir = 'D:/laragon/bin/sendmail/output/';
                 $target = basename($_POST['delete']);
                 $fullPath = $emailDir . $target;
-
-                if (file_exists($fullPath)) {
+                if (in_array($fullPath, $emails) && file_exists($fullPath)) {
                         unlink($fullPath);
-                        echo "<script>location.href='?module=email&deleted=1';</script>";
+                        header("Location: ?module=email&deleted=1");
                         exit;
                 }
         }
-
-	
-	
-	$emailDir = 'D:/laragon/bin/sendmail/output/';
-	$emails = glob($emailDir . '*.{eml,txt}', GLOB_BRACE);
-	
-	usort($emails, fn($a, $b) => strcmp(basename($b), basename($a))); // DESC by filename
-	
-	$current = $_GET['email'] ?? null;
-	
-        // Handle deletion
-        if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['delete'])) {
-                if (!verifyCsrfToken($_POST['csrf_token'] ?? null)) {
-                        header('HTTP/1.1 400 Bad Request');
-                        echo 'Invalid CSRF token';
-                        exit;
-                }
-
-                $target = basename($_POST['delete']);
-                $fullPath = $emailDir . $target;
-		if (in_array($fullPath, $emails) && file_exists($fullPath)) {
-			unlink($fullPath);
-			header("Location: ?module=email&deleted=1");
-			exit;
-		}
-	}
 ?>
 
 <div class="container-fluid py-4">

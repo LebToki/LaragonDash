@@ -68,7 +68,7 @@ LaragonDash/
 
 Replace the Root Folder
 Simply overwrite your existing root directory with the one from the repo.
-or even create a project (directory too) depends on your preference as I have introduced a variable that reads the root from a config file ProjectPath you simply need to update it to match the location of your www folder
+or even create a project (directory too) depends on your preference as I have introduced a variable that reads the root from a config file ProjectPath you simply need to update it to match the location of your www folder. You can also configure where Laragon stores outgoing mail using `email_output_path`.
 
 **Configure settings.php**
 
@@ -87,8 +87,11 @@ Locate /Includes/config/settings.php and adjust the following to match your setu
         // Update to your Laragon www path
         'ProjectPath' => 'D:/laragon8/www/',   
         // Exclude unwanted files and directories
-        'IgnoreDirs' => ['.', '..', 'templates', 'app', 'includes', 'modules', '.idea', 'logs', 'vendor', 'assets'], 
-        
+        'IgnoreDirs' => ['.', '..', 'templates', 'app', 'includes', 'modules', '.idea', 'logs', 'vendor', 'assets'],
+
+        // Where Laragon stores outgoing emails
+        'email_output_path' => 'D:/laragon/bin/sendmail/output/',
+
     ];
 ?>
 ```
