@@ -1,5 +1,5 @@
 <?php
-        $current = $_GET['module'] ?? 'dashboard';
+       $current = basename($_GET['module'] ?? 'dashboard');
 
         require_once __DIR__ . '/lang.php';
         $trans = getTranslations();
